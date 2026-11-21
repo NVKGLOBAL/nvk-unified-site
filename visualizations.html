@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Visualizations — Recovered NVK Assets — Honest Status | NVK Global</title>
-<meta name="description" content="The recovered NVK visualization systems — the orb, the CODEXA visualizers, and the other visual assets. Source recovered, status honest.">
+<title>Visualizations — Live Orb &amp; Visualizers | NVK Global</title>
+<meta name="description" content="The live Nexus orb, resonance display, knowledge graph, temporal spiral, seeker aura, and crown-jewel background — real NVK code, running on this site. The visualizations are the face of the AI and the user.">
 <link rel="canonical" href="https://nvk.global/visualizations.html">
-<meta property="og:title" content="Visualizations — Recovered NVK Assets — Honest Status | NVK Global">
-<meta property="og:description" content="The recovered NVK visualization systems — the orb, the CODEXA visualizers, and the other visual assets. Source recovered, status honest.">
+<meta property="og:title" content="Visualizations — Live Orb &amp; Visualizers | NVK Global">
+<meta property="og:description" content="The live Nexus orb, resonance display, knowledge graph, temporal spiral, seeker aura, and crown-jewel background — real NVK code, running on this site.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nvk.global/visualizations.html">
 <meta property="og:site_name" content="NVK GLOBAL">
@@ -15,6 +15,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"></noscript>
 <link rel="stylesheet" href="assets/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+  }
+}
+</script>
 <style>
 .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:4px 11px;line-height:1.4;white-space:nowrap}
 .badge-live{color:#0b6b3a;background:#e2f5e9}
@@ -52,7 +60,7 @@
 <a href="story.html">Story</a>
 <a href="brand.html">Brand</a>
 <a href="why.html">Why NVK</a>
-<a href="intelligence.html" aria-current="page">Intelligence</a>
+<a href="intelligence.html">Intelligence</a>
 <a href="status.html">Status</a>
 <a href="store/">Store</a>
 </nav>
@@ -61,54 +69,129 @@
 <main>
 <section class="hero">
 <div class="wrap">
-<p class="eyebrow">NVK Assets — Recovered Code</p>
+<p class="eyebrow">NVK Assets — Live</p>
 <h1>Visualizations</h1>
-<p class="lede">NVK's unique code and visualizations are assets. These are the visualization systems recovered from the repositories — real source, preserved verbatim, with an honest status on each. Nothing here is presented as running live until it is.</p>
-<p><span class="badge-exp">Recovered source</span> <span class="badge-blocked">Not yet live on this site</span></p>
+<p class="lede">The visualizations are the representation of the AI and the user — the next generation beyond Muse and other AIs. They are the face of the product, not decoration. Everything on this page is real NVK code from the repositories, running live in your browser. Each one responds to something real — your clicks, your navigation, your search — and anything that cannot run yet says so instead of faking it.</p>
+<p><span class="badge-live">Live on this site</span> <span class="badge-exp">NVK's own code</span></p>
 </div>
 </section>
 
 <section>
 <div class="wrap">
-<p class="eyebrow">The Orb System — canonical source: nvknexusorb</p>
-<h2>The Nexus orb</h2>
-<p class="lede">The signature NVK orb visual language. The Quantum-Simulated-Multi-Agent-Collaboration repo shares the same filenames, but every one of its orb files is a 0-byte empty placeholder — <strong>nvknexusorb holds 100% of the real orb code</strong> and is the canonical source by default.</p>
-<table class="status-table">
-<thead><tr><th>Component</th><th>What it does</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td>CodexOrbSystem.tsx (16,638 B)</td><td>Full-screen three.js hub: central shader orb, clickable gateway nodes on an orbit ring, bloom, drag-rotate with momentum, portal transitions into projects.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>NexusOrb.tsx (6,083 B)</td><td>The central-orb factory (<code>createNexusOrb()</code>) that CodexOrbSystem imports.</td><td><span class="badge-blocked">Not recovered — rate-limited (HTTP 429) on every attempt. The one blocking gap: the orb cannot compile without it.</span></td></tr>
-<tr><td>ParticleBackground.tsx (10,948 B)</td><td>250,000-point spiral-galaxy shader backdrop with mouse warp.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>ThresholdAnimation.tsx (11,888 B)</td><td>6-second warp transitions in 4 shader modes: Quantum Vortex, Wormhole Collapse, Starlight Dash, Cosmic Bloom.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>CodexPortalAnimation.tsx (7,091 B)</td><td>2-second themed / random portal-wipe transitions.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>FractalBurst.tsx (926 B)</td><td>2-second burst-light flash transition.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>NexusOriginSeal.tsx (5,544 B)</td><td>SVG glyph seal with parallax and click glow. No hexagram — consistent with the sacred-geometry law.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>NvkGlyph.tsx (556 B)</td><td>Circular "NVK" badge.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>kindness-visualizer.ts (721 B)</td><td>Not a visualizer: it only toggles a CSS class. Marked honestly — do not treat it as a visualization.</td><td><span class="badge-blocked">Mock</span></td></tr>
-</tbody>
-</table>
-<p class="evidence-note">Compile caveat: CodexOrbSystem also needs <code>constants.ts</code>, <code>audio.ts</code> and <code>ProjectViewer.tsx</code> (unread), and the orb has no activity-state wiring yet — wiring orb states to real activity is build work, not recovery. The home page orb is a separate, honest CSS orb driven by real page activity. The NVKTRISOPHIANCODEX <code>CodexOrbSystem</code> is a different, simpler component (axiom + peer orbit rings) — not merged with this one.</p>
+<p class="eyebrow">Live — the Nexus orb</p>
+<h2>The orb, running</h2>
+<p class="lede">The signature NVK orb — the three.js orb from nvknexusorb, the canonical source. The Quantum-Simulated-Multi-Agent-Collaboration repo shares the same filenames, but every one of its orb files is a 0-byte empty placeholder — <strong>nvknexusorb holds 100% of the real orb code</strong>. Drag it to spin it. Click a gateway node to open its section. The galaxy behind it is the project's own 250,000-point particle background.</p>
+<div class="viz-hub" id="orb-hub" data-viz data-viz-label="Nexus orb hub">
+  <div id="galaxy-backdrop" class="viz-galaxy" data-viz data-viz-label="particle galaxy"></div>
+  <div id="viz-orb" class="viz-orb-mount"></div>
+  <div id="gateway-modal" class="gateway-modal" hidden>
+    <h3 id="gateway-modal-title"></h3>
+    <p id="gateway-modal-body"></p>
+    <div class="btn-row" id="gateway-modal-actions"></div>
+    <button class="btn btn-ghost btn-small gateway-modal-close" type="button">Close</button>
+  </div>
+  <p class="viz-unavailable" hidden>The live orb did not start in your browser — try a browser with WebGL enabled. Nothing here is simulated, so the panel stays empty rather than faking it.</p>
+</div>
+<p class="viz-caption">Orb states follow real activity: drag and click the orb, navigate the site, use the search box on the home page. The orb's gateway nodes open real pages of this site — Vision → Story, Codex → Intelligence, Nexus → Offers, Lore → Brand. Archived projects from the original project list are shown in the modal but not linked: their live status was never verified.</p>
 </div>
 </section>
 
 <section class="tint">
 <div class="wrap">
-<p class="eyebrow">CODEXA Visualizers — source: -CODEXA</p>
-<h2>Resonance and knowledge-graph visualizers</h2>
+<p class="eyebrow">Live — resonance</p>
+<h2>Resonance</h2>
+<p class="lede">The resonator from CODEXA's ResonanceVisualizerPanel — the most wired-to-real-activity visualizer found in the repositories. The icosahedron idles at its original baseline; every real resonance event on this page — your clicks, and the Pulse button below — sends a burst of particles through it.</p>
+<div class="viz-mount viz-mount-std viz-dark-panel" data-viz data-viz-label="resonance visualizer">
+  <canvas id="resonance-canvas"></canvas>
+  <p class="viz-unavailable" hidden>The resonance visualizer did not start in your browser — try a browser with WebGL enabled. Nothing here is simulated, so the panel stays empty rather than faking it.</p>
+</div>
+<div class="viz-controls">
+  <button id="resonance-pulse" class="btn btn-primary btn-small" type="button">Pulse</button>
+  <button id="resonance-play" class="btn btn-ghost btn-small" type="button" aria-pressed="false">Pause</button>
+  <button id="resonance-clear" class="btn btn-ghost btn-small" type="button">Clear</button>
+  <span class="viz-counter">Bursts this session: <strong id="resonance-count">0</strong></span>
+</div>
+<p class="viz-caption">Bursts come from real activity only — there is no scheduled or simulated effect. Click anywhere on the page and the resonator answers.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<p class="eyebrow">Live — knowledge graph</p>
+<h2>The living web</h2>
+<p class="lede">CODEXA's EmergentLogicWeb — a force-directed 3D knowledge graph, with its physics, colors, drag, and hover tooltips intact. The data is this site's own real structure: the eight sections of the site as axiom nodes, and the nine chapters of Book 2: The Exodus as glyph nodes, chained in reading order. Drag a node, hover for its real page and chapter facts, click to select it.</p>
+<div class="viz-mount viz-mount-std viz-dark-panel" data-viz data-viz-label="knowledge graph">
+  <canvas id="logicweb-canvas"></canvas>
+  <div class="viz-tip" id="logicweb-tip"></div>
+  <p class="viz-unavailable" hidden>The knowledge graph did not start in your browser — try a browser with WebGL enabled. Nothing here is simulated, so the panel stays empty rather than faking it.</p>
+</div>
+<p class="viz-debug" id="logicweb-debug" aria-live="polite"></p>
+<p class="viz-caption">Glow (entropy) is a stated derivation from real facts: published chapters sit low (0.15); the finale runs hotter (0.55) because its ending is undecided. Nothing here invents a frequency, a score, or a node that does not exist on this site.</p>
+</div>
+</section>
+
+<section class="tint">
+<div class="wrap">
+<p class="eyebrow">Live — temporal spiral</p>
+<h2>The spiral of the Exodus</h2>
+<p class="lede">CODEXA's TemporalSpiralVisualizer — the spiral geometry, node placement, state colors, and junction diamonds, intact. One node per chapter of Book 2: The Exodus, in reading order. Chapters 1–8 are published (Woven); the finale is the active node (Spooling, junction — the door). The spiral tightens and loosens with your measured activity on this page.</p>
+<div class="viz-mount viz-mount-spiral" data-viz data-viz-label="temporal spiral">
+  <svg id="spiral-svg" role="img" aria-label="Temporal spiral of the nine chapters of Book 2: The Exodus"></svg>
+  <p class="viz-unavailable" hidden>The spiral did not start in your browser. Nothing here is simulated, so the panel stays empty rather than faking it.</p>
+</div>
+<p class="viz-readout" id="spiral-readout" aria-live="polite"></p>
+<p class="viz-caption">Hover a node for its chapter, state, and entropy. The readout under the spiral shows the live measured activity level driving it.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<p class="eyebrow">Live — seeker aura</p>
+<h2>Your aura</h2>
+<p class="lede">CODEXA's SeekerAuraDisplay — the seeker is you, the visitor. The aura's flares grow from the pages you have actually opened in this session; the central orb pulses with your measured activity level. Visit more pages and the aura changes.</p>
+<div class="viz-mount viz-mount-aura viz-dark-panel" data-viz data-viz-label="seeker aura">
+  <canvas id="aura-canvas" width="640" height="420"></canvas>
+  <p class="viz-unavailable" hidden>The aura did not start in your browser. Nothing here is simulated, so the panel stays empty rather than faking it.</p>
+</div>
+<p class="viz-caption" id="aura-traits" aria-live="polite">This session: no pages visited yet — the aura shows its base form.</p>
+</div>
+</section>
+
+<section class="tint">
+<div class="wrap">
+<p class="eyebrow">Live — crown jewel</p>
+<h2>The crown-jewel sun</h2>
+<p class="lede">The 2D layer of CODEXA's CodexaCrownJewelBackground — the radiant sun glow, twelve rotating ray beams, and 120 swirling particles. This is the layer the original itself guarantees on any device. Its 3D layer (a distort-material sun) needs a library this static build does not carry, so it is not embedded — and not faked.</p>
+<div class="viz-mount viz-mount-crown viz-dark-panel" data-viz data-viz-label="crown-jewel background">
+  <canvas id="crownjewel-canvas"></canvas>
+  <p class="viz-unavailable" hidden>The crown-jewel background did not start in your browser. Nothing here is simulated, so the panel stays empty rather than faking it.</p>
+</div>
+<p class="viz-caption">No audio runs on this site, so the sun does not react to sound — it runs at its base state, honestly.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<p class="eyebrow">Not yet wired — honestly marked</p>
+<h2>What is not running, and why</h2>
 <table class="status-table">
-<thead><tr><th>Component</th><th>What it does</th><th>Status</th></tr></thead>
+<thead><tr><th>Component</th><th>What it is</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td>ResonanceVisualizerPanel.tsx (9,836 B)</td><td>Real 3D visualizer: wireframe icosahedron resonator with particle bursts driven by ResonanceEffect events. The most wired-to-real-activity visualizer found.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>EmergentLogicWeb.tsx (21,677 B)</td><td>Force-directed 3D knowledge graph of glyphs and axioms, with physics, drag, and hover tooltips.</td><td><span class="badge-exp">Source recovered</span></td></tr>
+<tr><td>NegentropicBloomVisualizer.tsx (3,907 B)</td><td>Recovered in full — but the original source is itself a stub: its render loop is empty and never runs. It cannot be made live by embedding; it needs to be built.</td><td><span class="badge-blocked">Not yet wired</span></td></tr>
+<tr><td>TreeOfLifeVisualizer.tsx (26,269 B)</td><td>Complete 2D canvas — 11 sephirot plus Da'at, 26 paths, entropy-driven. Its Kabbalistic sephirot diagram sits outside NVK's own symbol set (Flower of Life / Buga sphere), so it is not embedded. The owner's call whether it belongs on the site.</td><td><span class="badge-blocked">Not embedded — owner's call</span></td></tr>
+<tr><td>StarfieldBackground.tsx (2,349 B)</td><td>A simple 2D starfield. Superseded by the 250,000-point galaxy above — not embedded.</td><td><span class="badge-blocked">Superseded</span></td></tr>
+<tr><td>CodexOrbSystem.tsx (342 B)</td><td>A stub in the original that returns nothing ("replaced by the integrated Sovereign Core"). Not used.</td><td><span class="badge-blocked">Stub in the original</span></td></tr>
+<tr><td>kindness-visualizer.ts (721 B)</td><td>Not a visualizer: it only toggles a CSS class. Marked honestly — do not treat it as a visualization.</td><td><span class="badge-blocked">Mock</span></td></tr>
+<tr><td>ThresholdAnimation.tsx (11,888 B) · CodexPortalAnimation.tsx (7,091 B) · FractalBurst.tsx (926 B)</td><td>Warp and portal transitions from nvknexusorb — 6-second shader warps and 2-second portal wipes. Source recovered; not embedded as standalone panels. They belong to navigation transitions, which this static site does not yet have.</td><td><span class="badge-exp">Source recovered</span></td></tr>
+<tr><td>NexusOriginSeal.tsx (5,544 B) · NvkGlyph.tsx (556 B)</td><td>SVG glyph seal with parallax and click glow (no hexagram — consistent with the sacred-geometry law) and the circular "NVK" badge. Source recovered; not embedded as standalone panels.</td><td><span class="badge-exp">Source recovered</span></td></tr>
 <tr><td>ResonanceField.tsx (2,525 B)</td><td>Event-feed list panel, not 3D. Its Filter and Refresh buttons have no handlers (dead UI) — stated plainly.</td><td><span class="badge-exp">Source recovered</span></td></tr>
-<tr><td>components/visuals/ — 17 files</td><td>Listed, contents not yet read. Includes NegentropicBloomVisualizer, TemporalSpiralVisualizer, TreeOfLifeVisualizer, TesseractVisualizer, SeekerAuraDisplay.</td><td><span class="badge-soon">Listed — contents pending</span></td></tr>
 </tbody>
 </table>
 <p class="evidence-note">Two corrections from the recovery pass: no file named "Toroidal Flow" or "Fractal Bloom" exists in -CODEXA, and SeekerAuraDisplay is a "Seeker" visualizer — not a seeker-card / TCG implementation. No TCG code exists in any repository.</p>
 </div>
 </section>
 
-<section>
+<section class="tint">
 <div class="wrap">
 <p class="eyebrow">Other Recovered Assets</p>
 <h2>What else the recovery pass found</h2>
@@ -162,5 +245,43 @@
 </div>
 </div>
 </footer>
+<script src="assets/viz/activity.js"></script>
+<script src="assets/viz/audio.js"></script>
+<script src="assets/main.js"></script>
+<script src="assets/viz/spiral.js"></script>
+<script src="assets/viz/aura.js"></script>
+<script src="assets/viz/crownjewel.js"></script>
+<script>
+  mountSpiral(document.getElementById("spiral-svg"), document.getElementById("spiral-readout"));
+  mountAura(document.getElementById("aura-canvas"), document.getElementById("aura-traits"));
+  mountCrownJewel(document.getElementById("crownjewel-canvas"));
+  /* The Pulse button needs no handler of its own: the shared activity bus
+     fires a real resonance event on every pointer press, including this one. */
+</script>
+<script type="module">
+  import { mountNexusOrb } from "./assets/viz/orb.js";
+  import { mountGalaxy } from "./assets/viz/galaxy.js";
+  import { mountResonance } from "./assets/viz/resonance.js";
+  import { mountLogicWeb } from "./assets/viz/logicweb.js";
+  mountGalaxy(document.getElementById("galaxy-backdrop"));
+  mountNexusOrb(document.getElementById("viz-orb"), {
+    modalEl: document.getElementById("gateway-modal"),
+    titleEl: document.getElementById("gateway-modal-title"),
+    bodyEl: document.getElementById("gateway-modal-body"),
+    actionsEl: document.getElementById("gateway-modal-actions")
+  });
+  document.querySelector(".gateway-modal-close").addEventListener("click", function () {
+    document.getElementById("gateway-modal").hidden = true;
+  });
+  mountResonance(document.getElementById("resonance-canvas"), {
+    playBtn: document.getElementById("resonance-play"),
+    clearBtn: document.getElementById("resonance-clear"),
+    countEl: document.getElementById("resonance-count")
+  });
+  mountLogicWeb(document.getElementById("logicweb-canvas"), {
+    debugEl: document.getElementById("logicweb-debug"),
+    tooltipEl: document.getElementById("logicweb-tip")
+  });
+</script>
 </body>
 </html>

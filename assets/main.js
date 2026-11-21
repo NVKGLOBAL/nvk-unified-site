@@ -42,6 +42,43 @@
     if (!orbState || !orbLabel) return;
     orbState.setAttribute("data-orb-state", state);
     orbLabel.textContent = detail || STATES[state] || STATES.idle;
+    /* The live three.js orb (assets/viz/orb.js) listens for this event and
+       changes its bloom / speed / hover glow to match the real state. */
+    window.dispatchEvent(new CustomEvent("nvk:orb-state", {
+      detail: { state: state, label: orbLabel.textContent }
+    }));
+  }
+
+  /* ---- Visualizer watchdog ----
+     Every live visualizer mount carries [data-viz]; its module marks it
+     [data-viz-ready] on the first rendered frame. If a mount is still
+     unmarked 8s after load, it never started — say so honestly instead
+     of leaving a dark box or a fake animation. Registered here, before
+     the search-box early return, so it runs on every page. */
+  setTimeout(function () {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-viz]"), function (host) {
+      if (host.getAttribute("data-viz-ready") === "true") return;
+      host.classList.add("viz-failed");
+      var note = host.querySelector(".viz-unavailable");
+      if (note) {
+        if (!note.textContent.trim()) {
+          note.textContent = "This visualizer did not start in your browser — nothing here is simulated, so the panel stays empty rather than faking it. Try a browser with WebGL enabled.";
+        }
+        note.hidden = false;
+      }
+    });
+  }, 8000);
+
+  /* ---- Sound toggle (home hero orb) ----
+     The orb's clicks play a short synthesized chime (assets/viz/audio.js).
+     Sound is OFF by default and only ever plays on a click gesture. */
+  var soundToggle = document.getElementById("orb-sound-toggle");
+  if (soundToggle && window.NVKAudio) {
+    soundToggle.addEventListener("click", function () {
+      var on = window.NVKAudio.toggle();
+      soundToggle.textContent = on ? "Sound: on" : "Sound: off";
+      soundToggle.setAttribute("aria-pressed", on ? "true" : "false");
+    });
   }
 
   if (!searchInput || searchItems.length === 0) {

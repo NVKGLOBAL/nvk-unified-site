@@ -15,6 +15,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"></noscript>
 <link rel="stylesheet" href="assets/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+  }
+}
+</script>
 <style>
 .badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:4px 11px;line-height:1.4;white-space:nowrap}
 .badge-live{color:#0b6b3a;background:#e2f5e9}
@@ -92,7 +100,16 @@
 </ul>
 </div>
 </div>
-<p style="margin-top:18px"><strong>The milestone that matters:</strong> one real model downloaded, loaded, and answering — in progress. When a small model is downloaded, loaded, and answers a question with real inference, that is the first milestone worth announcing. It has not been reached yet.</p>
+<p style="margin-top:18px"><strong>The milestone that matters:</strong> milestone #10 — one real model downloaded, loaded, and answering "2+2" with "4". It has not passed yet. When it does, that is the first milestone worth announcing. Until then, the intelligence is being built to real — the vision is locked and nothing is cut from it, but the checkout for CODEXA stays closed until the intelligence is real and Stripe is wired.</p>
+<p><strong>The face of the AI:</strong> the visualizations are the representation of the AI and the user — the next generation beyond Muse and other AIs. The resonator below is CODEXA's own resonance display, running live on this page. It answers your clicks, nothing else — there is no simulated intelligence behind it.</p>
+<div class="viz-mount viz-mount-compact viz-dark-panel" data-viz data-viz-label="CODEXA resonance face">
+  <canvas id="codexa-resonance-canvas"></canvas>
+  <p class="viz-unavailable" hidden>The resonance face did not start in your browser — try a browser with WebGL enabled. Nothing here is simulated, so the panel stays empty rather than faking it.</p>
+</div>
+<div class="viz-controls">
+  <button id="codexa-resonance-pulse" class="btn btn-primary btn-small" type="button">Pulse</button>
+  <span class="viz-counter">Bursts this session: <strong id="codexa-resonance-count">0</strong></span>
+</div>
 </div>
 
 <div class="status-card">
@@ -175,6 +192,14 @@
 </div>
 </div>
 </footer>
+<script src="assets/viz/activity.js"></script>
+<script src="assets/viz/audio.js"></script>
 <script src="assets/main.js" defer></script>
+<script type="module">
+  import { mountResonance } from "./assets/viz/resonance.js";
+  mountResonance(document.getElementById("codexa-resonance-canvas"), {
+    countEl: document.getElementById("codexa-resonance-count")
+  });
+</script>
 </body>
 </html>

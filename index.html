@@ -14,6 +14,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -60,23 +68,27 @@
         </div>
       </div>
       <div class="orb-wrap orb-state" data-orb-state="idle">
-        <div class="orb-stage">
-          <svg class="orb-motif" viewBox="0 0 220 220" aria-hidden="true" focusable="false">
-            <g fill="none" stroke="#00a8c6" stroke-width="1.2">
-              <circle cx="110" cy="110" r="34"/>
-              <circle cx="110" cy="76" r="34"/>
-              <circle cx="110" cy="144" r="34"/>
-              <circle cx="80.6" cy="93" r="34"/>
-              <circle cx="139.4" cy="93" r="34"/>
-              <circle cx="80.6" cy="127" r="34"/>
-              <circle cx="139.4" cy="127" r="34"/>
-              <circle cx="110" cy="110" r="68"/>
-            </g>
-          </svg>
-          <div class="orb" role="img" aria-label="NVK orb — reflects this page's activity"></div>
+        <div class="viz-mount viz-mount-hero viz-dark-panel" id="home-orb" data-viz data-viz-label="Nexus orb">
+          <div class="orb-stage orb-fallback">
+            <svg class="orb-motif" viewBox="0 0 220 220" aria-hidden="true" focusable="false">
+              <g fill="none" stroke="#00a8c6" stroke-width="1.2">
+                <circle cx="110" cy="110" r="34"/>
+                <circle cx="110" cy="76" r="34"/>
+                <circle cx="110" cy="144" r="34"/>
+                <circle cx="80.6" cy="93" r="34"/>
+                <circle cx="139.4" cy="93" r="34"/>
+                <circle cx="80.6" cy="127" r="34"/>
+                <circle cx="139.4" cy="127" r="34"/>
+                <circle cx="110" cy="110" r="68"/>
+              </g>
+            </svg>
+            <div class="orb" role="img" aria-label="NVK orb — reflects this page's activity"></div>
+          </div>
+          <p class="viz-unavailable" hidden>The live orb did not start in your browser — the CSS orb above is the fallback. Try a browser with WebGL enabled.</p>
         </div>
         <p class="orb-label" id="orb-status" aria-live="polite">Idle — ready</p>
-        <p class="orb-note">The orb shows what this page is actually doing. Type in the search box and it responds to your search — nothing more.</p>
+        <p class="orb-note">The live 3D Nexus orb — the same code from the nvknexusorb project, running here. Type in the search box and it listens; filter and it works; find nothing and it blocks. Click the orb and it chimes. Nothing here is decorative — every state is a real thing this page is doing.</p>
+        <button class="btn btn-ghost btn-small" id="orb-sound-toggle" type="button" aria-pressed="false">Sound: off</button>
       </div>
     </div>
   </section>
@@ -137,7 +149,7 @@
         <a class="tile" href="visualizations.html" data-search="visualizations orb 3d assets recovered code visualizer">
           <span class="tag violet">Assets</span>
           <h3>Visualizations</h3>
-          <p>The recovered orb and visualizer systems — real NVK code, honestly marked.</p>
+          <p>The live orb and visualizers — real NVK code, running on this site.</p>
         </a>
       </div>
       <div class="search-empty" id="search-empty" role="status">
@@ -213,6 +225,12 @@
   </div>
 </footer>
 
+<script src="assets/viz/activity.js"></script>
+<script src="assets/viz/audio.js"></script>
 <script src="assets/main.js"></script>
+<script type="module">
+  import { mountNexusOrb } from "./assets/viz/orb.js";
+  mountNexusOrb(document.getElementById("home-orb"), { compact: true });
+</script>
 </body>
 </html>
