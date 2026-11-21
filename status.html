@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>System Status — What Is Real | NVK Global</title>
+<meta name="description" content="NVK Global system status: a capability registry of what is operational, partial, simulated, missing, or blocked — with evidence and what comes next for each.">
+<link rel="canonical" href="https://nvk.global/status.html">
+<meta property="og:title" content="System Status — What Is Real | NVK Global">
+<meta property="og:description" content="A capability registry: what is operational, partial, simulated, missing, or blocked — with evidence and what's next.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nvk.global/status.html">
+<meta property="og:site_name" content="NVK GLOBAL">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.badge{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:4px 11px;line-height:1.4;white-space:nowrap}
+.badge-live{color:#0b6b3a;background:#e2f5e9}
+.badge-soon{color:var(--cyan-deep);background:var(--cyan-soft)}
+.badge-exp{color:var(--violet);background:var(--violet-soft)}
+.badge-blocked{color:#8a1f1f;background:#fdecec}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.registry{width:100%;border-collapse:collapse;min-width:760px;background:#fff}
+table.registry th,table.registry td{border:1px solid var(--line);padding:14px 16px;text-align:left;vertical-align:top;font-size:.93rem}
+table.registry th{background:var(--bg-light);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
+table.registry td:first-child{font-weight:700;white-space:nowrap}
+table.registry td p{margin:0;color:var(--ink-soft)}
+.status-key{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px;padding:0;list-style:none}
+.status-key li{font-size:.85rem;color:var(--muted)}
+.legend-note{font-size:.9rem;color:var(--muted);max-width:760px}
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="NVK Global — home"><svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#00a8c6" stroke-width="2.5"/><path d="M20 9 L29 29 L11 29 Z" fill="none" stroke="#11151a" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="23" r="2.4" fill="#00a8c6"/></svg><span>NVK&nbsp;GLOBAL<sup>™</sup></span></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+<nav class="main-nav" id="main-nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="offers.html">Offers</a>
+<a href="story.html">Story</a>
+<a href="brand.html">Brand</a>
+<a href="why.html">Why NVK</a>
+<a href="intelligence.html">Intelligence</a>
+<a href="status.html" aria-current="page">Status</a>
+<a href="store/">Store</a>
+</nav>
+</div>
+</header>
+<main>
+<section class="hero">
+<div class="wrap">
+<div class="orb" role="img" aria-label="The NVK orb"></div>
+<p class="eyebrow">System Status</p>
+<h1>What is real</h1>
+<p class="lede">A capability registry for the whole NVK program. Every capability is classified by what the code and the live evidence actually show — not by what the plan hopes for. Statuses change only when evidence changes.</p>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<ul class="status-key" aria-label="Status key">
+<li><span class="badge badge-live">Operational</span> — live and working</li>
+<li><span class="badge badge-soon">Partial</span> — real, but incomplete</li>
+<li><span class="badge badge-exp">Simulated / Disconnected</span> — looks like a feature, is not yet real or not connected</li>
+<li><span class="badge badge-blocked">Missing / Blocked</span> — does not exist yet, or is waiting on something outside the build</li>
+</ul>
+<div class="table-scroll">
+<table class="registry">
+<thead>
+<tr><th scope="col">Capability</th><th scope="col">Status</th><th scope="col">Evidence</th><th scope="col">What&rsquo;s next</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Live store</td>
+<td><span class="badge badge-live">Operational</span></td>
+<td><p>NVK-Equipment-Vault Cloudflare Worker + Stripe checkout, live and verified November 2026: 27 products, PRO 2.0 $299.99, prices audited.</p></td>
+<td><p>Keep operating. A redesigned storefront is staged and awaiting owner approval before anything live changes.</p></td>
+</tr>
+<tr>
+<td>CODEXA shell</td>
+<td><span class="badge badge-live">Operational shell</span> / <span class="badge badge-exp">Simulated intelligence</span></td>
+<td><p><a href="https://codexa.nvkglobal.workers.dev" target="_blank" rel="noopener">codexa.nvkglobal.workers.dev</a> loads and renders; onboarding works; 122-module navigator works. Chat and inference inside the shell are canned templates, verified at source.</p></td>
+<td><p>Wire real inference into the shell, starting with one real model downloaded, loaded, and answering.</p></td>
+</tr>
+<tr>
+<td>CODEXA local inference</td>
+<td><span class="badge badge-soon">Partial</span></td>
+<td><p>Real Transformers.js <code>pipeline()</code> path for 4 small models, verified in the source code. 8 of the 12 catalog models have no working load path; not yet run end to end here.</p></td>
+<td><p>Prove it end to end: download the smallest model, load it, and get a real answer.</p></td>
+</tr>
+<tr>
+<td>CODEXA cloud inference</td>
+<td><span class="badge badge-soon">Partial</span></td>
+<td><p>Real server-side Gemini call in <code>server.ts</code>, verified in the source code. Gated on an API key; the client bundle previously leaked the key (claimed fixed, unverified by this read).</p></td>
+<td><p>Verify key handling; cloud stays an explicit, user-enabled option, never the default.</p></td>
+</tr>
+<tr>
+<td>Aethel reasoner</td>
+<td><span class="badge badge-exp">Simulated</span></td>
+<td><p>Canned string, no inference — verified at source. This is the live site&rsquo;s failure to answer a simple question, confirmed in the code.</p></td>
+<td><p>Build it into real inference; until then, chat must say so instead of performing an answer.</p></td>
+</tr>
+<tr>
+<td>MLC / WebLLM models</td>
+<td><span class="badge badge-exp">Simulated</span></td>
+<td><p>Fake download loop (10&rarr;100% on a timer, then marked cached). <code>CreateMLCEngine</code> is imported but never called; no MLC weights are fetched.</p></td>
+<td><p>Wire a real engine, or label the models &ldquo;not yet wired&rdquo; until one is.</p></td>
+</tr>
+<tr>
+<td>Chain block production</td>
+<td><span class="badge badge-soon">Partial — localnet only</span></td>
+<td><p>Full Cosmos SDK app wired, verified in <code>app.go</code>. Localnet boot is a CI step, not a running network. No public testnet: no RPC, validators, or supply are verifiable.</p></td>
+<td><p>Diagnose the failing Go CI job from its run logs, then bring up a public testnet.</p></td>
+</tr>
+<tr>
+<td>Chain escrow</td>
+<td><span class="badge badge-soon">Partial code</span> / <span class="badge badge-blocked">Missing exposure</span></td>
+<td><p>Keeper is real on the testnet-hardening branch and moves funds correctly — verified by direct reads. But the module exposes no callable messages and no queries, and genesis has no escrow section. Escrow is unreachable.</p></td>
+<td><p>Expose messages and queries, and add the escrow section to genesis.</p></td>
+</tr>
+<tr>
+<td>Token <code>unvk</code></td>
+<td><span class="badge badge-blocked">Missing</span></td>
+<td><p>The denom in the chain code is <code>udeltatheta</code>, not <code>unvk</code>. The PRD&rsquo;s <code>unvk</code> asset does not exist in the chain code.</p></td>
+<td><p>Reconcile the proposed asset name with the chain code, per standing counsel: no public sale, 100% utility at launch.</p></td>
+</tr>
+<tr>
+<td>Wallet / explorer</td>
+<td><span class="badge badge-blocked">Missing</span></td>
+<td><p>No wallet or explorer code found in the chain repo.</p></td>
+<td><p>Build after a public testnet exists.</p></td>
+</tr>
+<tr>
+<td>ChatNVK multi-model chat</td>
+<td><span class="badge badge-soon">Partial</span></td>
+<td><p>Substantial code and server, README read in full. Runtime not verified here; gated on provider keys.</p></td>
+<td><p>Provide provider keys and verify the runtime; it is the most complete chat core in the program.</p></td>
+</tr>
+<tr>
+<td>Orb / visualizer systems</td>
+<td><span class="badge badge-exp">Disconnected</span></td>
+<td><p>Orb clusters exist in two repos, verified by file listing. They are not connected to any live surface, and their component code has not yet been read at component level.</p></td>
+<td><p>Recovery in progress: deduplicate to one canonical copy, preserve the originals, and wire orb states to real activity (Listening / Thinking / Planning / Executing / Verifying / Complete / Blocked).</p></td>
+</tr>
+<tr>
+<td>Seeker cards / TCG</td>
+<td><span class="badge badge-blocked">Missing as code</span></td>
+<td><p>No implementation found in any repo root listing. Cards exist as artwork in the content program, not as repo code.</p></td>
+<td><p>Build an implementation when prioritized; artwork is preserved as the design source.</p></td>
+</tr>
+<tr>
+<td>Membership funnel / Stripe product</td>
+<td><span class="badge badge-blocked">Blocked</span></td>
+<td><p>The funnel artifact exists, but the Stripe product has not been created yet, so the funnel cannot take payment.</p></td>
+<td><p>Create the Stripe product (owner action — needs the owner&rsquo;s Stripe account), then wire the funnel to it.</p></td>
+</tr>
+<tr>
+<td>NVK-shop</td>
+<td><span class="badge badge-soon">Unread</span></td>
+<td><p>Freshest repo in the org (updated 2026-11-10), but its <code>src/</code> has not been read and its package is still scaffold-named. It cannot be classified yet — and it must not be assumed to be the live store. The live store is the Equipment Vault Worker above.</p></td>
+<td><p>Verify <code>src/</code> before classifying.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="legend-note" style="margin-top:28px">Source: NVK Unified repository inventory (Phase 1 Discover, 2026-11-21) and the CODEXA fix list (live review, 2026-11-21). Classifications are provisional where the underlying code has only been listed, not read — those rows say so. No fake dashboards, metrics, or network statistics appear on this site, because there is no live network to measure.</p>
+<div class="btn-row">
+<a class="btn btn-primary" href="intelligence.html">Read the Intelligence program</a>
+<a class="btn btn-ghost" href="why.html">Why choose NVK</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<h3>NVK GLOBAL<sup>™</sup></h3>
+<p>Experience The Future Today<sup>™</sup><br>A modern technology company bringing intelligent products and innovative experiences into everyday life.</p>
+<p><a href="mailto:support@nvk.global">support@nvk.global</a></p>
+</div>
+<div>
+<h3>Explore</h3>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="why.html">Why NVK</a></li>
+<li><a href="intelligence.html">NVK Intelligence / Codex</a></li>
+<li><a href="status.html">System Status</a></li>
+<li><a href="https://nvk.global/">Shop — all 27 products</a></li>
+</ul>
+</div>
+<div>
+<h3>Listen &amp; Watch</h3>
+<ul>
+<li><a href="https://www.youtube.com/@NVKGlobal" target="_blank" rel="noopener">Headphone Hero on YouTube</a></li>
+<li><a href="https://open.spotify.com/artist/67YjD6rXsH2SrADS3awYyp" target="_blank" rel="noopener">NVK Records on Spotify</a></li>
+<li><a href="https://nvk.global/">NVK store</a></li>
+</ul>
+</div>
+<div>
+<h3>Honesty</h3>
+<ul>
+<li><a href="intelligence.html">Intelligence roadmap &amp; gates</a></li>
+<li><a href="why.html">Why choose NVK</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 NVK Global. Experience The Future Today™.</span>
+<span>Checkout handled securely by Stripe.</span>
+</div>
+</div>
+</footer>
+<script src="assets/main.js" defer></script>
+</body>
+</html>

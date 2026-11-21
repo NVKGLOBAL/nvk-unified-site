@@ -1,0 +1,870 @@
+[
+ {
+  "id": "nvk-headphone-hero-2",
+  "name": "NVK TIME™ HEADPHONE HERO™ PRO 2.0",
+  "category": "AI & Wearables",
+  "price": 299.99,
+  "originalPrice": 500,
+  "description": "The Intelligence Wearable & ANC Earbud System with real-time biometric tracking and spatial sound engine.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/nvknew.png?v=1785757194",
+  "stripeUrl": "https://buy.stripe.com/4gM14n7aQ1Fs6UKail1Fe0J",
+  "flagship": true,
+  "specs": [
+   "Active Noise Cancellation (ANC 2.0 with 45dB Attenuation)",
+   "Biometric Cardiovascular & Temp Sensors",
+   "36-Hour Battery Life with MagCharge Case",
+   "Custom 12mm Graphene Spatial Audio Drivers",
+   "IPX5 Sweat & Water Resistance"
+  ],
+  "whatsIncluded": [
+   "Headphone Hero Pro 2.0 Acoustic Units",
+   "Aerospace Alloy MagCharge Case",
+   "Custom Ergonomic Silicone Eartips (S/M/L)",
+   "Reinforced Braided USB-C Rapid Cable",
+   "Quick Setup Protocol Guide"
+  ],
+  "seoSlug": "nvk-headphone-hero-pro-2",
+  "seoTitle": "NVK TIME™ Headphone Hero Pro 2.0 — ANC & Intelligence Wearable Earbuds",
+  "seoDescription": "Experience Headphone Hero Pro 2.0: Active Noise Cancellation, biometric tracking, 36H battery, and spatial audio with direct Stripe checkout.",
+  "faqs": [
+   {
+    "q": "How does the ANC 2.0 acoustic engine work?",
+    "a": "Headphone Hero Pro 2.0 uses dual forward and feedback microphones analyzing ambient acoustic waves 40,000 times per second to generate precise anti-noise frequencies."
+   },
+   {
+    "q": "Is international insured shipping included?",
+    "a": "Yes. All orders ship express worldwide with transit insurance and signature verification at zero additional charge."
+   },
+   {
+    "q": "What is the evaluation policy?",
+    "a": "Every purchase includes a 30-day risk-free evaluation guarantee alongside a full 2-year hardware replacement warranty."
+   }
+  ]
+ },
+ {
+  "id": "nvk-time-machine",
+  "name": "NVK TIME™ Machine | AI Flagship Smartwatch",
+  "category": "AI & Wearables",
+  "price": 299,
+  "originalPrice": 800,
+  "description": "The Ultimate AI Command Center Wrist Device crafted with aerospace-grade titanium and sapphire crystal display.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVK_TIME_MACHINE_WATCH.png?v=1785708508",
+  "stripeUrl": "https://buy.stripe.com/5kQ9AT7aQck66UK9eh1Fe14",
+  "flagship": true,
+  "specs": [
+   "Titanium Grade-5 Aerospace Chassis",
+   "Sapphire Crystal Multi-Touch Display",
+   "Embedded AI Assistant with Voice Intelligence",
+   "Medical-Grade ECG, SpO2 & Optical PPG",
+   "14-Day Extended Battery Life",
+   "50M Water Resistance (5 ATM)"
+  ],
+  "whatsIncluded": [
+   "NVK Time Machine Smartwatch",
+   "Solid Titanium Link Bracelet",
+   "Fluoroelastomer High-Performance Sport Strap",
+   "Magnetic Fast Inductive Charger",
+   "Calibration Certificate & Manual"
+  ],
+  "seoSlug": "nvk-time-machine",
+  "seoTitle": "NVK TIME™ Machine | AI Flagship Smartwatch — Titanium Command Center",
+  "seoDescription": "Acquire the NVK TIME Machine AI Smartwatch: Aerospace titanium, sapphire crystal, embedded intelligence, and ECG telemetry with direct Stripe checkout.",
+  "faqs": [
+   {
+    "q": "Is the watch compatible with iOS and Android?",
+    "a": "Yes. The NVK Time Machine pairs seamlessly via low-latency Bluetooth 5.3 with any modern iOS or Android device."
+   },
+   {
+    "q": "Can I swim with the NVK Time Machine?",
+    "a": "Yes. The chassis is hermetically sealed to 5 ATM (50 meters), making it suitable for swimming, rain, and rigorous workouts."
+   },
+   {
+    "q": "How fast is dispatch?",
+    "a": "Orders are dispatched within 24 hours via DHL or FedEx Express with end-to-end tracking provided."
+   }
+  ]
+ },
+ {
+  "id": "nvk-core",
+  "name": "NVK CORE™ | Portable Power Station",
+  "category": "Energy & Power",
+  "price": 299,
+  "originalPrice": 500,
+  "description": "High-Output Energy Independence Node engineered with ultra-durable LiFePO4 chemistry and pure sine wave inversion.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVK_CORE_portable_power_station.jpg?v=1785773907",
+  "stripeUrl": "https://buy.stripe.com/5kQbJ1dze5VIfrg8ad1Fe0y",
+  "specs": [
+   "1,200W Pure Sine Wave AC Inverter (2,400W Surge)",
+   "Long-Life LiFePO4 Cells (3,500+ Cycles to 80%)",
+   "Fast Solar Recharging (MPPT Controller Built-In)",
+   "Zero-Millisecond Transfer UPS Mode",
+   "Dual USB-C 100W Power Delivery Ports"
+  ],
+  "whatsIncluded": [
+   "NVK Core Portable Power Station",
+   "Heavy-Duty AC Wall Adapter",
+   "12V Car Cigarette Lighter Charging Cable",
+   "Solar MC4 Adapter Cable",
+   "Owner Operating Manual"
+  ],
+  "seoSlug": "nvk-core-portable-power-station",
+  "seoTitle": "NVK CORE™ Portable Power Station — 1,200W LiFePO4 Solar Generator",
+  "seoDescription": "Empower off-grid independence with the NVK CORE Power Station. Pure sine wave, LiFePO4 cells, solar charging, and zero-lag UPS backup.",
+  "faqs": [
+   {
+    "q": "What devices can the NVK CORE power?",
+    "a": "It easily powers CPAP machines, laptops, mobile devices, mini-fridges, drones, cameras, and power tools up to 1,200W continuous output."
+   },
+   {
+    "q": "How many years does the battery last?",
+    "a": "Thanks to automotive-grade LiFePO4 chemistry, the core provides over 3,500 full cycles—yielding 10+ years of daily reliability."
+   }
+  ]
+ },
+ {
+  "id": "nvk-apex-phantom",
+  "name": "NVK APEX PHANTOM™ | Reverse Trike",
+  "category": "Electric Mobility",
+  "price": 14999,
+  "description": "Hyper-Performance 3-Wheel Electric Vehicle delivering instant torque, aerodynamic agility, and 250+ mile range.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVKAPEXPHANTOMPremiumReverseTrike2.png?v=1785771761",
+  "stripeUrl": "https://buy.stripe.com/eVq9ATbr683Q4MCail1Fe0z",
+  "specs": [
+   "Dual High-Torque AC Synchronous Electric Motors",
+   "0-60 MPH in 3.8 Seconds",
+   "250+ Mile Range per High-Density Charge",
+   "Carbon-Kevlar Composite Aerodynamic Body",
+   "Brembo Regenerative Disc Braking System"
+  ],
+  "whatsIncluded": [
+   "NVK Apex Phantom Reverse Trike",
+   "Level 2 Universal Fast Home Charger",
+   "Dual Encrypted Digital Keycards",
+   "Owner Vault Delivery Kit & Documentation"
+  ],
+  "seoSlug": "nvk-apex-phantom-reverse-trike",
+  "seoTitle": "NVK APEX PHANTOM™ Reverse Trike — Hyper-Performance 3-Wheel EV",
+  "seoDescription": "Discover the NVK Apex Phantom: 0-60 in 3.8s, 250+ mile range, carbon composite engineering, and direct Stripe reservation checkout.",
+  "faqs": [
+   {
+    "q": "What driving license is required?",
+    "a": "In most jurisdictions, reverse trikes require a standard passenger driver license (no motorcycle endorsement needed)."
+   },
+   {
+    "q": "How is delivery handled?",
+    "a": "Each vehicle is shipped via enclosed, insured white-glove transport directly to your designated residence or facility."
+   }
+  ]
+ },
+ {
+  "id": "nvk-nomad",
+  "name": "NVK NOMAD™ | Utility Terrain Vehicle",
+  "category": "Electric Mobility",
+  "price": 4999,
+  "originalPrice": 7999,
+  "description": "Heavy-Duty Off-Road Electric UTV built for challenging terrain, high-capacity hauling, and silent trail operations.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVKNOMADUtilityTerrainVehicle.jpg?v=1785769753",
+  "stripeUrl": "https://buy.stripe.com/28EfZh0Msbg27YO6251Fe0A",
+  "specs": [
+   "Independent High-Travel Double A-Arm Suspension",
+   "Instant-Torque 4WD Electric Drivetrain",
+   "1,500 lb Towing Capacity & Tilting Cargo Bed",
+   "All-Weather IP67 Waterproof Electrical Subsystems",
+   "60-Mile Off-Road Range"
+  ],
+  "whatsIncluded": [
+   "NVK Nomad Electric UTV",
+   "All-Terrain 26\" Kevlar-Reinforced Tires",
+   "Front Electric Winch Kit (3,500 lb)",
+   "Heavy-Duty Rapid Battery Charger"
+  ],
+  "seoSlug": "nvk-nomad-utv",
+  "seoTitle": "NVK NOMAD™ Electric UTV — Heavy-Duty 4WD Off-Road Utility Vehicle",
+  "seoDescription": "Conquer any terrain with the NVK Nomad Electric UTV. Silent torque, 1,500 lb towing, and reinforced roll cage with direct Stripe checkout.",
+  "faqs": [
+   {
+    "q": "Can the battery be recharged from home outlets?",
+    "a": "Yes. The included rapid charger plugs into any standard 110V/220V grounded outlet, recharging in 4-6 hours."
+   }
+  ]
+ },
+ {
+  "id": "nvk-raven",
+  "name": "NVK RAVEN™ | Electric Dirt Bike",
+  "category": "Electric Mobility",
+  "price": 2999,
+  "originalPrice": 4999,
+  "description": "72V 4500W High-Torque Performance Motocross Bike engineered for blistering acceleration and lightweight agility.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVKRAVENPremiumElectricDirtBike3_273a574e-06e3-4e08-8084-933a07404861.png?v=1785770321",
+  "stripeUrl": "https://buy.stripe.com/7sYeVdgLq83Q4MC7691Fe0C",
+  "specs": [
+   "72V 4500W Peak High-Torque Brushless Motor",
+   "Top Speed of 55 MPH with 3 Power Modes",
+   "High-Capacity Removable LG Lithium Battery",
+   "Inverted Hydraulic Adjustable Front Suspension",
+   "Forged Lightweight Aircraft Aluminum Chassis"
+  ],
+  "whatsIncluded": [
+   "NVK Raven Performance Motocross Bike",
+   "72V High-Output Charger",
+   "Heavy-Duty Assembly Toolkit",
+   "Comprehensive Setup & Safety Manual"
+  ],
+  "seoSlug": "nvk-raven-electric-dirt-bike",
+  "seoTitle": "NVK RAVEN™ Electric Dirt Bike — 72V 4500W High-Torque Motocross",
+  "seoDescription": "Master the track with the NVK Raven Electric Dirt Bike: 55 MPH top speed, 72V battery, and inverted suspension with direct Stripe checkout.",
+  "faqs": [
+   {
+    "q": "Is the battery pack removable?",
+    "a": "Yes. The battery unlocks and pulls out within 10 seconds for convenient charging indoors or quick field swaps."
+   }
+  ]
+ },
+ {
+  "id": "nvk-raven-mini",
+  "name": "NVK RAVEN MINI™ | Youth Electric Dirt Bike",
+  "category": "Electric Mobility",
+  "price": 1999,
+  "originalPrice": 2499,
+  "description": "Lightweight Youth Off-Road Electric Bike featuring progressive throttle mapping and parental safety limiters.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/TheNVKRAVENMINI.png?v=1785768938",
+  "stripeUrl": "https://buy.stripe.com/14A00j52Ifwi2Eu6251Fe0B",
+  "specs": [
+   "Parent-Controlled 3-Speed Key Limiter",
+   "Hydraulic Front & Rear Disc Brakes",
+   "Quiet Brushless Electric Drive (No Fumes)",
+   "Reinforced Ergonomic Low-Profile Frame"
+  ],
+  "whatsIncluded": [
+   "Raven Mini Bike",
+   "Standard Wall Charger",
+   "Parental Speed Key Fob",
+   "Full Protective Guard Kit"
+  ],
+  "seoSlug": "nvk-raven-mini-youth-dirt-bike",
+  "seoTitle": "NVK RAVEN MINI™ Youth Electric Dirt Bike — Safe Performance Motocross",
+  "seoDescription": "Introduce young riders to electric motocross with NVK Raven Mini: parental speed control, disc brakes, and clean quiet operation.",
+  "faqs": [
+   {
+    "q": "What rider age and weight is recommended?",
+    "a": "Designed for ages 8-15 with a maximum rider weight capacity of 165 lbs."
+   }
+  ]
+ },
+ {
+  "id": "nvk-titan-pro",
+  "name": "NVK TITAN™ PRO | AI Command Chair",
+  "category": "Command & Living",
+  "price": 399,
+  "description": "Executive Workstation & AI Builder Throne designed for zero-gravity focus, lumbar climate control, and supreme posture.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/763104958_2213617679182422_3159775669205852597_n.webp?v=1785765277",
+  "stripeUrl": "https://buy.stripe.com/3cI00j0Ms4RE1AqeyB1Fe0F",
+  "specs": [
+   "Ergonomic Zero-Gravity Recline Mechanism",
+   "Integrated Active Lumbar Heating & Pulsing Massage",
+   "Full-Grain Nappa Leather & Memory Foam Contouring",
+   "4D Heavy-Duty Steel Work Armrests"
+  ],
+  "whatsIncluded": [
+   "Titan Pro Command Chair",
+   "Precision Tool Kit & Hardware",
+   "Power Adapter Cable",
+   "Owner Warranty Card"
+  ],
+  "seoSlug": "nvk-titan-pro-ai-command-chair",
+  "seoTitle": "NVK TITAN™ PRO AI Command Chair — Ergonomic Workstation & Builder Throne",
+  "seoDescription": "Upgrade your workstation with the NVK Titan Pro Command Chair: zero-gravity recline, lumbar heating, and Nappa leather luxury.",
+  "faqs": [
+   {
+    "q": "How long does assembly take?",
+    "a": "Assembly takes approximately 15 minutes with all required precision tools and fasteners included in the box."
+   }
+  ]
+ },
+ {
+  "id": "nvk-nexus-lounge",
+  "name": "NVK NEXUS™ LOUNGE | Smart Executive Sectional",
+  "category": "Command & Living",
+  "price": 14999,
+  "description": "Modular Luxury Living System with Embedded Qi2 wireless charging, tactile acoustic transducers, and acoustic privacy.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVKNEXUSLOUNGEbrown_ea99c934-6ed1-4fb5-a7f4-f7d588fe0f72.webp?v=1785764744",
+  "stripeUrl": "https://buy.stripe.com/aFa28rbr6ck64MC7691Fe0G",
+  "specs": [
+   "Modular Acoustic Dampening Architecture",
+   "Embedded Fast Qi2 Multi-Device Wireless Charging",
+   "Integrated Low-Frequency Bass Transducers",
+   "Stain-Resistant Performance Nano-Fabric"
+  ],
+  "whatsIncluded": [
+   "Nexus Sectional Modules",
+   "Integrated Subwoofer & Control Amplifiers",
+   "Smart Power Hub Array",
+   "Fabric Care & Maintenance Kit"
+  ],
+  "seoSlug": "nvk-nexus-lounge-sectional",
+  "seoTitle": "NVK NEXUS™ Lounge Smart Sectional — Luxury Modular Living System",
+  "seoDescription": "Transform executive spaces with the NVK Nexus Lounge: embedded audio transducers, Qi2 fast charging, and luxury modular engineering.",
+  "faqs": [
+   {
+    "q": "Can the sectional configuration be customized?",
+    "a": "Yes. The modular interlocking architecture allows linear, L-shape, or U-shape configurations to match your room."
+   }
+  ]
+ },
+ {
+  "id": "nvk-aether-lounge",
+  "name": "NVK AETHER™ SMART LOUNGE",
+  "category": "Command & Living",
+  "price": 5999,
+  "originalPrice": 9999,
+  "description": "AI Living Experience System featuring integrated surround sound, ambient circadian lighting, and climate-adaptive seating.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVKAETHERSMARTLOUNGE.webp?v=1785763997",
+  "stripeUrl": "https://buy.stripe.com/fZu9ATfHm2Jwgvkcqt1Fe0H",
+  "specs": [
+   "Dynamic Ambient Circadian Mood Lighting",
+   "High-Fidelity Spatial Audio Headrest Arrays",
+   "Voice & App Controlled Comfort Controls",
+   "Ergonomic Body-Contour Memory Matrix"
+  ],
+  "whatsIncluded": [
+   "Aether Smart Lounge",
+   "Power Supply Unit",
+   "Wireless Touch Remote",
+   "Owner Operating Guide"
+  ],
+  "seoSlug": "nvk-aether-smart-lounge",
+  "seoTitle": "NVK AETHER™ Smart Lounge — Spatial Audio & Circadian Living System",
+  "seoDescription": "Experience intelligent living with the NVK Aether Smart Lounge: headrest spatial audio, circadian mood lighting, and supreme comfort.",
+  "faqs": [
+   {
+    "q": "Does it connect to home entertainment systems?",
+    "a": "Yes. It supports Bluetooth 5.3, optical audio input, and Wi-Fi streaming protocols."
+   }
+  ]
+ },
+ {
+  "id": "nvk-titan-core",
+  "name": "NVK TITAN™ CORE | Creator Gaming Chair",
+  "category": "Command & Living",
+  "price": 199,
+  "description": "Ergonomic Gaming & Studio Task Chair built with breathable high-tensile mesh and industrial steel frame.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/S8981a9d8824f4e86aae9043ddc374fbbw.avif?v=1785762913",
+  "stripeUrl": "https://buy.stripe.com/9B64gzgLq6ZM4MCfCF1Fe0I",
+  "specs": [
+   "4D Multi-Directional Armrests",
+   "Breathable High-Tensile Mesh Backing",
+   "Industrial Reinforced Steel Base",
+   "Smooth 135° Recline with Tension Control"
+  ],
+  "whatsIncluded": [
+   "Titan Core Chair",
+   "Hardware Bolt Kit",
+   "Ergonomic Assembly Wrench",
+   "Manual"
+  ],
+  "seoSlug": "nvk-titan-core-gaming-chair",
+  "seoTitle": "NVK TITAN™ CORE Gaming Chair — High-Tensile Ergonomic Studio Chair",
+  "seoDescription": "Maintain comfort during long creative sprints with the NVK Titan Core Chair: 4D armrests, breathable mesh, and steel frame.",
+  "faqs": [
+   {
+    "q": "What is the weight rating?",
+    "a": "Rated for users up to 330 lbs with class-4 heavy-duty gas cylinder."
+   }
+  ]
+ },
+ {
+  "id": "nvk-vision-cam-x1",
+  "name": "NVK VISION™ CAM X1 | AI Smart Camera Glasses",
+  "category": "AI & Wearables",
+  "price": 249.99,
+  "originalPrice": 299.99,
+  "description": "8MP AI POV Camera & Audio Glasses enabling instant hands-free 4K video recording and directional acoustic listening.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/1c19971d-b7b5-4a0a-89a0-647aa90f8a86.jpg?v=1785730280",
+  "stripeUrl": "https://buy.stripe.com/aFaeVd1Qwese92Scqt1Fe0V",
+  "specs": [
+   "8MP Sony Sensor with Electronic Image Stabilization",
+   "Open-Ear Directional Stereo Audio",
+   "One-Touch Instant POV Video & Photo Capture",
+   "Ultra-Lightweight TR90 Memory Frame"
+  ],
+  "whatsIncluded": [
+   "Vision Cam X1 Glasses",
+   "Protective Smart Charging Case",
+   "Microfiber Cleaning Cloth",
+   "USB-C Cable"
+  ],
+  "seoSlug": "nvk-vision-cam-x1-glasses",
+  "seoTitle": "NVK VISION™ CAM X1 — AI Smart Camera Glasses with Open-Ear Audio",
+  "seoDescription": "Capture high-definition first-person content with NVK Vision Cam X1: 8MP POV camera, directional speakers, and lightweight TR90 frame.",
+  "faqs": [
+   {
+    "q": "How long can it record?",
+    "a": "Built-in battery supports up to 90 minutes of continuous capture, extended to 8+ hours with the smart charging case."
+   }
+  ]
+ },
+ {
+  "id": "nvk-vision-glasses-translator",
+  "name": "NVK VISION™ AI Glasses | Real-Time Translator",
+  "category": "AI & Wearables",
+  "price": 129.99,
+  "originalPrice": 149.99,
+  "description": "160+ Language Real-Time Voice & Visual Eyewear projecting translated speech and subtitles right in your line of sight.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/Gemini_Generated_Image_2suvh02suvh02suv.png?v=1785677828",
+  "stripeUrl": "https://buy.stripe.com/cNi7sL0Msese4MC2PT1Fe0W",
+  "specs": [
+   "Real-Time Holographic Micro-HUD Subtitles",
+   "160+ Languages & Dialects Supported",
+   "Noise-Cancelling Dual Beamforming Microphones",
+   "Polarized Anti-UV Eyewear Lenses"
+  ],
+  "whatsIncluded": [
+   "Translator Glasses",
+   "Protective Hard Case",
+   "Magnetic Charging Cable",
+   "User Manual"
+  ],
+  "seoSlug": "nvk-vision-ai-glasses-translator",
+  "seoTitle": "NVK VISION™ AI Translator Glasses — 160+ Language Real-Time Subtitles",
+  "seoDescription": "Break language barriers effortlessly with NVK Vision AI Translator Glasses: real-time heads-up subtitles and instant two-way translation.",
+  "faqs": [
+   {
+    "q": "Does it work offline?",
+    "a": "Core language packages (English, Spanish, Mandarin, Japanese, German, French) can be downloaded for full offline translation."
+   }
+  ]
+ },
+ {
+  "id": "nvk-lingua",
+  "name": "NVK LINGUA™ AI Translator",
+  "category": "Clean & EDC",
+  "price": 119.99,
+  "originalPrice": 149.99,
+  "description": "138-Language Smart Standalone Communicator with high-accuracy dual neural engines and instant touch transcription.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVK_LINGUA_AI_Translator_6d7707ff-e4d1-4715-99b9-6204ab156e72.png?v=1785731294",
+  "stripeUrl": "https://buy.stripe.com/7sY14n3YEck62Eu2PT1Fe0O",
+  "specs": [
+   "0.5s Ultra-Fast Neural Translation Engine",
+   "Offline Translation for 17 Major Languages",
+   "3.1\" IPS High-Resolution Touchscreen",
+   "Dual Microphone Far-Field Array with ANC"
+  ],
+  "whatsIncluded": [
+   "Lingua Communicator Device",
+   "Braided Wrist Lanyard",
+   "USB-C Cable",
+   "Travel Quick Start Guide"
+  ],
+  "seoSlug": "nvk-lingua-ai-translator",
+  "seoTitle": "NVK LINGUA™ AI Translator — 138-Language Pocket Neural Communicator",
+  "seoDescription": "Communicate globally with NVK Lingua: 0.5s translation speed, offline dictionary, and dual noise-cancelling mics with direct Stripe checkout.",
+  "faqs": [
+   {
+    "q": "Is a cellular SIM required?",
+    "a": "No. Lingua works over Wi-Fi, hotspot, or in offline mode with pre-installed neural models."
+   }
+  ]
+ },
+ {
+  "id": "nvk-chatbot",
+  "name": "NVK CHATBOT™ ChatNVK",
+  "category": "AI & Wearables",
+  "price": 149.99,
+  "originalPrice": 199.99,
+  "description": "Dedicated Physical AI Agent Node providing instant offline and cloud-connected conversational intelligence on your desk.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/713b0280-312a-44f7-bb28-52dac47b1977.jpg?v=1785679499",
+  "stripeUrl": "https://buy.stripe.com/14A3cv8eUbg21Aq1LP1Fe0U",
+  "specs": [
+   "Standalone Hardware AI Assistant Hub",
+   "Hands-Free Voice Recognition with Spatial Audio",
+   "Encrypted Private Local Cache",
+   "All-Day Rechargeable Battery with Magnetic Dock"
+  ],
+  "whatsIncluded": [
+   "ChatNVK Unit",
+   "Magnetic Desktop Docking Stand",
+   "Power Supply",
+   "Setup Guide"
+  ],
+  "seoSlug": "nvk-chatbot-chatnvk",
+  "seoTitle": "NVK CHATBOT™ ChatNVK — Physical AI Assistant Hardware Node",
+  "seoDescription": "Place dedicated AI intelligence on your desk with NVK ChatNVK: voice assistant, encrypted private cache, and magnetic charging dock.",
+  "faqs": [
+   {
+    "q": "Is there a monthly subscription?",
+    "a": "No mandatory subscription. Core AI features and on-device processing are included for life."
+   }
+  ]
+ },
+ {
+  "id": "nvk-orb",
+  "name": "NVK ORB™ AI Companion",
+  "category": "AI & Wearables",
+  "price": 99.99,
+  "originalPrice": 149.99,
+  "description": "Physical Smart AI Sphere Assistant featuring 360-degree acoustic fidelity and intuitive mood aura illumination.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVK_Orb.png?v=1785726933",
+  "stripeUrl": "https://buy.stripe.com/dRm5kD3YE6ZMdj82PT1Fe0X",
+  "specs": [
+   "360° Omnidirectional Acoustic Driver",
+   "Dynamic Ambient Mood Aura Illumination",
+   "Smart Home Device Integration",
+   "Capacitive Touch & Voice Response"
+  ],
+  "whatsIncluded": [
+   "NVK Orb Unit",
+   "Inductive Wireless Charging Base",
+   "Power Adapter",
+   "Instruction Manual"
+  ],
+  "seoSlug": "nvk-orb-ai-companion",
+  "seoTitle": "NVK ORB™ AI Companion — Smart Ambient Sphere Assistant",
+  "seoDescription": "Enrich your space with the NVK Orb AI Companion: 360-degree omnidirectional audio, dynamic light aura, and smart home controls.",
+  "faqs": [
+   {
+    "q": "Can it play streaming music?",
+    "a": "Yes. Connect via Bluetooth or Wi-Fi to stream high-fidelity audio from your favorite services."
+   }
+  ]
+ },
+ {
+  "id": "nvk-clean-v6",
+  "name": "NVK CLEAN™ V6 | Ultra-Light Cordless Vacuum",
+  "category": "Clean & EDC",
+  "price": 380,
+  "description": "6-in-1 Cordless Home Cleaning System with 35,000Pa cyclone suction and carbon fiber featherweight wand.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVKCLEANV6-Ultra-Light.Cordless.BuiltforModernLiving.webp?v=1785766722",
+  "stripeUrl": "https://buy.stripe.com/8x2eVd8eU0Bo2Eu1LP1Fe0D",
+  "specs": [
+   "35,000Pa High-Efficiency Digital Motor",
+   "2.4 lb Ultra-Light Carbon Fiber Extension Wand",
+   "99.97% HEPA Filtration System",
+   "60-Minute Fade-Free Rechargeable Runtime"
+  ],
+  "whatsIncluded": [
+   "Clean V6 Power Unit",
+   "Carbon Fiber Wand",
+   "Motorized LED Floor Roller",
+   "Crevice & Upholstery Attachments",
+   "Wall Mount Dock"
+  ],
+  "seoSlug": "nvk-clean-v6-cordless-vacuum",
+  "seoTitle": "NVK CLEAN™ V6 Cordless Vacuum — 35,000Pa Carbon Fiber Cleaning System",
+  "seoDescription": "Master modern cleaning with NVK Clean V6: 35,000Pa suction, carbon fiber wand, 60-minute runtime, and direct Stripe checkout.",
+  "faqs": [
+   {
+    "q": "Are replacement filters washable?",
+    "a": "Yes. The multi-stage HEPA filter can be rinsed under warm water and reused."
+   }
+  ]
+ },
+ {
+  "id": "nvk-pulse-speaker",
+  "name": "NVK PULSE™ | Portable RGB Speaker",
+  "category": "AI & Wearables",
+  "price": 49.99,
+  "description": "360° Wireless Sound & Ambient RGB Light with IPX7 submersible waterproofing and punchy dual passive bass radiators.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVK_PULSE.png?v=1785729120",
+  "stripeUrl": "https://buy.stripe.com/9B6bJ19iY2Jw3Iy7691Fe10",
+  "specs": [
+   "360° Room-Filling Immersive Sound",
+   "Dynamic Audio-Reactive RGB Light Ring",
+   "IPX7 Waterproof & Floatable Construction",
+   "20-Hour Continuous Playback Battery"
+  ],
+  "whatsIncluded": [
+   "NVK Pulse Speaker",
+   "Braided USB-C Cable",
+   "Carabiner Lanyard",
+   "User Guide"
+  ],
+  "seoSlug": "nvk-pulse-rgb-speaker",
+  "seoTitle": "NVK PULSE™ Portable RGB Speaker — IPX7 Waterproof Wireless Audio",
+  "seoDescription": "Take sound anywhere with NVK Pulse: 360 audio, reactive RGB lighting, IPX7 waterproofing, and 20-hour battery life.",
+  "faqs": [
+   {
+    "q": "Can two Pulse speakers be paired?",
+    "a": "Yes. TWS pairing allows two Pulse speakers to sync for true left/right stereo sound."
+   }
+  ]
+ },
+ {
+  "id": "nvk-photo-orb",
+  "name": "NVK PHOTO ORB™ | Personal Memory Display",
+  "category": "Clean & EDC",
+  "price": 79.99,
+  "originalPrice": 99.99,
+  "description": "Luminous K9 Optical Crystal Sphere showcasing your photos and holographic memories with ethereal floating illumination.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/nvkphotoorbnewway.png?v=1785739291",
+  "stripeUrl": "https://buy.stripe.com/bJe14n9iYgAm5QG3TX1Fe0N",
+  "specs": [
+   "Precision K9 Optical Crystal Holographic Sphere",
+   "Wi-Fi Instant Photo Upload App",
+   "Warm Ambient LED Base with Touch Dimmer",
+   "Internal Rechargeable Lithium Battery"
+  ],
+  "whatsIncluded": [
+   "Photo Orb Crystal Sphere",
+   "Solid Walnut LED Base",
+   "USB-C Power Cable",
+   "Cloud App Registration Card"
+  ],
+  "seoSlug": "nvk-photo-orb-memory-display",
+  "seoTitle": "NVK PHOTO ORB™ — Holographic Crystal Memory Display",
+  "seoDescription": "Display treasured moments with the NVK Photo Orb: optical crystal, wireless photo syncing, and ambient LED illumination.",
+  "faqs": [
+   {
+    "q": "How many photos can be stored?",
+    "a": "The internal memory holds over 1,000 high-resolution photos with seamless rotation."
+   }
+  ]
+ },
+ {
+  "id": "nvk-airblast-vortex",
+  "name": "NVK AIRBLAST™ VORTEX Mini",
+  "category": "Clean & EDC",
+  "price": 59.99,
+  "originalPrice": 79.99,
+  "description": "130,000 RPM Electric Rechargeable Air Duster delivering hurricane-force precision airflow for studio gear and electronics.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVK_AIRBLAST_VORTEX_MINI.png?v=1785729886",
+  "stripeUrl": "https://buy.stripe.com/4gM5kDeDick64MCeyB1Fe0Y",
+  "specs": [
+   "130,000 RPM Brushless Turbine Motor",
+   "Adjustable 3-Speed Wind Velocity (up to 52 m/s)",
+   "7,500mAh USB-C Rechargeable Battery",
+   "Aerospace CNC Aluminum Body"
+  ],
+  "whatsIncluded": [
+   "Airblast Vortex Mini",
+   "3 Magnetic Precision Nozzle Attachments",
+   "Fast Charging USB-C Cable",
+   "Velvet Carry Pouch"
+  ],
+  "seoSlug": "nvk-airblast-vortex-mini",
+  "seoTitle": "NVK AIRBLAST™ VORTEX Mini — 130,000 RPM Electric Air Duster",
+  "seoDescription": "Clean studio electronics and gear with NVK Airblast Vortex Mini: 130,000 RPM hurricane airflow, USB-C rechargeable, no chemicals.",
+  "faqs": [
+   {
+    "q": "Is it safe for computer motherboards and camera sensors?",
+    "a": "Yes. It produces pure filtered dry air without toxic chemical propellants or moisture."
+   }
+  ]
+ },
+ {
+  "id": "nvk-auto-titan-rescue",
+  "name": "NVK AUTO™ TITAN RESCUE X1",
+  "category": "Clean & EDC",
+  "price": 99.99,
+  "originalPrice": 129.99,
+  "description": "4-in-1 Roadside Jump Starter & Air Compressor capable of jump-starting 8.5L gas engines and inflating tires to 150 PSI.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVK_AUTO_TITAN_RESCUE.png?v=1785729329",
+  "stripeUrl": "https://buy.stripe.com/eVq9AT2UA0Bo92S4Y11Fe0Z",
+  "specs": [
+   "2000A Peak Current Heavy-Duty Jump Starter",
+   "Digital Preset 150 PSI Tire Air Compressor",
+   "500-Lumen Emergency SOS Beacon Light",
+   "20,000mAh Power Bank with Dual Fast Outputs"
+  ],
+  "whatsIncluded": [
+   "Titan Rescue X1 Unit",
+   "Spark-Proof Smart Jumper Cables",
+   "Braided Air Hose with 4 Valve Adapters",
+   "Rugged EVA Hard Travel Case"
+  ],
+  "seoSlug": "nvk-auto-titan-rescue-x1",
+  "seoTitle": "NVK AUTO™ TITAN RESCUE X1 — 2000A Jump Starter & 150 PSI Air Pump",
+  "seoDescription": "Equip emergency peace of mind with NVK Auto Titan Rescue: 2000A jump starter, 150 PSI tire compressor, and power bank in one rugged tool.",
+  "faqs": [
+   {
+    "q": "How many jump starts on a single charge?",
+    "a": "Up to 30 jump starts on full charge, suitable for up to 8.5L gas and 6.0L diesel engines."
+   }
+  ]
+ },
+ {
+  "id": "nvk-air-mosquito-drone",
+  "name": "NVK AIR™ MOSQUITO X1 Drone",
+  "category": "Clean & EDC",
+  "price": 119.99,
+  "originalPrice": 149.99,
+  "description": "Pocket-Sized Folding Micro Camera Drone with 4K camera, optical flow hovering, and 25-minute flight capability.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/Screenshot2026-08-02074743.png?v=1785683162",
+  "stripeUrl": "https://buy.stripe.com/bJecN59iY6ZM7YO0HL1Fe0R",
+  "specs": [
+   "4K Ultra HD Stabilized Gimbal Camera",
+   "Ultra-Compact Foldable Pocket Airframe (< 249g)",
+   "Optical Flow & GPS Stable Hovering",
+   "One-Key Return & Gesture Control Flight"
+  ],
+  "whatsIncluded": [
+   "Mosquito X1 Folding Drone",
+   "Ergonomic Remote Controller",
+   "Modular Battery Pack",
+   "Spare Propellers & Guards",
+   "Padded Travel Case"
+  ],
+  "seoSlug": "nvk-air-mosquito-x1-drone",
+  "seoTitle": "NVK AIR™ MOSQUITO X1 Drone — 4K Folding Micro Camera Drone",
+  "seoDescription": "Fly and film effortlessly with NVK Air Mosquito X1: 4K camera, pocket folding frame, under 249g (no FAA registration required).",
+  "faqs": [
+   {
+    "q": "Is FAA drone registration required in the USA?",
+    "a": "No. Weighing under 249 grams, it is exempt from FAA registration for recreational flight."
+   }
+  ]
+ },
+ {
+  "id": "nvk-click-controller",
+  "name": "NVK CLICK™ Creator Controller",
+  "category": "Clean & EDC",
+  "price": 59.99,
+  "originalPrice": 79.99,
+  "description": "Wireless Gesture & Presentation Remote combining precision air-mouse cursor tracking with ergonomic studio controls.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/5b9cb0b6-dc82-4bd0-b87b-acf7b793a2d5.jpg?v=1785684566",
+  "stripeUrl": "https://buy.stripe.com/28E28r2UA1FsencfCF1Fe0P",
+  "specs": [
+   "6-Axis Gyroscopic Air-Mouse Tracking",
+   "Precision Red Laser Pointer Integrated",
+   "Universal Compatibility (Mac, Windows, iPad, Android)",
+   "Rechargeable 60-Day Standby Battery"
+  ],
+  "whatsIncluded": [
+   "Click Creator Controller",
+   "Compact USB Wireless Receiver",
+   "USB-C Charging Cable",
+   "Travel Pouch"
+  ],
+  "seoSlug": "nvk-click-creator-controller",
+  "seoTitle": "NVK CLICK™ Creator Controller — Wireless Air Mouse & Presentation Remote",
+  "seoDescription": "Command presentations and creative workflows with NVK Click: gyroscopic air mouse, integrated laser, and universal plug-and-play compatibility.",
+  "faqs": [
+   {
+    "q": "Does it require software drivers?",
+    "a": "No. It is 100% plug-and-play across Mac, Windows, ChromeOS, and mobile devices."
+   }
+  ]
+ },
+ {
+  "id": "nvk-breeze-fan",
+  "name": "NVK BREEZE™ Portable Cooling Fan",
+  "category": "Clean & EDC",
+  "price": 49.99,
+  "originalPrice": 69.99,
+  "description": "5-Speed Turbo Fan & Emergency Power Bank featuring an ultra-quiet brushless turbine and digital battery percentage display.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/5dde6e4a-aae7-4334-ae91-7570f2cc8488.jpg?v=1785684006",
+  "stripeUrl": "https://buy.stripe.com/9B6fZh2UA1Fs92Scqt1Fe0Q",
+  "specs": [
+   "5 Turbo Speed Flow Settings (up to 16,000 RPM)",
+   "Digital Real-Time Battery Display",
+   "Dual Handheld & 180° Foldable Desktop Stand",
+   "5,000mAh Phone Backup Power Bank"
+  ],
+  "whatsIncluded": [
+   "Breeze Cooling Fan",
+   "Braided Lanyard",
+   "USB-C Fast Charging Cable",
+   "User Manual"
+  ],
+  "seoSlug": "nvk-breeze-portable-cooling-fan",
+  "seoTitle": "NVK BREEZE™ Portable Cooling Fan — 5-Speed Turbo Fan & Power Bank",
+  "seoDescription": "Stay cool anywhere with NVK Breeze: 5 turbo speeds, digital LED display, foldable stand, and 5,000mAh power bank functionality.",
+  "faqs": [
+   {
+    "q": "How long does the battery last on low speed?",
+    "a": "Up to 24 hours of continuous airflow on speed 1, and 6 hours on maximum turbo."
+   }
+  ]
+ },
+ {
+  "id": "nvk-pulse-mirror",
+  "name": "NVK PULSE™ Smart Desktop Mirror",
+  "category": "Clean & EDC",
+  "price": 99.99,
+  "originalPrice": 129.99,
+  "description": "Smart Vanity Mirror with 15W Fast Qi Wireless Phone Charger and Integrated Bluetooth Speaker with studio-grade illumination.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/afd5426a-d76b-4fc7-8ded-9689574bd410_36294aca-e96c-4442-9c65-8858cee0b257.jpg?v=1785682755",
+  "stripeUrl": "https://buy.stripe.com/bJe4gzfHm3NA1AqeyB1Fe0S",
+  "specs": [
+   "Color-Accurate 95+ CRI Dimmable LED Ring",
+   "15W Fast Qi Wireless Charging Phone Base",
+   "Integrated Bluetooth High-Fidelity Speaker",
+   "Touch Sensor Brightness & Temp Adjust"
+  ],
+  "whatsIncluded": [
+   "Pulse Smart Desktop Mirror",
+   "DC Fast Wall Power Adapter",
+   "3.5mm Aux Cable",
+   "User Guide"
+  ],
+  "seoSlug": "nvk-pulse-smart-desktop-mirror",
+  "seoTitle": "NVK PULSE™ Smart Desktop Mirror — 15W Qi Charger & Bluetooth Audio",
+  "seoDescription": "Elevate your desk or vanity with NVK Pulse Mirror: high-CRI LED ring, 15W wireless charger, and integrated Bluetooth speaker.",
+  "faqs": [
+   {
+    "q": "Does the mirror distort at angles?",
+    "a": "No. Made from high-purity silver-backed optical glass for true 1:1 distortion-free reflection."
+   }
+  ]
+ },
+ {
+  "id": "nvk-fabric-renew",
+  "name": "NVK FABRIC RENEW™ Smart Trimmer",
+  "category": "Clean & EDC",
+  "price": 24.99,
+  "originalPrice": 39.99,
+  "description": "Rechargeable Clothing & Fabric Restoration System revitalizing wool, cashmere, and upholstery in seconds.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/Gemini_Generated_Image_dkwle1dkwle1dkwl.png?v=1785681724",
+  "stripeUrl": "https://buy.stripe.com/bJe8wP1Qwfwifrg4Y11Fe0T",
+  "specs": [
+   "6-Leaf Precision Stainless Steel Rotary Blades",
+   "Safety Automatic Auto-Stop Protection Screen",
+   "Detachable High-Capacity Lint Bin",
+   "Rechargeable USB-C Battery with 90-Min Runtime"
+  ],
+  "whatsIncluded": [
+   "Fabric Renew Trimmer Unit",
+   "Cleaning Brush",
+   "2 Replacement Rotary Blades",
+   "USB-C Cable"
+  ],
+  "seoSlug": "nvk-fabric-renew-smart-trimmer",
+  "seoTitle": "NVK FABRIC RENEW™ Smart Trimmer — Rechargeable Clothes Defuzzer",
+  "seoDescription": "Restore luxury knitwear and upholstery with NVK Fabric Renew: 6-leaf steel blades, safety sensor, and USB-C rechargeable power.",
+  "faqs": [
+   {
+    "q": "Is it safe for delicate cashmere and wool?",
+    "a": "Yes. The precision honeycomb mesh protects fine garments while shaving pills and lint cleanly."
+   }
+  ]
+ },
+ {
+  "id": "nvk-auto-vac-pro",
+  "name": "NVK AUTO™ VAC PRO | Portable Cordless Vacuum",
+  "category": "Clean & EDC",
+  "price": 59,
+  "description": "Compact Vehicle & Studio Precision Vacuum generating 18,000Pa of cyclone suction with washable HEPA filtration.",
+  "image": "https://cdn.shopify.com/s/files/1/1061/7841/2625/files/NVKAUTOVACPROTheCleanRevolution.jpg?v=1785765903",
+  "stripeUrl": "https://buy.stripe.com/00w14ndze83Qcf43TX1Fe0E",
+  "specs": [
+   "18,000Pa High-Velocity Cyclone Suction",
+   "Washable Reusable Medical HEPA Filter",
+   "Lightweight 1.1 lb Ergonomic Grip Design",
+   "Crevice & Brush Dual Attachment System"
+  ],
+  "whatsIncluded": [
+   "Auto Vac Pro Unit",
+   "Bristle Brush Nozzle",
+   "Extended Crevice Tool",
+   "Fast USB-C Charging Cord"
+  ],
+  "seoSlug": "nvk-auto-vac-pro",
+  "seoTitle": "NVK AUTO™ VAC PRO — 18,000Pa Portable Cordless Vehicle Vacuum",
+  "seoDescription": "Keep vehicles and workspaces spotless with NVK Auto Vac Pro: 18,000Pa suction, washable HEPA filter, and compact cordless convenience.",
+  "faqs": [
+   {
+    "q": "Can it be stored in a vehicle glove box or cup holder?",
+    "a": "Yes. The slim cylindrical design fits easily into car door bins, glove compartments, and backpacks."
+   }
+  ]
+ }
+]
