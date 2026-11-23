@@ -1501,7 +1501,7 @@
             li("<b>Spotify:</b>&nbsp;The public catalog travels with you — your follow link comes on the final step, after checkout, so it never pulls you out of the journey.") +
             li("<b>First drop:</b>&nbsp;" + perksText() + " — live the moment your trial starts.") +
             li("<b>Signal name:</b>&nbsp;" + name + ", carried on every chapter and early-access window.") +
-            li("<b>Email:</b>&nbsp;" + (state.email ? state.email + " — held in this tab only, and passed to Stripe as your checkout email when the trial starts." : "Added on the card step — held in this tab only, and passed to Stripe as your checkout email when the trial starts.")) +
+            li("<b>Email:</b>&nbsp;" + (state.email ? state.email + " — held in this tab only, and passed to Stripe as your checkout email when the trial starts." : "not added — add it on the card step to prefill checkout")) +
             (state.upsells.length ? li("<b>Physical cards:</b>&nbsp;" + state.upsells.map(function(x){ return x.name + " ($" + x.price + ")"; }).join(", ") + " — reserved as one-time add-ons, not part of the $10/mo and not charged today; the print-on-demand order link arrives when fulfillment opens.") : "");
           var addonRows = document.getElementById("addonRows");
           var addonTotalRow = document.getElementById("addonTotalRow");
