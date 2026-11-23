@@ -1,0 +1,1636 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="data:," />
+    <title>Headphone Heroes Membership — $10/mo, 30 Days Free</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#06080b;
+        --bg2:#090d12;
+        --panel:#0e141c;
+        --panel2:#131b26;
+        --line:#22303f;
+        --line-soft:#18222e;
+        --ink:#eef4f8;
+        --muted:#a7bccd;
+        --faint:#6e8499;
+        --cyan:#19e3ff;
+        --blue:#2f7bff;
+        --gold:#e9b558;
+        --accent:#19e3ff;
+        --accent-ink:#04141a;
+        --radius:14px;
+      }
+      *{ box-sizing:border-box; }
+      html{ scroll-behavior:smooth; }
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font-family:"Manrope", system-ui, sans-serif;
+        font-size:17px;
+        line-height:1.55;
+        -webkit-font-smoothing:antialiased;
+      }
+      button, input{ font:inherit; }
+      button{ min-height:2.75rem; cursor:pointer; }
+      :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:6px; }
+      .mono{ font-family:"IBM Plex Mono", ui-monospace, monospace; }
+      .wrap{ max-width:1060px; margin:0 auto; padding:0 20px; }
+
+      /* ---------- sticky funnel progress ---------- */
+      .progress-shell{
+        position:sticky; top:0; z-index:50;
+        background:rgba(6,8,11,.88);
+        backdrop-filter:blur(10px);
+        border-bottom:1px solid var(--line-soft);
+      }
+      .progress-inner{ max-width:1060px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:14px; }
+      .progress-label{ font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+      .progress-track{ flex:1; height:6px; background:var(--panel2); border-radius:99px; overflow:hidden; }
+      .progress-fill{ height:100%; width:4%; background:var(--accent); border-radius:99px; transition:width .6s cubic-bezier(.22,1,.36,1), background .4s; }
+      .progress-pct{ font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--accent); min-width:38px; text-align:right; transition:color .4s; }
+
+      /* ---------- hero ---------- */
+      .hero{ position:relative; overflow:hidden; border-bottom:1px solid var(--line-soft); }
+      .hero-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+      .hero-shade{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,8,11,.42) 0%, rgba(6,8,11,.18) 38%, rgba(6,8,11,.93) 88%, var(--bg) 100%); }
+      .hero-content{ position:relative; padding:120px 0 56px; max-width:1060px; margin:0 auto; padding-left:20px; padding-right:20px; }
+      .hero-tag{
+        display:inline-flex; align-items:center; gap:9px;
+        font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+        color:var(--ink); background:rgba(6,8,11,.55); border:1px solid rgba(25,227,255,.45);
+        padding:8px 14px; border-radius:99px;
+      }
+      .hero-tag .dot{ width:8px; height:8px; border-radius:50%; background:var(--cyan); animation:pulse 2s infinite; }
+      @keyframes pulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(25,227,255,.5);} 55%{ box-shadow:0 0 0 7px rgba(25,227,255,0);} }
+      h1{
+        font-family:"Unbounded", sans-serif; font-weight:900;
+        font-size:clamp(34px, 6.4vw, 62px); line-height:1.04; letter-spacing:-.01em;
+        margin:22px 0 16px; max-width:12em; text-wrap:balance;
+      }
+      .hero-sub{ font-size:clamp(17px,2.4vw,20px); color:#d7e5ef; max-width:34em; margin:0 0 28px; }
+      .hero-sub strong{ color:#fff; }
+      .hero-cta-row{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+      .btn{
+        display:inline-flex; align-items:center; justify-content:center; gap:10px;
+        border-radius:12px; border:1px solid transparent;
+        padding:13px 24px; font-weight:800; font-size:16px; text-decoration:none;
+        transition:transform .15s, background .2s, border-color .2s, color .2s;
+      }
+      .btn:active{ transform:scale(.98); }
+      .btn-primary{ background:var(--accent); color:var(--accent-ink); }
+      .btn-primary:hover{ filter:brightness(1.1); }
+      .btn-ghost{ background:rgba(6,8,11,.5); color:var(--ink); border-color:var(--line); }
+      .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+      .btn[disabled]{ opacity:.38; cursor:not-allowed; filter:none; }
+      .hero-note{ font-size:13.5px; color:var(--muted); margin-top:14px; font-family:"IBM Plex Mono",monospace; letter-spacing:.02em; }
+      .hero-stats{ display:flex; flex-wrap:wrap; gap:0; margin-top:44px; border:1px solid rgba(34,48,63,.9); background:rgba(9,13,18,.72); border-radius:var(--radius); overflow:hidden; max-width:720px; }
+      .hstat{ flex:1 1 150px; padding:16px 20px; border-right:1px solid var(--line-soft); }
+      .hstat:last-child{ border-right:none; }
+      .hstat b{ display:block; font-family:"Unbounded",sans-serif; font-size:24px; font-weight:700; }
+      .hstat span{ font-size:13px; color:var(--muted); }
+
+      /* ---------- funnel ---------- */
+      .funnel-section{ padding:64px 0 8px; }
+      .sec-head{ max-width:640px; margin-bottom:28px; }
+      .sec-kicker{ font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin:0 0 10px; transition:color .4s; }
+      h2{ font-family:"Unbounded",sans-serif; font-weight:700; font-size:clamp(24px,4vw,34px); line-height:1.15; margin:0 0 12px; text-wrap:balance; }
+      .sec-head p{ color:var(--muted); margin:0; }
+      .funnel-card{
+        background:var(--panel); border:1px solid var(--line); border-radius:20px;
+        padding:28px; position:relative; overflow:hidden;
+      }
+      .funnel-card::before{
+        content:""; position:absolute; top:0; left:0; right:0; height:3px;
+        background:var(--accent); opacity:.85; transition:background .4s;
+      }
+      .step{ display:none; }
+      .step.active{ display:block; animation:stepIn .45s cubic-bezier(.22,1,.36,1); }
+      @keyframes stepIn{ from{ opacity:0; transform:translateX(26px);} to{ opacity:1; transform:none;} }
+      .step-meta{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:6px; }
+      .step-count{ font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); }
+      .step-free{ font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--accent); letter-spacing:.08em; text-transform:uppercase; transition:color .4s; }
+      .step h3{ font-family:"Unbounded",sans-serif; font-weight:700; font-size:clamp(21px,3.4vw,27px); line-height:1.2; margin:0 0 10px; }
+      .step .lede{ color:var(--muted); margin:0 0 22px; max-width:36em; }
+      .step-nav{ display:flex; gap:12px; margin-top:26px; flex-wrap:wrap; align-items:center; }
+      .btn-back{ background:transparent; color:var(--muted); border:1px solid var(--line); border-radius:12px; padding:12px 20px; font-weight:700; }
+      .btn-back:hover{ color:var(--ink); border-color:var(--muted); }
+      .step-hint{ font-size:13.5px; color:var(--faint); margin:0; }
+
+      /* frequency cards */
+      .freq-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+      .freq-card{
+        text-align:left; background:var(--panel2); border:1.5px solid var(--line); border-radius:14px;
+        padding:18px; color:var(--ink); display:flex; gap:14px; align-items:flex-start; width:100%;
+        transition:border-color .2s, background .2s, transform .15s;
+      }
+      .freq-card:hover{ transform:translateY(-2px); }
+      .freq-card[aria-pressed="true"]{ border-color:var(--fc); background:#182130; box-shadow:0 0 0 1px var(--fc) inset; }
+      .freq-orb{ flex:none; width:38px; height:38px; border-radius:50%; background:var(--fc); position:relative; margin-top:2px; }
+      .freq-orb::after{ content:""; position:absolute; inset:-7px; border-radius:50%; border:1.5px solid var(--fc); opacity:.4; animation:orbPulse 2.6s infinite; }
+      @keyframes orbPulse{ 0%,100%{ transform:scale(.86); opacity:.5;} 50%{ transform:scale(1.05); opacity:.15;} }
+      .freq-card b{ display:block; font-size:16.5px; margin-bottom:2px; }
+      .freq-card span{ font-size:13.5px; color:var(--muted); line-height:1.4; display:block; }
+
+      /* perk chips */
+      .perk-list{ display:grid; gap:12px; }
+      .perk{
+        display:flex; gap:14px; align-items:flex-start; text-align:left; width:100%;
+        background:var(--panel2); border:1.5px solid var(--line); border-radius:14px; padding:18px; color:var(--ink);
+        transition:border-color .2s, background .2s;
+      }
+      .perk[aria-pressed="true"]{ border-color:var(--accent); background:#16202e; }
+      .perk-check{
+        flex:none; width:26px; height:26px; border-radius:8px; border:1.5px solid var(--line);
+        display:grid; place-items:center; margin-top:1px; color:transparent; font-weight:900; font-size:15px;
+        transition:background .2s, color .2s, border-color .2s;
+      }
+      .perk[aria-pressed="true"] .perk-check{ background:var(--accent); border-color:var(--accent); color:var(--accent-ink); }
+      .perk b{ display:block; font-size:16.5px; margin-bottom:2px; }
+      .perk span{ font-size:14px; color:var(--muted); display:block; }
+      .perk .perk-tag{ margin-left:auto; flex:none; font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border:1px solid var(--line); padding:4px 8px; border-radius:99px; }
+
+      /* equalizer */
+      .eq-stage{ background:var(--bg2); border:1px solid var(--line-soft); border-radius:16px; padding:26px 22px 20px; text-align:center; }
+      .eq{ display:flex; align-items:flex-end; justify-content:center; gap:4px; height:92px; margin-bottom:18px; }
+      .eq i{ flex:1; max-width:14px; min-width:5px; background:var(--accent); border-radius:3px 3px 0 0; height:18%; opacity:.9; transition:background .4s; }
+      .eq.playing i{ animation:eqBounce 0.9s ease-in-out infinite alternate; }
+      @keyframes eqBounce{ from{ transform:scaleY(.35);} to{ transform:scaleY(1);} }
+      .eq-caption{ font-size:13.5px; color:var(--faint); margin:12px 0 0; }
+
+      /* name step */
+      .field label{ display:block; font-weight:700; margin-bottom:8px; }
+      .field input{
+        width:100%; background:var(--bg2); border:1.5px solid var(--line); border-radius:12px;
+        color:var(--ink); padding:14px 16px; font-size:17px; min-height:3.25rem;
+      }
+      .field input:focus{ border-color:var(--accent); outline:none; box-shadow:0 0 0 3px rgba(25,227,255,.15); }
+      .field .field-note{ font-size:13.5px; color:var(--faint); margin-top:8px; }
+
+      /* offer step */
+      .offer-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:20px; align-items:start; }
+      .summary-list{ list-style:none; margin:0 0 6px; padding:0; display:grid; gap:10px; }
+      .summary-list li{ display:flex; gap:10px; font-size:15.5px; color:var(--muted); }
+      .summary-list li b{ color:var(--ink); }
+      .summary-list .tick{ color:var(--accent); font-weight:900; flex:none; }
+      .price-card{ background:var(--bg2); border:1px solid var(--line); border-radius:16px; padding:22px; }
+      .price-row{ display:flex; justify-content:space-between; align-items:baseline; padding:9px 0; border-bottom:1px dashed var(--line-soft); font-size:15px; }
+      .price-row:last-of-type{ border-bottom:none; }
+      .price-row span{ color:var(--muted); }
+      .price-row b{ font-family:"IBM Plex Mono",monospace; font-weight:600; }
+      .price-row .free{ color:var(--accent); }
+      .price-total{ display:flex; justify-content:space-between; align-items:baseline; margin-top:12px; }
+      .price-total b{ font-family:"Unbounded",sans-serif; font-size:21px; }
+      .price-fine{ font-size:13px; color:var(--faint); margin:12px 0 0; }
+
+      /* completion */
+      .done-wrap{ text-align:center; padding:14px 0 6px; }
+      .rings{ position:relative; width:120px; height:120px; margin:0 auto 20px; }
+      .rings i{ position:absolute; border-radius:50%; border:2px solid var(--accent); inset:0; animation:ringOut 2.2s ease-out infinite; opacity:0; }
+      .rings i:nth-child(2){ animation-delay:.7s; } .rings i:nth-child(3){ animation-delay:1.4s; }
+      @keyframes ringOut{ 0%{ transform:scale(.32); opacity:.9;} 100%{ transform:scale(1.15); opacity:0;} }
+      .rings .core{ position:absolute; inset:38px; border-radius:50%; background:var(--accent); display:grid; place-items:center; color:var(--accent-ink); font-size:24px; font-weight:900; }
+      .done-wrap h3{ margin-bottom:8px; }
+      .done-wrap p{ color:var(--muted); max-width:32em; margin:0 auto 10px; }
+      .done-recap{ display:inline-block; text-align:left; background:var(--bg2); border:1px solid var(--line-soft); border-radius:12px; padding:14px 18px; font-size:14.5px; color:var(--muted); margin-top:8px; }
+      .done-recap b{ color:var(--ink); }
+
+      /* ---------- sections ---------- */
+      section.block{ padding:64px 0 0; }
+      .perks-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+      .perk-card{ background:var(--panel); border:1px solid var(--line-soft); border-radius:16px; padding:24px; }
+      .perk-card .glyph{ width:44px; height:44px; border-radius:12px; background:var(--panel2); border:1px solid var(--line); display:grid; place-items:center; margin-bottom:14px; }
+      .perk-card .glyph svg{ width:22px; height:22px; stroke:var(--cyan); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+      .perk-card h3{ font-size:18px; margin:0 0 6px; font-family:"Manrope",sans-serif; font-weight:800; }
+      .perk-card p{ color:var(--muted); margin:0; font-size:15px; }
+      .perk-card .when{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; margin-top:12px; }
+
+      /* the circle */
+      .circle-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+      .circle-card{ background:var(--panel); border:1px solid var(--line-soft); border-radius:16px; padding:24px; }
+      .circle-card h3{ font-size:18px; margin:0 0 6px; font-weight:800; }
+      .circle-card p{ color:var(--muted); margin:0; font-size:15px; }
+      .circle-line{ margin:26px 0 0; font-size:17px; color:var(--muted); max-width:44em; }
+      .circle-line a{ color:var(--accent); font-weight:800; text-decoration:none; white-space:nowrap; }
+      .circle-line a:hover{ text-decoration:underline; }
+
+      /* timeline */
+      .timeline{ display:grid; gap:0; border-left:2px solid var(--line); margin-left:8px; }
+      .t-item{ position:relative; padding:0 0 26px 28px; }
+      .t-item:last-child{ padding-bottom:4px; }
+      .t-item::before{ content:""; position:absolute; left:-8px; top:4px; width:14px; height:14px; border-radius:50%; background:var(--bg); border:2.5px solid var(--cyan); }
+      .t-item.bill::before{ border-color:var(--gold); }
+      .t-day{ font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--cyan); }
+      .t-item.bill .t-day{ color:var(--gold); }
+      .t-item h3{ margin:4px 0 4px; font-size:17.5px; }
+      .t-item p{ margin:0; color:var(--muted); font-size:15px; max-width:38em; }
+
+      /* faq */
+      .faq{ display:grid; gap:10px; }
+      details{ background:var(--panel); border:1px solid var(--line-soft); border-radius:14px; padding:4px 20px; }
+      summary{ font-weight:700; padding:14px 0; cursor:pointer; min-height:2.75rem; display:flex; align-items:center; }
+      details p{ color:var(--muted); margin:0 0 16px; font-size:15px; }
+      footer{ padding:56px 0 44px; margin-top:64px; border-top:1px solid var(--line-soft); color:var(--faint); font-size:13.5px; }
+      footer .wrap{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+
+      /* retune bar */
+      .retune-bar{ display:none; align-items:center; gap:10px; flex-wrap:wrap; background:var(--bg2); border:1px solid var(--line-soft); border-radius:12px; padding:10px 14px; margin-bottom:20px; font-size:14px; color:var(--muted); }
+      .retune-bar.show{ display:flex; }
+      .retune-bar .swatch{ width:14px; height:14px; border-radius:50%; background:var(--accent); border:1px solid rgba(255,255,255,.35); flex:none; }
+      .retune-bar b{ color:var(--ink); }
+      .retune-bar button{ margin-left:auto; background:transparent; border:1px solid var(--line); color:var(--ink); border-radius:99px; padding:7px 14px; font-size:13px; font-weight:700; min-height:2.25rem; }
+      .retune-bar button:hover{ border-color:var(--accent); color:var(--accent); }
+
+      /* quest */
+      .quest-scene{ background:var(--bg2); border:1px solid var(--line-soft); border-radius:16px; padding:22px; }
+      .quest-progress{ display:flex; gap:6px; margin-bottom:16px; }
+      .quest-progress i{ flex:1; height:5px; border-radius:99px; background:var(--panel2); }
+      .quest-progress i.on{ background:var(--accent); }
+      .quest-chapter{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0 0 8px; }
+      .quest-scene h4{ font-family:"Unbounded",sans-serif; font-size:19px; margin:0 0 10px; line-height:1.25; }
+      .quest-scene .story{ color:var(--muted); margin:0 0 18px; }
+      .quest-choices{ display:grid; gap:10px; }
+      .quest-choice{ text-align:left; width:100%; background:var(--panel); border:1.5px solid var(--line); border-radius:12px; padding:14px 16px; color:var(--ink); font-weight:700; transition:border-color .2s, transform .15s; }
+      .quest-choice:hover{ border-color:var(--accent); transform:translateX(3px); }
+      .quest-choice small{ display:block; font-weight:500; color:var(--muted); margin-top:2px; }
+      .quest-outcome{ display:none; border-left:3px solid var(--accent); background:var(--panel); border-radius:0 12px 12px 0; padding:14px 16px; color:var(--muted); }
+      .quest-outcome.show{ display:block; }
+      .quest-outcome b{ color:var(--ink); }
+
+      /* hero card — real TCG layout */
+      .hero-card{
+        max-width:400px; margin:0 auto; border-radius:22px; padding:5px;
+        background:linear-gradient(155deg, var(--accent) 0%, #f4e3bb 26%, var(--accent) 52%, #8a6a25 78%, var(--accent) 100%);
+        box-shadow:0 24px 60px rgba(0,0,0,.55), 0 0 34px color-mix(in srgb, var(--accent) 22%, transparent);
+      }
+      .hero-card-inner{ background:#0a0f16; border-radius:18px; padding:14px 14px 12px; overflow:hidden; position:relative; }
+      .tcg-nameplate{
+        display:flex; justify-content:space-between; align-items:center; gap:10px;
+        background:linear-gradient(180deg, #1b2635, #101825); border:1px solid var(--line);
+        border-radius:11px; padding:9px 13px;
+      }
+      .tcg-name{ font-family:"Unbounded",sans-serif; font-weight:900; font-size:19px; line-height:1.12; letter-spacing:.01em; }
+      .tcg-cost{ display:flex; gap:3px; flex:none; align-items:center; }
+      .tcg-cost i{ width:11px; height:11px; border-radius:50%; background:#232f3f; border:1px solid var(--line); }
+      .tcg-cost i.on{ background:var(--accent); border-color:var(--accent); box-shadow:0 0 7px var(--accent); }
+      .tcg-art{ margin-top:10px; border:2px solid var(--accent); border-radius:10px; overflow:hidden; aspect-ratio:10/8.4; background:var(--panel2); }
+      .tcg-art img{ width:100%; height:100%; object-fit:cover; display:block; }
+      .tcg-typeline{
+        display:flex; justify-content:space-between; align-items:center; gap:10px;
+        background:linear-gradient(180deg, #1b2635, #101825); border:1px solid var(--line);
+        border-radius:9px; padding:7px 12px; margin-top:10px;
+        font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.13em; text-transform:uppercase;
+      }
+      .tcg-typeline b{ color:var(--accent); font-weight:600; }
+      .tcg-rarity{ color:var(--gold); font-size:13px; letter-spacing:.2em; flex:none; }
+      .tcg-textbox{
+        margin-top:10px; background:linear-gradient(180deg, #131c29, #0d141f);
+        border:1px solid var(--line); border-radius:10px; padding:13px 14px 11px;
+      }
+      .tcg-entry{ margin:0 0 11px; font-size:14.5px; }
+      .tcg-entry:last-of-type{ margin-bottom:9px; }
+      .tcg-entry .k{ display:block; font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--faint); margin-bottom:2px; }
+      .tcg-entry b{ display:block; font-size:15.5px; }
+      .tcg-entry span{ color:var(--muted); font-size:13.5px; }
+      .tcg-flavor{ border-top:1px dashed var(--line); padding-top:9px; margin:0; font-style:italic; color:#c8d8e6; font-size:13.5px; }
+      .tcg-footer{
+        display:flex; justify-content:space-between; align-items:center; gap:10px;
+        margin-top:11px; font-family:"IBM Plex Mono",monospace; font-size:10.5px;
+        letter-spacing:.1em; text-transform:uppercase; color:var(--faint);
+      }
+      .tcg-footer .res{ color:var(--accent); white-space:nowrap; }
+      .card-actions{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:20px; }
+      .card-note{ text-align:center; color:var(--muted); font-size:14px; max-width:34em; margin:16px auto 0; }
+
+      /* spotify follow step */
+      .spotify-panel{ background:var(--bg2); border:1px solid var(--line-soft); border-radius:16px; padding:24px; display:flex; gap:18px; align-items:flex-start; }
+      .spotify-mark{ flex:none; width:56px; height:56px; border-radius:50%; background:#1db954; display:grid; place-items:center; color:#04140a; }
+      .spotify-mark svg{ width:30px; height:30px; }
+      .spotify-panel b{ display:block; font-size:17.5px; margin-bottom:4px; }
+      .spotify-panel p{ color:var(--muted); margin:0; font-size:15px; }
+      .spotify-actions{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:20px; }
+      .btn-spotify{ background:#1db954; color:#04140a; }
+      .btn-spotify:hover{ filter:brightness(1.08); }
+      .spotify-status{ font-size:13.5px; color:var(--faint); margin:0; }
+      .spotify-status.done{ color:#1db954; }
+      @media (max-width:560px){ .spotify-panel{ flex-direction:column; } }
+
+      /* card save panel + physical upsells */
+      .format-chips{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-top:16px; }
+      .format-chips span{ font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); border-radius:99px; padding:5px 11px; }
+      .save-panel{ display:none; margin:22px auto 0; max-width:400px; background:var(--bg2); border:1px solid var(--accent); border-radius:16px; padding:18px; text-align:center; }
+      .save-panel.show{ display:block; }
+      .save-panel img{ width:190px; max-width:70%; height:auto; border-radius:8px; border:1px solid var(--line); display:block; margin:0 auto 14px; background:#0a0f16; }
+      .save-panel b{ display:block; font-size:16px; margin-bottom:4px; }
+      .save-panel p{ color:var(--muted); font-size:13.5px; margin:0 0 14px; }
+      .save-actions{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+      .upsell{ margin-top:34px; border-top:1px dashed var(--line); padding-top:26px; }
+      .upsell h4{ font-family:"Unbounded",sans-serif; font-size:19px; margin:0 0 8px; text-align:center; line-height:1.3; }
+      .upsell .ulede{ color:var(--muted); text-align:center; max-width:36em; margin:0 auto 20px; font-size:15px; }
+      .upsell-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+      .upsell-card{ text-align:left; background:var(--panel2); border:1.5px solid var(--line); border-radius:14px; padding:18px; color:var(--ink); display:flex; flex-direction:column; gap:6px; transition:border-color .2s, background .2s; min-height:0; }
+      .upsell-card[aria-pressed="true"]{ border-color:var(--gold); background:#1c1a12; box-shadow:0 0 0 1px var(--gold) inset; }
+      .upsell-card .utag{ font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); }
+      .upsell-card b{ font-size:16.5px; line-height:1.25; }
+      .upsell-card span.desc{ font-size:13.5px; color:var(--muted); line-height:1.45; flex:1; }
+      .upsell-card .uprice{ display:flex; justify-content:space-between; align-items:center; margin-top:8px; }
+      .upsell-card .uprice b{ font-family:"Unbounded",sans-serif; font-size:17px; }
+      .upsell-card .uadd{ font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); border:1px solid var(--line); border-radius:99px; padding:5px 11px; }
+      .upsell-card[aria-pressed="true"] .uadd{ background:var(--gold); border-color:var(--gold); color:#191204; font-weight:700; }
+      .upsell-note{ text-align:center; color:var(--faint); font-size:13px; margin:16px auto 0; max-width:38em; }
+      .card-model{ margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:12px; text-align:left; }
+      .card-model .cm{ border-radius:16px; padding:20px; border:1.5px solid var(--line); background:var(--bg2); }
+      .card-model .cm.one{ border-color:var(--gold); background:linear-gradient(180deg, #1c1a12, var(--bg2)); }
+      .card-model .cm .cm-tag{ font-family:"IBM Plex Mono",monospace; font-size:11px; letter-spacing:.15em; text-transform:uppercase; display:block; margin-bottom:8px; }
+      .card-model .cm.one .cm-tag{ color:var(--gold); }
+      .card-model .cm.set .cm-tag{ color:var(--accent); }
+      .card-model .cm b{ display:block; font-family:"Unbounded",sans-serif; font-size:16px; line-height:1.3; margin-bottom:8px; }
+      .card-model .cm p{ color:var(--muted); font-size:14px; margin:0; line-height:1.55; }
+      .card-model .cm p strong{ color:var(--ink); }
+      @media (max-width:760px){ .upsell-grid{ grid-template-columns:1fr; } .card-model{ grid-template-columns:1fr; } }
+
+      /* ---------- locked-stepper mode ---------- */
+      body.funnel-locked #inside,
+      body.funnel-locked #the-circle,
+      body.funnel-locked #timeline,
+      body.funnel-locked #faq,
+      body.funnel-locked footer{ display:none; }
+      .lock-bar{ display:none; align-items:center; gap:10px; flex-wrap:wrap; background:var(--bg2); border:1px solid var(--accent); border-radius:12px; padding:10px 14px; margin-bottom:16px; font-size:14px; color:var(--muted); }
+      body.funnel-locked .lock-bar{ display:flex; }
+      .lock-bar b{ color:var(--ink); }
+      .lock-bar button{ margin-left:auto; background:transparent; border:1px solid var(--line); color:var(--ink); border-radius:99px; padding:7px 14px; font-size:13px; font-weight:700; min-height:2.25rem; }
+      .lock-bar button:hover{ border-color:var(--accent); color:var(--accent); }
+
+      /* email gate on the card step */
+      .email-gate{ max-width:520px; margin:22px auto 0; text-align:left; background:var(--bg2); border:1px solid var(--line); border-radius:16px; padding:18px; }
+      .email-gate label{ display:block; font-weight:700; margin-bottom:6px; }
+      .email-gate p{ color:var(--muted); font-size:14px; margin:0 0 12px; }
+      .email-gate input{ width:100%; background:var(--bg); border:1.5px solid var(--line); border-radius:12px; color:var(--ink); padding:13px 15px; font-size:16.5px; min-height:3.1rem; }
+      .email-gate input:focus{ border-color:var(--accent); outline:none; box-shadow:0 0 0 3px rgba(25,227,255,.15); }
+      .email-gate .gate-status{ font-size:13.5px; margin:10px 0 0; color:var(--faint); }
+      .email-gate .gate-status.ok{ color:var(--accent); }
+
+      /* checkout pending notice */
+      .checkout-notice{ display:none; margin-top:16px; background:#1c1a12; border:1px solid var(--gold); border-radius:14px; padding:16px 18px; font-size:15px; color:var(--muted); }
+      .checkout-notice.show{ display:block; }
+      .checkout-notice b{ color:var(--ink); display:block; margin-bottom:4px; }
+
+      .rv{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+      .rv.in{ opacity:1; transform:none; }
+
+      @media (max-width:760px){
+        .freq-grid, .perks-grid, .offer-grid, .circle-grid{ grid-template-columns:1fr; }
+        .funnel-card{ padding:22px 18px; }
+        .hero-content{ padding-top:84px; }
+        .hstat{ flex-basis:calc(50% - 1px); }
+        body{ font-size:16px; }
+      }
+      @media (prefers-reduced-motion: reduce){
+        *, *::before, *::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+        html{ scroll-behavior:auto; }
+        .rv{ opacity:1; transform:none; }
+        .eq.playing i{ animation:none; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="progress-shell" aria-hidden="true">
+      <div class="progress-inner">
+        <span class="progress-label" id="progressLabel">Your journey in</span>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <span class="progress-pct" id="progressPct">0%</span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <img class="hero-img" src="assets/hero.webp" alt="The Headphone Hero in glowing cyan headphones stands before a vast neon waveform river, a Flower of Life pattern in the sky and the Buga sphere rising on the horizon" />
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span class="hero-tag"><span class="dot"></span> Headphone Heroes · Membership</span>
+        <h1>Live inside the frequency.</h1>
+        <p class="hero-sub">The membership for the people already listening. <strong>One exclusive unreleased track every month</strong>, story chapters before anyone else, art that never posts publicly — and now, <strong>your own Headphone Hero</strong>. Take the quest, earn your card, free for 30 days, then <strong>$10/mo</strong>. Cancel anytime.</p>
+        <div class="hero-cta-row">
+          <button class="btn btn-primary" id="heroStart" type="button">Begin — it's free
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <a class="btn btn-ghost" href="#funnel" id="heroSteps">See the 8 steps</a>
+        </div>
+        <p class="hero-note">$0 due today · No charge for 30 days · Auto-bills $10/mo after · Cancel in one tap</p>
+        <div class="hero-stats">
+          <div class="hstat"><b>$10/mo</b><span>after the free trial</span></div>
+          <div class="hstat"><b>30 days</b><span>free, full access</span></div>
+          <div class="hstat"><b>Hero card</b><span>yours free — take the quest</span></div>
+          <div class="hstat"><b>Cancel</b><span>anytime — one tap, no lock-in</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ THE FUNNEL ============ -->
+      <section class="funnel-section wrap" id="funnel">
+        <div class="sec-head rv">
+          <p class="sec-kicker">Begin free</p>
+          <h2>Eight small steps. All of them free.</h2>
+          <p>Pick your frequency, build your drop, take the quest — <strong style="color:var(--ink)">do you have what it takes to be a Headphone Hero?</strong> Conquer the Silence, earn your hero card, and only then decide if you stay inside. It costs nothing to look.</p>
+        </div>
+
+        <div class="lock-bar" id="lockBar" role="status">
+          <span><b>You're in the journey.</b> One step at a time — the rest of the page waits until you finish or pause.</span>
+          <button type="button" id="unlockBtn">Pause &amp; view the page</button>
+        </div>
+
+        <div class="funnel-card" id="funnelCard">
+          <div class="retune-bar" id="retuneBar">
+            <span class="swatch" aria-hidden="true"></span>
+            <span>Tuned to <b id="retuneName">The Signal</b> — your drops, art and hero follow this frequency.</span>
+            <button type="button" id="retuneBtn">Retune — change frequency</button>
+          </div>
+
+          <!-- STEP 1 · frequency -->
+          <div class="step active" data-step="1">
+            <div class="step-meta"><span class="step-count">Step 1 of 8 · Pick your sound</span><span class="step-free">Free · Change anytime</span></div>
+            <h3>Which frequency is yours?</h3>
+            <p class="lede">Every color in the NVK universe is a sound — eight frequencies now, from Battle Crimson to the void of Pitch Black and the pure signal of Radiant Light. Pick the one you live in. You can retune anytime; your hero card retunes with you.</p>
+            <div class="freq-grid" role="group" aria-label="Choose your frequency">
+              <button type="button" class="freq-card" style="--fc:#19e3ff" data-freq="The Signal" data-genre="ambient" data-color="#19e3ff" aria-pressed="false">
+                <span class="freq-orb"></span>
+                <span><b>Neon Cyan — The Signal</b><span>Ambient. The sound that started everything.</span></span>
+              </button>
+              <button type="button" class="freq-card" style="--fc:#2f7bff" data-freq="Deep Frequencies" data-genre="the Silence, deep and low" data-color="#2f7bff" aria-pressed="false">
+                <span class="freq-orb"></span>
+                <span><b>Electric Blue — Deep Frequencies</b><span>Low, heavy, submerged. Where the Silence lives.</span></span>
+              </button>
+              <button type="button" class="freq-card" style="--fc:#e9b558" data-freq="The Golden Voice" data-genre="warm vocal, choir &amp; melody" data-color="#e9b558" aria-pressed="false">
+                <span class="freq-orb"></span>
+                <span><b>Gold — The Golden Voice</b><span>Warm vocal, choir, melody that carries.</span></span>
+              </button>
+              <button type="button" class="freq-card" style="--fc:#e04dff" data-freq="Kinetic Bass" data-genre="high-energy bass — the Beat Runner lane" data-color="#e04dff" aria-pressed="false">
+                <span class="freq-orb"></span>
+                <span><b>Magenta — Kinetic Bass</b><span>High-energy bass. The Beat Runner at full speed.</span></span>
+              </button>
+              <button type="button" class="freq-card" style="--fc:#2fe6a8" data-freq="Bio-Rhythms" data-genre="nature &amp; bio-rhythms" data-color="#2fe6a8" aria-pressed="false">
+                <span class="freq-orb"></span>
+                <span><b>Emerald — Bio-Rhythms</b><span>Nature frequencies. The living world, amplified.</span></span>
+              </button>
+              <button type="button" class="freq-card" style="--fc:#ff4d5e" data-freq="Battle Crimson" data-genre="fire, battle &amp; rock" data-color="#ff4d5e" aria-pressed="false">
+                <span class="freq-orb"></span>
+                <span><b>Crimson — Battle Crimson</b><span>Fire, battle, rock. For the clash scenes.</span></span>
+              </button>
+              <button type="button" class="freq-card" style="--fc:#23232f" data-freq="Pitch Black" data-genre="the void — silence, shadow &amp; sub-bass" data-color="#a9a9c6" aria-pressed="false">
+                <span class="freq-orb" style="box-shadow:0 0 0 2px #a9a9c6 inset;"></span>
+                <span><b>Pitch Black — The Void</b><span>No light, no noise. You hear what the dark is hiding.</span></span>
+              </button>
+              <button type="button" class="freq-card" style="--fc:#fff3cf" data-freq="Radiant Light" data-genre="the pure signal — light, clarity &amp; ascension" data-color="#ffe9a8" aria-pressed="false">
+                <span class="freq-orb"></span>
+                <span><b>Radiant Light — The Pure Signal</b><span>Every frequency at once, in perfect clarity. The Architect's light.</span></span>
+              </button>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn btn-primary" data-next disabled id="freqNext">Tune me in</button>
+              <p class="step-hint" id="freqHint">Tap a frequency to continue.</p>
+            </div>
+          </div>
+
+          <!-- STEP 2 · perks -->
+          <div class="step" data-step="2">
+            <div class="step-meta"><span class="step-count">Step 2 of 8 · Build your membership</span><span class="step-free">Free</span></div>
+            <h3>What do you want first?</h3>
+            <p class="lede">Members get all four — this just tells us where your first drop starts. Pick everything that calls to you.</p>
+            <div class="perk-list" role="group" aria-label="Choose what you want first">
+              <button type="button" class="perk" data-perk="a monthly exclusive track" aria-pressed="true">
+                <span class="perk-check">✓</span>
+                <span><b>The exclusive track</b><span>One unreleased Headphone Hero track every month. Never on streaming, never posted — members only.</span></span>
+                <span class="perk-tag">Monthly</span>
+              </button>
+              <button type="button" class="perk" data-perk="early story chapters" aria-pressed="true">
+                <span class="perk-check">✓</span>
+                <span><b>Early story chapters</b><span>New chapters of Book 1 and The First Sound before they reach anyone else.</span></span>
+                <span class="perk-tag">Early</span>
+              </button>
+              <button type="button" class="perk" data-perk="members-only art" aria-pressed="true">
+                <span class="perk-check">✓</span>
+                <span><b>Members-only art</b><span>Hyper-Signal art made for the inside — never posted to the public feed.</span></span>
+                <span class="perk-tag">Exclusive</span>
+              </button>
+              <button type="button" class="perk" data-perk="first access to drops" aria-pressed="true">
+                <span class="perk-check">✓</span>
+                <span><b>First access to drops</b><span>TIME MACHINE editions and limited drops open to members before the public window.</span></span>
+                <span class="perk-tag">First</span>
+              </button>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn-back" data-back>Back</button>
+              <button type="button" class="btn btn-primary" data-next id="perkNext">That's my membership</button>
+              <p class="step-hint" id="perkHint">4 unlocks in your first drop.</p>
+            </div>
+          </div>
+
+          <!-- STEP 3 · the free drop -->
+          <div class="step" data-step="3">
+            <div class="step-meta"><span class="step-count">Step 3 of 8 · Your first drop</span><span class="step-free">Free</span></div>
+            <h3>Your first drop is already waiting.</h3>
+            <p class="lede">The moment your trial starts, this month's exclusive track lands in your inbox — before you've paid a cent. Press play and feel the shape of it.</p>
+            <div class="eq-stage">
+              <div class="eq" id="eq" aria-hidden="true"></div>
+              <button type="button" class="btn btn-primary" id="eqPlay" aria-pressed="false">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" id="eqIcon"><path d="M7 4.5v15l13-7.5z"/></svg>
+                <span id="eqLabel">Play the preview</span>
+              </button>
+              <p class="eq-caption">Equalizer preview — the full track arrives by email the second your free trial begins.</p>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn-back" data-back>Back</button>
+              <button type="button" class="btn btn-primary" data-next>Unlock my drop</button>
+            </div>
+          </div>
+
+          <!-- STEP 4 · signal name -->
+          <div class="step" data-step="4">
+            <div class="step-meta"><span class="step-count">Step 4 of 8 · Make it yours</span><span class="step-free">Free</span></div>
+            <h3>Name your signal.</h3>
+            <p class="lede">Every member carries a signal name inside the Nexus. It's how your drops get addressed to you — and it's the name that will be printed on your Headphone Hero card.</p>
+            <div class="field">
+              <label for="signalName">Your signal name</label>
+              <input id="signalName" type="text" autocomplete="off" maxlength="24" placeholder="e.g. WaveRider, Nova, The Listener…" />
+              <p class="field-note">Just for this preview — nothing is saved or sent anywhere.</p>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn-back" data-back>Back</button>
+              <button type="button" class="btn btn-primary" data-next id="nameNext">Claim my signal</button>
+              <button type="button" class="btn-back" data-next id="nameSkip" style="border:none;">Skip</button>
+            </div>
+          </div>
+
+          <!-- STEP 5 · the quest -->
+          <div class="step" data-step="5">
+            <div class="step-meta"><span class="step-count">Step 5 of 8 · The quest</span><span class="step-free">Free · 3 choices</span></div>
+            <h3>Do you have what it takes to be a Headphone Hero?</h3>
+            <p class="lede">The Silence is swallowing the universe, one sound at a time. Three moments will decide what kind of hero you are. There are no wrong answers — only your answers. They forge your card.</p>
+            <div class="quest-scene" id="questScene"></div>
+            <div class="step-nav">
+              <button type="button" class="btn-back" data-back>Back</button>
+              <button type="button" class="btn btn-primary" data-next disabled id="questNext">Face the Silence first</button>
+              <p class="step-hint" id="questHint">Make all three choices to forge your hero.</p>
+            </div>
+          </div>
+
+          <!-- STEP 6 · hero card -->
+          <div class="step" data-step="6">
+            <div class="step-meta"><span class="step-count">Step 6 of 8 · Your hero card</span><span class="step-free">Yours to keep</span></div>
+            <h3 style="text-align:center;">Your Headphone Hero is real. And only yours.</h3>
+            <p class="lede" style="text-align:center; margin-left:auto; margin-right:auto;">Forged from your frequency, your genre, and the choices you made against the Silence. Painted hero art, your headphone, your superpower, your serial number. This is your <strong style="color:var(--ink)">1/1</strong> — a single holographic card that exists once, for you alone. It is never remade, never reprinted, and never sold in a pack.</p>
+            <div class="hero-card" id="heroCard">
+              <div class="hero-card-inner">
+                <div class="tcg-nameplate">
+                  <span class="tcg-name" id="cardName">The Listener</span>
+                  <span class="tcg-cost" id="cardCost" aria-hidden="true"></span>
+                </div>
+                <div class="tcg-art"><img id="cardArt" src="assets/card-art.webp" alt="Painted trading-card art of your Headphone Hero, forged from your frequency" /></div>
+                <div class="tcg-typeline"><b id="cardClass">Guardian · Bio-Rhythms</b><span class="tcg-rarity" aria-label="One of one rarity">★</span></div>
+                <div class="tcg-textbox">
+                  <p class="tcg-entry"><span class="k">Headphone</span><b id="cardPhone">FLORA-05 · Mycelial Mesh</b><span id="cardPhoneDesc">Grown, not built. The mesh listens to living things and translates.</span></p>
+                  <p class="tcg-entry"><span class="k">Superpower</span><b id="cardPower">Root Resonance</b><span id="cardPowerDesc">You tune into the living world itself — forests, oceans, heartbeats — as one vast instrument.</span></p>
+                  <p class="tcg-entry"><span class="k">Genre</span><b id="cardGenre">Nature &amp; bio-rhythms</b></p>
+                  <p class="tcg-flavor" id="cardVerdict">You held the line against the Silence — and the universe kept its music because you stood there.</p>
+                </div>
+                <div class="tcg-footer">
+                  <span id="cardSerial">HH-3623 · ONE OF ONE · GUARDIAN</span>
+                  <span class="res" id="cardLevel">Resonance 4 / 5</span>
+                </div>
+              </div>
+            </div>
+            <div class="email-gate">
+              <label for="cardEmail">Where should your drops find you?</label>
+              <p>Your card is free either way. Enter your email to unlock the full-size download. Straight talk: this page doesn't save or send your email anywhere — it stays in this tab, and when you start the trial it's handed to Stripe checkout as your prefilled email, so your member drops have an address to land on.</p>
+              <input id="cardEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" />
+              <p class="gate-status" id="emailStatus">Enter a valid email to unlock the download.</p>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-primary" id="downloadCard" disabled>Save my card — full-size PNG</button>
+              <button type="button" class="btn btn-ghost" id="cardRetune" style="background:transparent;">Retune my frequency</button>
+            </div>
+            <div class="format-chips" aria-label="Card file format">
+              <span>1/1 · Holographic</span><span>2.5″ × 3.5″ TCG size</span><span>Full bleed</span><span>1650 × 2250 PNG</span>
+            </div>
+            <div class="save-panel" id="savePanel" role="status">
+              <img id="savePreview" src="assets/card-art.webp" alt="Your finished Headphone Hero trading card, ready to save" />
+              <b>Your 1/1 file is forged.</b>
+              <p id="saveStatus">This is the digital master of your one-of-one — standard trading-card size with full bleed and a safe-zone layout. If the download didn't start, press and hold the card above (or right-click it) and save the image.</p>
+              <div class="save-actions">
+                <a class="btn btn-primary" id="saveDownload" href="#" download="headphone-hero-card.png">Download the PNG</a>
+                <button type="button" class="btn btn-ghost" id="shareCard" style="display:none;">Share my card</button>
+              </div>
+            </div>
+            <p class="card-note">Keep this card — it's yours forever, member or not. The download unlocks with your email, which is held only in this tab and passed to Stripe at checkout — never stored by this page. There is only one of it in the world. Inside the membership, your hero goes further: every month you receive a <b style="color:var(--ink)">personalized hero frequency</b> — a members-only transmission built around your hero, your headphone, and your sound, delivered with your drop.</p>
+
+            <div class="card-model" aria-label="How NVK cards work">
+              <div class="cm one">
+                <span class="cm-tag">Your card · 1/1</span>
+                <b>One card. One owner. Ever.</b>
+                <p>Your hero card is a <strong>single holographic 1/1</strong>. It belongs entirely to you — <strong>never remade, never reprinted, never reissued</strong>, and it will never appear in a booster pack, a box set, or anyone else's collection. When its one physical forging is made, that is the only one.</p>
+              </div>
+              <div class="cm set">
+                <span class="cm-tag">The other cards · The set</span>
+                <b>The NVK collectible set</b>
+                <p>Everything else is the collectible game: a set of NVK heroes, frequencies, and lore cards made to be <strong>opened, collected, traded, and chased</strong> — packs, foils, and rare pulls. Think the pull of Pokémon or Magic — but this is NVK: its own universe, its own frequencies, its own rules. Your 1/1 is not part of that set.</p>
+              </div>
+            </div>
+
+            <div class="upsell">
+              <h4>Forge the one. Collect the set.</h4>
+              <p class="ulede">Two different things, on purpose. Below: the single physical forging of <em>your</em> 1/1 — and, separately, the collectible NVK set that everyone can hunt.</p>
+              <div class="upsell-grid">
+                <button type="button" class="upsell-card" data-upsell="Your 1/1 holographic hero card — the only one ever made" data-price="19" aria-pressed="false">
+                  <span class="utag">Your 1/1 · The only one</span>
+                  <b>Forge My 1/1 Holographic</b>
+                  <span class="desc">The one physical forging of your hero card — your name, your serial, on holographic foil that shifts with your frequency in the light. Forged once. Never remade, never reprinted, never in a pack. Entirely yours.</span>
+                  <span class="uprice"><b>$19</b><span class="uadd">Add</span></span>
+                </button>
+                <button type="button" class="upsell-card" data-upsell="NVK booster pack — collectible set" data-price="12" aria-pressed="false">
+                  <span class="utag">Collectible set · Sealed pack</span>
+                  <b>NVK Booster Pack</b>
+                  <span class="desc">Eight sealed cards from the NVK collectible set — heroes, frequencies, and lore from Book 1 and The First Sound. Made to open, collect, and trade. Chase the rare set foils — no player's 1/1 is ever inside.</span>
+                  <span class="uprice"><b>$12</b><span class="uadd">Add</span></span>
+                </button>
+                <button type="button" class="upsell-card" data-upsell="NVK collector box set — collectible set" data-price="49" aria-pressed="false">
+                  <span class="utag">Collectible set · Box set</span>
+                  <b>Collector Box Set</b>
+                  <span class="desc">Four booster packs plus one guaranteed holographic from the collectible set — a set card, foiled, not a player's 1/1 — in a collector box. The whole opening-night pull in a single box.</span>
+                  <span class="uprice"><b>$49</b><span class="uadd">Add</span></span>
+                </button>
+              </div>
+              <p class="upsell-note">One-time add-ons, not part of the $10/mo. Anything you add rides along to your offer on the last step. Straight talk: print-on-demand ordering isn't connected yet, so adding an item reserves it rather than charging you — you'll get the order link when fulfillment opens. The rule doesn't change when ordering opens: your 1/1 is forged once and retired; the collectible set is the only thing that comes in packs.</p>
+            </div>
+            <div class="step-nav" style="justify-content:center;">
+              <button type="button" class="btn-back" data-back>Back to the quest</button>
+              <button type="button" class="btn btn-primary" data-next>Continue to my offer →</button>
+            </div>
+          </div>
+
+          <!-- STEP 8 · follow on Spotify (after the offer — never a detour before it) -->
+          <div class="step" data-step="8">
+            <div class="step-meta"><span class="step-count">Step 8 of 8 · Take it with you</span><span class="step-free">Free · 10 seconds</span></div>
+            <h3>One last thing — follow the frequency on Spotify.</h3>
+            <p class="lede">Your offer is set. Now carry the sound with you: follow Headphone Hero on Spotify so the catalog, the story albums, and the frequencies behind your card live in your library, not just on this page. It's free, and it's how the signal follows you after you leave.</p>
+            <div class="spotify-panel">
+              <span class="spotify-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.9 15.1a.72.72 0 0 1-1 .23c-2.7-1.65-6.1-2.02-10.1-1.1a.72.72 0 1 1-.32-1.4c4.37-1 8.1-.58 11.1 1.25.34.2.44.67.32 1.02Zm1.3-3.1a.9.9 0 0 1-1.24.3c-3.1-1.9-7.83-2.46-11.5-1.35a.9.9 0 0 1-.52-1.73c4.2-1.27 9.4-.65 12.95 1.54.42.25.55.8.31 1.24Zm.27-3.23C14.8 8.1 8.6 7.9 5.3 9.28a1.08 1.08 0 1 1-.85-2c3.9-1.63 10.7-1.4 15 .88a1.08 1.08 0 0 1-1 2.12Z"/></svg></span>
+              <div>
+                <b>Headphone Hero · NVK Records</b>
+                <p>Follow for new releases and story albums as they drop — including the sounds behind your frequency. Your monthly members-only track stays exclusive and never posts to streaming; Spotify is where the public catalog lives and grows with you.</p>
+                <div class="spotify-actions">
+                  <a class="btn btn-spotify" id="spotifyFollow" href="https://open.spotify.com/artist/67YjD6rXsH2SrADS3awYyp" target="_blank" rel="noopener noreferrer">Follow on Spotify</a>
+                  <p class="spotify-status" id="spotifyStatus">Opens Spotify in a new tab — your place here is held; come back to finish.</p>
+                </div>
+              </div>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn-back" data-back>Back to my offer</button>
+              <button type="button" class="btn btn-primary" data-next id="spotifyNext">Finish →</button>
+              <button type="button" class="btn-back" data-next style="border:none;">Skip for now</button>
+            </div>
+          </div>
+
+          <!-- STEP 7 · the offer -->
+          <div class="step" data-step="7">
+            <div class="step-meta"><span class="step-count">Step 7 of 8 · The offer</span><span class="step-free">Still $0 today</span></div>
+            <h3 id="offerHead">Your membership is tuned. Keep it running.</h3>
+            <p class="lede">Everything you just picked — hero included — starts free. If the frequency is yours, it continues at $10 a month — less than one album — billed automatically so the drops, and your hero's monthly frequency, never miss you.</p>
+            <div class="offer-grid">
+              <div>
+                <ul class="summary-list" id="summaryList"></ul>
+                <ul class="summary-list">
+                  <li><span class="tick">✓</span><span><b>Reminder before billing</b> — you hear from us before the trial ends, not after.</span></li>
+                  <li><span class="tick">✓</span><span><b>Cancel anytime</b> — one tap, no lock-in, keep everything you've already received.</span></li>
+                </ul>
+              </div>
+              <div class="price-card">
+                <div class="price-row"><span>Today</span><b class="free">$0.00</b></div>
+                <div class="price-row"><span>Days 1–30 · full access</span><b class="free">FREE</b></div>
+                <div class="price-row"><span>From <span id="billDate">December 23, 2026</span></span><b>$10.00 / month</b></div>
+                <div id="addonRows"></div>
+                <div class="price-total"><span>Then, monthly</span><b>$10/mo</b></div>
+                <div class="price-total" id="addonTotalRow" style="display:none; margin-top:4px;"><span>Card add-ons · one-time</span><b id="addonTotal" style="font-size:17px;">$0</b></div>
+                <p class="price-fine">Billed automatically via Stripe after the trial unless you cancel. Cancel anytime before <span id="billDate2">December 23, 2026</span> and you pay nothing.</p>
+              </div>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn-back" data-back>Back</button>
+              <button type="button" class="btn btn-primary" id="startTrial" style="flex:1; min-width:230px;">Start my 30 free days — $0 today</button>
+            </div>
+            <p class="step-hint" style="margin-top:12px;">Secure checkout via Stripe · $0 due today · Cancel anytime in your 30 free days and you pay nothing, ever.</p>
+            <div class="checkout-notice" id="checkoutNotice" role="alert">
+              <b>Your trial has not started yet — and nothing was charged.</b>
+              Secure checkout opens the moment the Stripe payment link is connected on our side. Your frequency, hero card, and choices are held right here in this tab — when checkout goes live, this button takes you straight to Stripe with your email already filled in. No trial begins, and no card is charged, until you complete that checkout.
+            </div>
+          </div>
+
+          <!-- STEP 9 · done -->
+          <div class="step" data-step="9">
+            <div class="done-wrap">
+              <div class="rings" aria-hidden="true"><i></i><i></i><i></i><span class="core">✓</span></div>
+              <h3 id="doneHead">Signal locked in.</h3>
+              <p>Frequency chosen, quest conquered, hero forged, first drop unlocked. That's all it takes — nothing owed, and everything you just picked, hero included, is waiting for you on the inside.</p>
+              <div class="done-recap" id="doneRecap"></div>
+              <p style="margin-top:18px;">This is where your 30 free days begin — $0 today, $10/mo from <b id="billDate3" style="color:var(--ink);">December 23, 2026</b> only if you stay, cancel anytime before that and you pay nothing. Your first drop lands the moment you step through the door.</p>
+              <div class="step-nav" style="justify-content:center;">
+                <button type="button" class="btn btn-ghost" id="restart">Start over</button>
+                <a class="btn btn-primary" href="#inside" id="doneInside" style="color:var(--accent-ink);">See what's inside</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============ INSIDE ============ -->
+      <section class="block wrap" id="inside">
+        <div class="sec-head rv">
+          <p class="sec-kicker">Inside the membership</p>
+          <h2>Every month. Tuned to you. One price.</h2>
+          <p>The catalog and the story engine already produce daily — the membership simply routes the best of it to the inside first.</p>
+        </div>
+        <div class="perks-grid">
+          <div class="perk-card rv">
+            <div class="glyph"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v11"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="15" r="2.5"/></svg></div>
+            <h3>Monthly exclusive track</h3>
+            <p>One unreleased Headphone Hero / NVK Records track per month, delivered to members only. Not on streaming. Not on the feed.</p>
+            <span class="when">Every month</span>
+          </div>
+          <div class="perk-card rv">
+            <div class="glyph"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5V5.5"/><path d="M8 7h8M8 11h5"/></svg></div>
+            <h3>Early story chapters</h3>
+            <p>Book 1: Awakening the Frequency and The First Sound unfold here first — members read the story while everyone else waits.</p>
+            <span class="when">Before public release</span>
+          </div>
+          <div class="perk-card rv">
+            <div class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M3 17l5-4 4 3 4-4 5 5"/></svg></div>
+            <h3>Members-only art</h3>
+            <p>Hyper-Signal art made for the inside wall only — new colors, powers, mechs, and worlds that never post publicly.</p>
+            <span class="when">Members only · always</span>
+          </div>
+          <div class="perk-card rv">
+            <div class="glyph"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></div>
+            <h3>Your hero's frequency</h3>
+            <p>Your Headphone Hero card is just the beginning. Members receive a personalized hero frequency every month — a transmission built around their hero, headphone, and sound.</p>
+            <span class="when">Monthly · Yours alone</span>
+          </div>
+          <div class="perk-card rv">
+            <div class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div>
+            <h3>First access to drops</h3>
+            <p>TIME MACHINE editions and limited drops open to members first. When a run is numbered, the inside hears the knock before the door opens.</p>
+            <span class="when">Before the public window</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ THE CIRCLE ============ -->
+      <section class="block wrap" id="the-circle">
+        <div class="sec-head rv">
+          <p class="sec-kicker">The founding circle</p>
+          <h2>8 billion people on this planet.<br />This was never for all of them.</h2>
+          <p>The signal reaches everywhere. The inside is for the few who actually hear it — the ones who feel the frequency instead of scrolling past it. If you're reading this, you might be one of them.</p>
+        </div>
+        <div class="circle-grid">
+          <div class="circle-card rv">
+            <h3>You are early</h3>
+            <p>Book 1 and The First Sound are still unfolding. Inside, you don't catch up on a finished story — you stand next to it while it's being written, chapter by chapter.</p>
+          </div>
+          <div class="circle-card rv">
+            <h3>Small by design</h3>
+            <p>No feed. No algorithm deciding who hears what. Your drops arrive by email because you chose your frequency — not because a platform served you an ad.</p>
+          </div>
+          <div class="circle-card rv">
+            <h3>Yours to leave</h3>
+            <p>Thirty free days, cancel in one tap, keep everything you've already received. The door stays open only while the frequency is yours — that's the deal, in plain sight.</p>
+          </div>
+        </div>
+        <p class="circle-line rv">Out of 8 billion people, the circle only needs a small few who truly hear it. <a href="#funnel">Step inside free →</a></p>
+      </section>
+
+      <!-- ============ TRIAL TIMELINE ============ -->
+      <section class="block wrap" id="timeline">
+        <div class="sec-head rv">
+          <p class="sec-kicker">How the trial runs</p>
+          <h2>Free first. Fair always.</h2>
+        </div>
+        <div class="timeline rv">
+          <div class="t-item">
+            <span class="t-day">Day 0 · Today</span>
+            <h3>Trial starts — everything unlocks</h3>
+            <p>Card on file, $0 charged. This month's exclusive track, the early chapters, and the members-only art are all live from minute one.</p>
+          </div>
+          <div class="t-item">
+            <span class="t-day">Day 28</span>
+            <h3>The reminder</h3>
+            <p>An email lands three days before the first charge: what's unlocked, what's coming, and a one-tap cancel link. No surprises, ever.</p>
+          </div>
+          <div class="t-item bill">
+            <span class="t-day">Day 31 · <span id="billDate4">First charge</span></span>
+            <h3>$10 — membership continues</h3>
+            <p>The first $10 bills automatically and the membership rolls on. Cancelled before this day? Total paid: $0, and you keep everything you already received.</p>
+          </div>
+          <div class="t-item">
+            <span class="t-day">Every month after</span>
+            <h3>A new drop, on schedule</h3>
+            <p>A fresh exclusive track, the next chapters, new art, and first windows on drops — the rhythm that makes $10 feel small.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FAQ ============ -->
+      <section class="block wrap" id="faq">
+        <div class="sec-head rv">
+          <p class="sec-kicker">Straight answers</p>
+          <h2>Before you ask</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>What do I actually pay today?</summary>
+            <p>Nothing. The card is only held by Stripe to start the trial. The first charge — $10 — lands on day 31, after your 30 free days, and only if you haven't cancelled.</p>
+          </details>
+          <details>
+            <summary>How do I cancel?</summary>
+            <p>One tap from any member email or the membership page, any time — including during the free trial. Cancelling costs nothing and you keep the track, chapters, and art you already received.</p>
+          </details>
+          <details>
+            <summary>Where do the drops arrive?</summary>
+            <p>By email, monthly: the exclusive track as a download, chapter links, and the members-only art. First-access drop windows are announced to members before anywhere else.</p>
+          </details>
+          <details>
+            <summary>Can I change my frequency later?</summary>
+            <p>Anytime. Hit Retune at the top of the journey — the whole experience and your drops re-tune to the new frequency instantly. Pitch Black one month, Radiant Light the next. Your 1/1 hero card is forged from the frequency and choices you finish the quest with — once its single holographic forging is made, that card is final and is never remade in another tuning.</p>
+          </details>
+          <details>
+            <summary>How does my hero card work?</summary>
+            <p>Pick your color and genre, name your signal, then take the quest — three choices against the Silence. Your answers assign your headphone model, your hero class, and your superpower, and your card is forged instantly: painted art in your frequency, your stats in the text box, your flavor line, your own serial number. It is a 1/1 — one card, one owner. Download the digital master at full size and keep it, free, whether you join or not.</p>
+          </details>
+          <details>
+            <summary>What's the difference between my card and the booster packs?</summary>
+            <p>Your hero card is not part of any set. It is a single holographic 1/1 — entirely yours, never remade, never reprinted, and never placed in a pack. Booster packs and the box set hold the other cards: the NVK collectible set — heroes, frequencies, and lore made to be opened, collected, traded, and chased for rare foils. Familiar pull, different universe: this is NVK, not Pokémon or Magic — its own frequencies, its own story, its own rules.</p>
+          </details>
+          <details>
+            <summary>Can I get my hero card as a real, physical card?</summary>
+            <p>Yes — once. Add “Forge My 1/1 Holographic” on the card step to reserve the single physical forging of your card on holographic foil. There is no second printing and no way to order another copy later; that is what makes it a 1/1. Print-on-demand ordering isn't connected on our side yet, so reserving costs nothing and charges nothing — you'll get the order link when fulfillment opens. Your downloadable file is the digital master of that same card, ready today.</p>
+          </details>
+          <details>
+            <summary>Why $10?</summary>
+            <p>Less than a single album — and it opens the whole inside: a track no one else can stream, chapters before they're released, art that never posts publicly, and first position on every limited drop. Small enough to forget about. Worth remembering every month.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>HEADPHONE HEROES™ · NVK RECORDS · NVK GLOBAL</span>
+        <span>$10/mo · 30-day free trial · cancel anytime</span>
+      </div>
+    </footer>
+
+    <script>
+      (function(){
+        "use strict";
+        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var state = { step: 1, freq: null, genre: null, color: null, perks: [], name: "", email: "", quest: [], questDone: false, returnTo: null, spotify: false, upsells: [], paid: false };
+        var TOTAL = 8;
+        var DONE = 9;
+
+        /* Live Stripe payment link for the $10/mo membership (30-day
+           trial). The offer button hands off to this link with the
+           visitor's email prefilled. The link's success URL points back
+           at this page with ?checkout=success — that return lands on the
+           final Spotify step, and only from there can the "Signal locked
+           in" screen be reached. If this is ever cleared, the offer
+           button falls back to an honest "checkout not connected" notice
+           and NO trial is started. */
+        var STRIPE_CHECKOUT_URL = "https://buy.stripe.com/28E9ATan25VIdj8eyB1Fe17";
+
+        var steps = Array.prototype.slice.call(document.querySelectorAll(".step"));
+        var fill = document.getElementById("progressFill");
+        var pct = document.getElementById("progressPct");
+        var label = document.getElementById("progressLabel");
+        var card = document.getElementById("funnelCard");
+
+        var retuneBar = document.getElementById("retuneBar");
+        var retuneName = document.getElementById("retuneName");
+        function setProgress(){
+          var done = state.step >= DONE ? TOTAL : state.step - 1;
+          var p = Math.round((done / TOTAL) * 100);
+          fill.style.width = Math.max(4, p) + "%";
+          pct.textContent = p + "%";
+          label.textContent = state.step >= DONE ? "Signal locked in" : "Your journey in · Step " + state.step + " of " + TOTAL;
+          retuneBar.classList.toggle("show", !!state.freq && state.step !== 1);
+          if (state.freq) retuneName.textContent = state.freq;
+        }
+
+        /* ---- progress resume (this tab's address only) ----
+           The journey position and non-personal choices ride in the URL
+           fragment, so a reload in this tab resumes where the visitor left
+           off. Name and email are never written anywhere — they live in
+           memory for this session only and are re-asked after a reload. */
+        function saveState(){
+          try {
+            var payload = {
+              s: state.step, f: state.freq, g: state.genre, c: state.color,
+              p: state.perks, q: state.quest, qd: state.questDone ? 1 : 0,
+              sp: state.spotify ? 1 : 0,
+              u: state.upsells.map(function(x){ return x.name; })
+            };
+            var frag = "j=" + encodeURIComponent(JSON.stringify(payload));
+            try { history.replaceState(null, "", "#" + frag); } catch (e) {}
+            /* sandboxed frames can refuse replaceState — fall back to a
+               plain fragment assignment (matches no element id, so the
+               page never jumps) */
+            if ((location.hash || "").indexOf("j=") === -1) {
+              try { location.hash = frag; } catch (e) {}
+            }
+          } catch (e) {}
+        }
+        function readSavedState(){
+          try {
+            var m = /#j=([^&]+)/.exec(location.hash || "");
+            if (!m) return null;
+            return JSON.parse(decodeURIComponent(m[1]));
+          } catch (e) { return null; }
+        }
+        function show(n, scroll){
+          state.step = n;
+          steps.forEach(function(s){ s.classList.toggle("active", +s.dataset.step === n); });
+          setProgress();
+          if (scroll && !reduced) {
+            card.scrollIntoView({ behavior: "smooth", block: "start" });
+          } else if (scroll) {
+            card.scrollIntoView({ block: "start" });
+          }
+          if (n === 6) renderCard();
+          if (n === 7) renderSummary();
+          if (n === DONE) renderDone();
+          saveState();
+        }
+        document.getElementById("retuneBtn").addEventListener("click", function(){
+          state.returnTo = state.step;
+          show(1, false);
+        });
+
+        /* ---- billing dates (30-day trial from today, Pacific) ---- */
+        var bill = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
+        var fmt = new Intl.DateTimeFormat("en-US", { timeZone: "America/Los_Angeles", month: "long", day: "numeric", year: "numeric" });
+        var billStr = fmt.format(bill);
+        ["billDate", "billDate2", "billDate3"].forEach(function(id){
+          var el = document.getElementById(id);
+          if (el) el.textContent = id === "billDate" ? billStr : billStr;
+        });
+        var bd4 = document.getElementById("billDate4");
+        if (bd4) bd4.textContent = billStr;
+
+        /* ---- Step 1: frequency ---- */
+        var freqNext = document.getElementById("freqNext");
+        var freqHint = document.getElementById("freqHint");
+        document.querySelectorAll(".freq-card").forEach(function(btn){
+          btn.addEventListener("click", function(){
+            document.querySelectorAll(".freq-card").forEach(function(b){ b.setAttribute("aria-pressed", "false"); });
+            btn.setAttribute("aria-pressed", "true");
+            state.freq = btn.dataset.freq;
+            state.genre = btn.dataset.genre;
+            state.color = btn.dataset.color;
+            document.documentElement.style.setProperty("--accent", state.color);
+            freqNext.disabled = false;
+            freqHint.textContent = state.freq + " selected — tap another to change it, or press Tune me in when you're ready.";
+            saveState();
+          });
+        });
+        freqNext.addEventListener("click", function(){ if (state.freq) { var d = state.returnTo || 2; state.returnTo = null; show(d, false); } });
+
+        /* ---- Step 2: perks ---- */
+        var perkNext = document.getElementById("perkNext");
+        var perkHint = document.getElementById("perkHint");
+        function syncPerks(){
+          perkNext.disabled = state.perks.length === 0;
+          perkHint.textContent = state.perks.length === 0
+            ? "Choose at least one."
+            : state.perks.length + (state.perks.length === 1 ? " unlock" : " unlocks") + " in your first drop.";
+        }
+        /* All four start selected — members get all four — so the checked
+           state and the Continue button agree on arrival. */
+        document.querySelectorAll(".perk").forEach(function(btn){
+          if (btn.getAttribute("aria-pressed") === "true" && state.perks.indexOf(btn.dataset.perk) === -1) {
+            state.perks.push(btn.dataset.perk);
+          }
+          btn.addEventListener("click", function(){
+            var on = btn.getAttribute("aria-pressed") === "true";
+            btn.setAttribute("aria-pressed", String(!on));
+            var v = btn.dataset.perk;
+            if (!on) { state.perks.push(v); } else { state.perks = state.perks.filter(function(x){ return x !== v; }); }
+            syncPerks();
+            saveState();
+          });
+        });
+        syncPerks();
+
+        perkNext.addEventListener("click", function(){ if (state.perks.length) show(3, false); });
+
+        /* ---- generic nav ---- */
+        document.querySelectorAll("[data-next]").forEach(function(btn){
+          if (btn.id === "freqNext" || btn.id === "perkNext" || btn.id === "questNext") return;
+          btn.addEventListener("click", function(){
+            var nxt = Math.min(state.step + 1, DONE);
+            /* The locked-in screen is gated on a real Stripe success
+               return — no in-page click path reaches it without one. */
+            if (nxt === DONE && !state.paid) { show(7, false); return; }
+            show(nxt, false);
+          });
+        });
+        document.querySelectorAll("[data-back]").forEach(function(btn){
+          btn.addEventListener("click", function(){ show(Math.max(state.step - 1, 1), false); });
+        });
+        document.getElementById("heroStart").addEventListener("click", function(){
+          document.body.classList.add("funnel-locked");
+          document.getElementById("funnel").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+        });
+        var heroSteps = document.getElementById("heroSteps");
+        if (heroSteps) heroSteps.addEventListener("click", function(){
+          document.body.classList.add("funnel-locked");
+        });
+        document.getElementById("unlockBtn").addEventListener("click", function(){
+          document.body.classList.remove("funnel-locked");
+          window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+        });
+        var doneInside = document.getElementById("doneInside");
+        if (doneInside) doneInside.addEventListener("click", function(){
+          document.body.classList.remove("funnel-locked");
+        });
+
+        /* ---- Step 3: equalizer ---- */
+        var eq = document.getElementById("eq");
+        var N = 26, bars = [];
+        for (var i = 0; i < N; i++) {
+          var b = document.createElement("i");
+          var h = 22 + Math.round(66 * Math.abs(Math.sin(i * 0.55)) * (0.45 + 0.55 * Math.random()));
+          b.style.height = h + "%";
+          b.style.animationDuration = (0.55 + Math.random() * 0.8).toFixed(2) + "s";
+          b.style.animationDelay = (Math.random() * 0.5).toFixed(2) + "s";
+          eq.appendChild(b); bars.push(b);
+        }
+        var playing = false, playTimer = null, elapsed = 0;
+        var eqPlay = document.getElementById("eqPlay");
+        var eqLabel = document.getElementById("eqLabel");
+        var eqIcon = document.getElementById("eqIcon");
+        function stopEq(){
+          playing = false;
+          eq.classList.remove("playing");
+          eqPlay.setAttribute("aria-pressed", "false");
+          eqLabel.textContent = elapsed > 0 ? "Play it again" : "Play the preview";
+          eqIcon.innerHTML = '<path d="M7 4.5v15l13-7.5z"/>';
+          if (playTimer) { clearInterval(playTimer); playTimer = null; }
+        }
+        eqPlay.addEventListener("click", function(){
+          if (playing) { stopEq(); return; }
+          playing = true; elapsed = 0;
+          eq.classList.add("playing");
+          eqPlay.setAttribute("aria-pressed", "true");
+          eqIcon.innerHTML = '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
+          eqLabel.textContent = "Previewing · 0:00 / 0:30";
+          playTimer = setInterval(function(){
+            elapsed++;
+            eqLabel.textContent = "Previewing · 0:" + String(elapsed).padStart(2, "0") + " / 0:30";
+            if (elapsed >= 30) stopEq();
+          }, 1000);
+        });
+
+        /* ---- Step 4: name ---- */
+        var nameInput = document.getElementById("signalName");
+        var nameNext = document.getElementById("nameNext");
+        function syncNameBtn(){ nameNext.textContent = nameInput.value.trim() ? "Claim my signal" : "Continue without a name"; }
+        nameInput.addEventListener("input", syncNameBtn);
+        nameInput.addEventListener("keydown", function(e){ if (e.key === "Enter") { e.preventDefault(); show(5, false); } });
+
+        /* ---- Step 5: the quest ---- */
+        var HERO_DATA = {
+          "The Signal":       { phone: "SIGNAL-01 · Resonance Cans", phoneDesc: "The original drivers. They caught the first sound ever sent.", power: "Waveform Sight", powerDesc: "You see every sound a half-second before it lands — and step exactly where it needs you." },
+          "Deep Frequencies": { phone: "ABYSS-02 · Submerged Drivers", phoneDesc: "Pressure-sealed, tuned for the low places where the Silence nests.", power: "Depth Pulse", powerDesc: "A sub-bass heartbeat that shakes hidden things loose from the dark." },
+          "The Golden Voice": { phone: "CHOIR-03 · Vocal Array", phoneDesc: "Layered drivers that carry a single voice like a hundred.", power: "Harmonic Mend", powerDesc: "Your voice knits broken frequencies — and broken resolve — back together." },
+          "Kinetic Bass":     { phone: "RUNNER-04 · Bass Pistons", phoneDesc: "Built for speed. Every step lands on the beat, every beat moves you.", power: "Tempo Dash", powerDesc: "You move at the speed of the drop. The Silence has never caught a Runner." },
+          "Bio-Rhythms":      { phone: "FLORA-05 · Mycelial Mesh", phoneDesc: "Grown, not built. The mesh listens to living things and translates.", power: "Root Resonance", powerDesc: "You tune into the living world itself — forests, oceans, heartbeats — as one vast instrument." },
+          "Battle Crimson":   { phone: "FORGE-06 · War Drivers", phoneDesc: "Forged for the clash. They do not flinch, and neither will you.", power: "Ignition Strike", powerDesc: "You turn a single note into a detonation of sound that cracks the Silence open." },
+          "Pitch Black":      { phone: "VOID-00 · Null Drivers", phoneDesc: "The rarest build in the Nexus. They play nothing — so you can hear everything the dark is hiding.", power: "Void Hearing", powerDesc: "In total darkness and total silence, you hear the one sound no one else can: the truth." },
+          "Radiant Light":    { phone: "LUMEN-07 · Prism Drivers", phoneDesc: "They split the pure signal into every color at once — and play them all in perfect clarity.", power: "Radiant Clarity", powerDesc: "You reveal hidden frequencies the way light reveals a room. Nothing false survives your listening." }
+        };
+        var CLASSES = {
+          guardian: { title: "Guardian", verdict: "You held the line against the Silence — and the universe kept its music because you stood there." },
+          seeker:   { title: "Seeker", verdict: "You walked into the unknown and listened first. The universe keeps its secrets for heroes like you — and gives them up." },
+          breaker:  { title: "Breaker", verdict: "You didn't wait for permission. You broke the silence open — and the universe heard itself again through you." }
+        };
+        var QUEST = [
+          { chapter: "Chapter I · The Call", title: "The Signal finds you at 3 a.m.",
+            story: "A sound no station plays pours through your headphones — a melody that knows your name. The Nexus is calling its next hero. The Silence is already listening too.",
+            choices: [
+              { text: "Answer it — loud.", small: "Turn it up and let it know you heard.", trait: "breaker", outcome: "<b>The Signal answers back.</b> Somewhere across the dark, something ancient turns its head toward you." },
+              { text: "Listen first. Learn it.", small: "Play it low. Memorize every note before you move.", trait: "seeker", outcome: "<b>You hear what others miss.</b> Under the melody, a second voice — counting down." },
+              { text: "Shield it.", small: "Pull the sound close and guard it with your own heartbeat.", trait: "guardian", outcome: "<b>The Signal settles, safe.</b> It chose well. It can feel that already." }
+            ] },
+          { chapter: "Chapter II · The Door", title: "A door appears in the waveform.",
+            story: "The broken waveform splits open — a door, hanging in the sound itself. You know the lore: this door is two-way. Whatever you let out, something else can come in. Knocking echoes from the other side.",
+            choices: [
+              { text: "Step through and close it behind you.", small: "Trap yourself on the Silence's side — so nothing follows you home.", trait: "guardian", outcome: "<b>The door seals.</b> You are alone in the Silence's country now. Your headphones glow like a lighthouse." },
+              { text: "Knock back — and listen to who knocks.", small: "Three knocks. Then an answer in a rhythm almost like music.", trait: "seeker", outcome: "<b>It knocks your name.</b> Whatever is in there has been waiting a very long time to be heard." },
+              { text: "Tear it wide open.", small: "If the Silence wants in, let it come — on your frequency.", trait: "breaker", outcome: "<b>The door blows off its hinges.</b> Worlds of swallowed sound pour out in a flood of impossible music." }
+            ] },
+          { chapter: "Chapter III · The Silence", title: "The Silence offers you the Trade.",
+            story: "It has no face — only a waveform where a mouth should be. Its offer is real: every world it ever swallowed, released free — if you stay and become its new voice. The universe holds its breath. This is the moment that decides everything.",
+            choices: [
+              { text: "Refuse — and fight for every world.", small: "No bargains with the thing that eats music.", trait: "breaker", outcome: "<b>Your first note hits like a sunrise.</b> The Silence cracks. Worlds begin to sing their way home." },
+              { text: "Take the Trade — then sing the worlds out from inside.", small: "Become its voice. Then use that voice to set everything free.", trait: "guardian", outcome: "<b>You speak — and it is a rescue.</b> From inside the Silence, your voice opens every cage at once." },
+              { text: "Ask it why it eats sound.", small: "Nobody has ever asked. Its waveform falters.", trait: "seeker", outcome: "<b>\"I was the first sound,\" it says. \"And no one ever listened back.\"</b> You do. It changes everything." }
+            ] }
+        ];
+        var questScene = document.getElementById("questScene");
+        var questNext = document.getElementById("questNext");
+        var questHint = document.getElementById("questHint");
+        var questIdx = 0;
+        function renderQuest(){
+          var dots = QUEST.map(function(_, i){ return '<i class="' + (i < state.quest.length ? "on" : "") + '"></i>'; }).join("");
+          if (questIdx >= QUEST.length) {
+            questScene.innerHTML = '<p class="quest-chapter">The quest is complete</p><h4>The Silence is conquered.</h4><p class="story" style="color:var(--muted); margin:0;">Three choices, one hero. Your answers have already decided your class, your headphone, and your power — your card is forged and waiting on the next step.</p>';
+            return;
+          }
+          var sc = QUEST[questIdx];
+          questScene.innerHTML = '<div class="quest-progress" aria-hidden="true">' + dots + '</div>' +
+            '<p class="quest-chapter">' + sc.chapter + '</p><h4>' + sc.title + '</h4><p class="story">' + sc.story + '</p>' +
+            '<div class="quest-choices">' + sc.choices.map(function(c, i){
+              return '<button type="button" class="quest-choice" data-choice="' + i + '">' + c.text + '<small>' + c.small + '</small></button>';
+            }).join("") + '</div><div class="quest-outcome" id="questOutcome" role="status"></div>';
+          questScene.querySelectorAll(".quest-choice").forEach(function(btn){
+            btn.addEventListener("click", function(){
+              var c = sc.choices[+btn.dataset.choice];
+              state.quest[questIdx] = c.trait;
+              questScene.querySelectorAll(".quest-choice").forEach(function(b){
+                var on = b === btn;
+                b.style.opacity = on ? "1" : ".55";
+                b.style.borderColor = on ? "var(--accent)" : "";
+              });
+              var out = document.getElementById("questOutcome");
+              out.innerHTML = c.outcome + '<div style="margin-top:12px;"><button type="button" class="btn btn-primary" id="questLock" style="min-height:2.5rem; padding:9px 18px; font-size:14.5px;">' + (questIdx >= QUEST.length - 1 ? "Lock it in — forge my hero" : "Lock it in — next moment →") + '</button> <span style="font-size:13px;">or tap a different choice to change your answer.</span></div>';
+              out.classList.add("show");
+              document.getElementById("questLock").addEventListener("click", function(){
+                questIdx++;
+                if (questIdx >= QUEST.length) {
+                  state.questDone = true;
+                  questNext.disabled = false;
+                  questNext.textContent = "Forge my hero card →";
+                  questHint.textContent = "Quest complete — your hero awaits.";
+                }
+                saveState();
+                renderQuest();
+              });
+            });
+          });
+        }
+        renderQuest();
+        questNext.addEventListener("click", function(){ if (state.questDone) show(6, false); });
+
+        /* ---- Step 6: hero card ---- */
+        function heroClass(){
+          var counts = { guardian: 0, seeker: 0, breaker: 0 };
+          state.quest.forEach(function(t){ if (counts[t] !== undefined) counts[t]++; });
+          var best = "guardian", bv = -1;
+          ["guardian", "seeker", "breaker"].forEach(function(k){ if (counts[k] > bv) { bv = counts[k]; best = k; } });
+          return best;
+        }
+        function heroLevel(){
+          var s = (state.name || "") + (state.freq || "") + state.quest.join("");
+          var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+          return 3 + (h % 3); /* 3..5 */
+        }
+        var CARD_ART = {
+          "The Signal":       { src: "assets/card-art-signal.webp",  filter: "" },
+          "Deep Frequencies": { src: "assets/card-art-signal.webp",  filter: "hue-rotate(38deg) saturate(1.25) brightness(.72) contrast(1.08)" },
+          "The Golden Voice": { src: "assets/card-art-golden-voice.webp", filter: "sepia(.45) saturate(1.7) hue-rotate(-10deg) brightness(1.02)" },
+          "Kinetic Bass":     { src: "assets/card-art-signal.webp",  filter: "hue-rotate(105deg) saturate(1.45) brightness(.95)" },
+          "Bio-Rhythms":      { src: "assets/card-art.webp",   filter: "" },
+          "Battle Crimson":   { src: "assets/card-art-signal.webp",  filter: "hue-rotate(168deg) saturate(1.55) brightness(.9) contrast(1.06)" },
+          "Pitch Black":      { src: "assets/card-art-signal.webp",  filter: "grayscale(.9) brightness(.5) contrast(1.25)" },
+          "Radiant Light":    { src: "assets/card-art-golden-voice.webp", filter: "" }
+        };
+        function renderCard(){
+          state.name = nameInput.value.trim();
+          var freq = state.freq || "The Signal";
+          var d = HERO_DATA[freq] || HERO_DATA["The Signal"];
+          var cls = CLASSES[heroClass()];
+          var name = state.name || "The Listener";
+          var art = CARD_ART[freq] || CARD_ART["The Signal"];
+          var artEl = document.getElementById("cardArt");
+          artEl.src = art.src;
+          artEl.style.filter = art.filter;
+          artEl.alt = "Painted trading-card art of " + name + ", a " + cls.title + " of " + freq + ", wearing " + d.phone;
+          document.getElementById("cardName").textContent = name;
+          document.getElementById("cardClass").textContent = cls.title + " · " + freq;
+          document.getElementById("cardPhone").textContent = d.phone;
+          document.getElementById("cardPhoneDesc").textContent = d.phoneDesc;
+          document.getElementById("cardPower").textContent = d.power;
+          document.getElementById("cardPowerDesc").textContent = d.powerDesc;
+          var genre = (state.genre || "ambient").replace(/^./, function(ch){ return ch.toUpperCase(); });
+          document.getElementById("cardGenre").textContent = genre;
+          document.getElementById("cardVerdict").textContent = state.questDone ? cls.verdict : "Take the quest to earn your verdict.";
+          var lvl = heroLevel();
+          document.getElementById("cardCost").innerHTML = [1,2,3,4,5].map(function(i){ return '<i class="' + (i <= lvl ? "on" : "") + '"></i>'; }).join("");
+          document.getElementById("cardLevel").textContent = "Resonance " + lvl + " / 5";
+          var serial = "HH-" + String(1000 + ((name.length * 137 + freq.length * 89) % 9000));
+          document.getElementById("cardSerial").textContent = serial + " · ONE OF ONE · " + cls.title.toUpperCase();
+          state.hero = { name: name, freq: freq, genre: genre, cls: cls.title, phone: d.phone, phoneDesc: d.phoneDesc, power: d.power, powerDesc: d.powerDesc, level: lvl, serial: serial, verdict: cls.verdict, art: art };
+        }
+        document.getElementById("cardRetune").addEventListener("click", function(){
+          state.returnTo = 6;
+          show(1, false);
+        });
+        /* ---- Step 6: email gate — the card is free, the download asks for an email ---- */
+        var emailInput = document.getElementById("cardEmail");
+        var emailStatus = document.getElementById("emailStatus");
+        var downloadBtn = document.getElementById("downloadCard");
+        function emailValid(){
+          return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((emailInput.value || "").trim());
+        }
+        function syncEmailGate(){
+          state.email = emailInput.value.trim();
+          var ok = emailValid();
+          downloadBtn.disabled = !ok;
+          emailStatus.textContent = ok
+            ? "Got it — your download is ready. " + state.email + " stays in this tab and goes to Stripe as your checkout email when you start the trial."
+            : "Enter a valid email to unlock the download.";
+          emailStatus.classList.toggle("ok", ok);
+        }
+        emailInput.addEventListener("input", syncEmailGate);
+
+        /* ---- Step 6: save the card — print-ready format ----
+           Standard TCG print file: 2.5" x 3.5" trim with 0.125" bleed on
+           every side = 2.75" x 3.75" (825 x 1125 at 300 DPI), rendered at
+           2x (1650 x 2250) for a crisp print-on-demand upload. Full-bleed
+           rectangle — the printer die-cuts the rounded corners — with all
+           text and art inside the safe zone, the real page fonts, and a
+           Blob download (data-URL downloads fail in mobile webviews). */
+        var cardBlob = null, cardBlobUrl = null, cardFileName = "";
+        var savePanel = document.getElementById("savePanel");
+        var savePreview = document.getElementById("savePreview");
+        var saveStatus = document.getElementById("saveStatus");
+        var saveDownload = document.getElementById("saveDownload");
+        var shareCardBtn = document.getElementById("shareCard");
+        function wrapText(g, text, x, y, maxW, lh){
+          var words = String(text).split(" "), line = "";
+          for (var i = 0; i < words.length; i++) {
+            var t = line ? line + " " + words[i] : words[i];
+            if (g.measureText(t).width > maxW && line) { g.fillText(line, x, y); y += lh; line = words[i]; }
+            else line = t;
+          }
+          if (line) { g.fillText(line, x, y); y += lh; }
+          return y;
+        }
+        function buildCardCanvas(artImg){
+          var h = state.hero, color = state.color || "#19e3ff";
+          var DW = 825, DH = 1125, S = 2;
+          var cv = document.createElement("canvas"); cv.width = DW * S; cv.height = DH * S;
+          var g = cv.getContext("2d"); g.scale(S, S);
+          function rr(x, y, w, hh, r){
+            g.beginPath();
+            g.moveTo(x + r, y);
+            g.arcTo(x + w, y, x + w, y + hh, r);
+            g.arcTo(x + w, y + hh, x, y + hh, r);
+            g.arcTo(x, y + hh, x, y, r);
+            g.arcTo(x, y, x + w, y, r);
+            g.closePath();
+          }
+          /* foil frame runs to the bleed edge — no transparency, no white border */
+          var foil = g.createLinearGradient(0, 0, DW, DH);
+          foil.addColorStop(0, color); foil.addColorStop(.28, "#f4e3bb"); foil.addColorStop(.52, color);
+          foil.addColorStop(.78, "#8a6a25"); foil.addColorStop(1, color);
+          g.fillStyle = foil; g.fillRect(0, 0, DW, DH);
+          g.fillStyle = "#0a0f16"; g.fillRect(58, 58, DW - 116, DH - 116);
+          /* safe zone: trim (37.5) + margin — all content lives inside X..X+CW */
+          var X = 82, CW = DW - 164;
+          /* name plate */
+          g.fillStyle = "#141e2c"; rr(X, 82, CW, 80, 14); g.fill();
+          g.strokeStyle = "#22303f"; g.lineWidth = 2; rr(X, 82, CW, 80, 14); g.stroke();
+          g.fillStyle = "#eef4f8"; g.textAlign = "left"; g.textBaseline = "middle";
+          var nf = 38;
+          g.font = "900 " + nf + "px Unbounded, sans-serif";
+          while (g.measureText(h.name).width > CW - 178 && nf > 20) { nf -= 2; g.font = "900 " + nf + "px Unbounded, sans-serif"; }
+          g.fillText(h.name, X + 22, 123);
+          for (var p = 0; p < 5; p++) {
+            g.beginPath(); g.arc(X + CW - 126 + p * 26, 122, 10, 0, Math.PI * 2);
+            if (p < h.level) { g.fillStyle = color; g.fill(); } else { g.fillStyle = "#232f3f"; g.fill(); g.strokeStyle = "#22303f"; g.stroke(); }
+          }
+          /* art window */
+          var AY = 178, AH = 330;
+          g.save(); rr(X, AY, CW, AH, 12); g.clip();
+          if (artImg) {
+            try { g.filter = h.art.filter || "none"; } catch (e) {}
+            var sc = Math.max(CW / artImg.width, AH / artImg.height);
+            var dw = artImg.width * sc, dh = artImg.height * sc;
+            g.drawImage(artImg, X + (CW - dw) / 2, AY + (AH - dh) / 2, dw, dh);
+            try { g.filter = "none"; } catch (e) {}
+          } else {
+            g.fillStyle = "#131b26"; g.fillRect(X, AY, CW, AH);
+          }
+          g.restore();
+          g.strokeStyle = color; g.lineWidth = 4; rr(X, AY, CW, AH, 12); g.stroke();
+          /* type line */
+          var TY = AY + AH + 16;
+          g.fillStyle = "#141e2c"; rr(X, TY, CW, 54, 11); g.fill();
+          g.strokeStyle = "#22303f"; g.lineWidth = 2; rr(X, TY, CW, 54, 11); g.stroke();
+          g.fillStyle = color; g.font = "600 24px 'IBM Plex Mono', monospace"; g.textAlign = "left";
+          var typeText = (h.cls + " · " + h.freq).toUpperCase();
+          var tf = 24;
+          while (g.measureText(typeText).width > CW - 76 && tf > 15) { tf -= 1; g.font = "600 " + tf + "px 'IBM Plex Mono', monospace"; }
+          g.fillText(typeText, X + 20, TY + 28);
+          g.fillStyle = "#e9b558"; g.font = "26px Manrope, sans-serif"; g.textAlign = "right";
+          g.fillText("★", X + CW - 20, TY + 28);
+          g.textAlign = "left";
+          /* text box */
+          var BY = TY + 70;
+          g.fillStyle = "#101825"; rr(X, BY, CW, 418, 13); g.fill();
+          g.strokeStyle = "#22303f"; g.lineWidth = 2; rr(X, BY, CW, 418, 13); g.stroke();
+          var y = BY + 38;
+          function entry(label, title, desc){
+            g.fillStyle = "#6e8499"; g.font = "600 17px 'IBM Plex Mono', monospace"; g.textBaseline = "alphabetic";
+            g.fillText(label, X + 24, y); y += 8;
+            g.fillStyle = "#eef4f8"; g.font = "700 27px Manrope, sans-serif";
+            y = wrapText(g, title, X + 24, y + 26, CW - 48, 31);
+            if (desc) {
+              g.fillStyle = "#a7bccd"; g.font = "400 21px Manrope, sans-serif";
+              y = wrapText(g, desc, X + 24, y + 4, CW - 48, 26);
+            }
+            y += 16;
+          }
+          entry("HEADPHONE", h.phone, h.phoneDesc);
+          entry("SUPERPOWER", h.power, h.powerDesc);
+          entry("GENRE", h.genre, null);
+          g.strokeStyle = "#22303f"; g.setLineDash([5, 5]); g.beginPath();
+          g.moveTo(X + 24, y - 6); g.lineTo(X + CW - 24, y - 6); g.stroke(); g.setLineDash([]);
+          g.fillStyle = "#c8d8e6"; g.font = "italic 400 21px Manrope, sans-serif";
+          wrapText(g, h.verdict, X + 24, y + 24, CW - 48, 27);
+          /* collector footer — inside the safe zone */
+          g.fillStyle = "#6e8499"; g.font = "600 18px 'IBM Plex Mono', monospace"; g.textAlign = "left"; g.textBaseline = "alphabetic";
+          g.fillText(h.serial + " · ONE OF ONE · " + h.cls.toUpperCase(), X, 1050);
+          g.fillStyle = color; g.textAlign = "right";
+          g.fillText("RESONANCE " + h.level + " / 5", X + CW, 1050);
+          g.textAlign = "left";
+          return cv;
+        }
+        function loadCardArt(src){
+          return new Promise(function(resolve){
+            var img = new Image();
+            img.onload = function(){ resolve(img); };
+            img.onerror = function(){ resolve(null); };
+            img.src = src;
+          });
+        }
+        function forgeCardFile(){
+          if (!emailValid()) {
+            emailStatus.textContent = "Add a valid email first — that's the one thing the free download asks for.";
+            emailInput.focus();
+            return;
+          }
+          renderCard();
+          var btn = document.getElementById("downloadCard");
+          btn.disabled = true; btn.textContent = "Forging your card file…";
+          var fontsReady = (document.fonts && document.fonts.load)
+            ? Promise.all([
+                document.fonts.load("900 38px Unbounded"), document.fonts.load("700 27px Manrope"),
+                document.fonts.load("400 21px Manrope"), document.fonts.load("italic 400 21px Manrope"),
+                document.fonts.load("600 18px 'IBM Plex Mono'")
+              ]).catch(function(){})
+            : Promise.resolve();
+          Promise.all([fontsReady, loadCardArt(state.hero.art.src)]).then(function(res){
+            var cv = buildCardCanvas(res[1]);
+            if (cardBlobUrl) { try { URL.revokeObjectURL(cardBlobUrl); } catch (e) {} }
+            cardFileName = "headphone-hero-" + state.hero.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") + "-" + state.hero.serial.toLowerCase() + "-tcg-print.png";
+            if (cv.toBlob) {
+              cv.toBlob(function(blob){
+                cardBlob = blob;
+                cardBlobUrl = blob ? URL.createObjectURL(blob) : cv.toDataURL("image/png");
+                finishSave(cv);
+              }, "image/png");
+            } else {
+              cardBlob = null; cardBlobUrl = cv.toDataURL("image/png"); finishSave(cv);
+            }
+          });
+          function finishSave(cv){
+            savePreview.src = cardBlobUrl;
+            saveDownload.href = cardBlobUrl;
+            saveDownload.setAttribute("download", cardFileName);
+            savePanel.classList.add("show");
+            saveStatus.textContent = "Saved as " + cardFileName + " — 1650 × 2250 PNG, standard 2.5″ × 3.5″ trading-card size with full bleed. This file is the digital master of your 1/1 — the only card of its kind. If the download didn't start, press and hold the card above (or right-click it) and save the image.";
+            if (shareCardBtn && cardBlob && navigator.canShare) {
+              try {
+                var f = new File([cardBlob], cardFileName, { type: "image/png" });
+                if (navigator.canShare({ files: [f] })) shareCardBtn.style.display = "";
+              } catch (e) {}
+            }
+            btn.disabled = false; btn.textContent = "Save my card again";
+            /* attempt the download; the panel above stays as the fallback that always works */
+            try { saveDownload.click(); } catch (e) {}
+            savePanel.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "nearest" });
+          }
+        }
+        document.getElementById("downloadCard").addEventListener("click", forgeCardFile);
+        if (shareCardBtn) {
+          shareCardBtn.addEventListener("click", function(){
+            if (!cardBlob) return;
+            try {
+              var f = new File([cardBlob], cardFileName, { type: "image/png" });
+              navigator.share({ files: [f], title: "My Headphone Hero card" }).catch(function(){});
+            } catch (e) {}
+          });
+        }
+
+        /* ---- Step 6: physical card upsells ---- */
+        document.querySelectorAll(".upsell-card").forEach(function(btn){
+          btn.addEventListener("click", function(){
+            var on = btn.getAttribute("aria-pressed") === "true";
+            btn.setAttribute("aria-pressed", String(!on));
+            btn.querySelector(".uadd").textContent = !on ? "Added ✓" : "Add";
+            var item = { name: btn.dataset.upsell, price: +btn.dataset.price };
+            if (!on) { state.upsells.push(item); }
+            else { state.upsells = state.upsells.filter(function(x){ return x.name !== item.name; }); }
+            saveState();
+          });
+        });
+        function upsellsTotal(){
+          return state.upsells.reduce(function(sum, x){ return sum + x.price; }, 0);
+        }
+
+        /* ---- Step 7: Spotify follow ---- */
+        var spotifyFollow = document.getElementById("spotifyFollow");
+        var spotifyStatus = document.getElementById("spotifyStatus");
+        var spotifyNext = document.getElementById("spotifyNext");
+        if (spotifyFollow) {
+          spotifyFollow.addEventListener("click", function(){
+            state.spotify = true;
+            if (spotifyStatus) {
+              spotifyStatus.textContent = "Nice — you're following the frequency. Come back here and continue to your offer.";
+              spotifyStatus.classList.add("done");
+            }
+            if (spotifyNext) spotifyNext.textContent = "I'm following — finish →";
+            saveState();
+          });
+        }
+
+        /* ---- Step 8: summary + offer ---- */
+        function perksText(){
+          if (!state.perks.length) return "the full membership";
+          if (state.perks.length === 1) return state.perks[0];
+          if (state.perks.length === 2) return state.perks.join(" and ");
+          return state.perks.slice(0, -1).join(", ") + ", and " + state.perks[state.perks.length - 1];
+        }
+        function renderSummary(){
+          state.name = nameInput.value.trim();
+          var name = state.name || "Listener";
+          document.getElementById("offerHead").textContent =
+            name + ", your " + (state.freq || "Signal") + " membership is tuned.";
+          var li = function(html){ return '<li><span class="tick">✓</span><span>' + html + "</span></li>"; };
+          renderCard();
+          document.getElementById("summaryList").innerHTML =
+            li("<b>Frequency:</b>&nbsp;" + (state.freq || "The Signal") + " — " + (state.genre || "ambient") + ", woven through your drops and art. Retune anytime.") +
+            li("<b>Your hero:</b>&nbsp;" + state.hero.name + ", " + state.hero.cls + " — " + state.hero.phone + " · " + state.hero.power + ". Your card is forged; inside, your hero gets a personalized frequency every month.") +
+            li("<b>Spotify:</b>&nbsp;The public catalog travels with you — your follow link comes on the final step, after checkout, so it never pulls you out of the journey.") +
+            li("<b>First drop:</b>&nbsp;" + perksText() + " — live the moment your trial starts.") +
+            li("<b>Signal name:</b>&nbsp;" + name + ", carried on every chapter and early-access window.") +
+            li("<b>Email:</b>&nbsp;" + (state.email ? state.email + " — held in this tab only, and passed to Stripe as your checkout email when the trial starts." : "Added on the card step — held in this tab only, and passed to Stripe as your checkout email when the trial starts.")) +
+            (state.upsells.length ? li("<b>Physical cards:</b>&nbsp;" + state.upsells.map(function(x){ return x.name + " ($" + x.price + ")"; }).join(", ") + " — reserved as one-time add-ons, not part of the $10/mo and not charged today; the print-on-demand order link arrives when fulfillment opens.") : "");
+          var addonRows = document.getElementById("addonRows");
+          var addonTotalRow = document.getElementById("addonTotalRow");
+          if (addonRows) {
+            addonRows.innerHTML = state.upsells.map(function(x){
+              return '<div class="price-row"><span>' + x.name + ' · one-time</span><b>$' + x.price + '.00</b></div>';
+            }).join("");
+          }
+          if (addonTotalRow) {
+            addonTotalRow.style.display = state.upsells.length ? "flex" : "none";
+            document.getElementById("addonTotal").textContent = "$" + upsellsTotal();
+          }
+        }
+        document.getElementById("startTrial").addEventListener("click", function(){
+          if (STRIPE_CHECKOUT_URL) {
+            /* Real checkout: hand off to Stripe with the email prefilled.
+               The "locked in" screen is only reachable on the success
+               return (?checkout=success), never from this click alone. */
+            var sep = STRIPE_CHECKOUT_URL.indexOf("?") === -1 ? "?" : "&";
+            var url = STRIPE_CHECKOUT_URL + (state.email ? sep + "prefilled_email=" + encodeURIComponent(state.email) : "");
+            window.location.assign(url);
+            return;
+          }
+          var notice = document.getElementById("checkoutNotice");
+          notice.classList.add("show");
+          notice.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "nearest" });
+        });
+        function renderDone(){
+          state.name = nameInput.value.trim();
+          var name = state.name || "Listener";
+          document.getElementById("doneHead").textContent = "Signal locked in, " + name + ".";
+          renderCard();
+          document.getElementById("doneRecap").innerHTML =
+            "<b>Frequency</b> · " + (state.freq || "The Signal") + " (retune anytime)<br>" +
+            "<b>Your hero</b> · " + state.hero.name + " — " + state.hero.cls + " · " + state.hero.power + " (" + state.hero.serial + ")<br>" +
+            (state.spotify ? "<b>Spotify</b> · Following Headphone Hero<br>" : "") +
+            (state.upsells.length ? "<b>Physical cards</b> · " + state.upsells.map(function(x){ return x.name + " ($" + x.price + ")"; }).join(", ") + " — one-time<br>" : "") +
+            "<b>First drop</b> · " + perksText() + "<br>" +
+            "<b>Terms</b> · $0 today → $10/mo from " + billStr + " · cancel anytime";
+        }
+        document.getElementById("restart").addEventListener("click", function(){
+          stopEq();
+          state.quest = []; state.questDone = false; questIdx = 0;
+          state.spotify = false;
+          questNext.disabled = true; questNext.textContent = "Face the Silence first";
+          questHint.textContent = "Make all three choices to forge your hero.";
+          renderQuest();
+          show(1, true);
+        });
+
+        /* ---- resume after reload + Stripe success return ---- */
+        (function restore(){
+          var saved = readSavedState();
+          var checkoutDone = /[?&]checkout=success/.test(location.search || "");
+          if (saved) {
+            if (saved.f) {
+              document.querySelectorAll(".freq-card").forEach(function(b){
+                if (b.dataset.freq === saved.f) {
+                  b.setAttribute("aria-pressed", "true");
+                  state.freq = b.dataset.freq; state.genre = b.dataset.genre; state.color = b.dataset.color;
+                }
+              });
+              if (state.freq) {
+                document.documentElement.style.setProperty("--accent", state.color);
+                freqNext.disabled = false;
+                freqHint.textContent = state.freq + " selected — press Tune me in when you're ready.";
+              }
+            }
+            if (saved.p) {
+              state.perks = saved.p.slice();
+              document.querySelectorAll(".perk").forEach(function(b){
+                b.setAttribute("aria-pressed", String(state.perks.indexOf(b.dataset.perk) !== -1));
+              });
+              syncPerks();
+            }
+            if (saved.q && saved.q.length) {
+              state.quest = saved.q.slice();
+              questIdx = Math.min(state.quest.length, QUEST.length);
+              if (saved.qd) {
+                state.questDone = true;
+                questNext.disabled = false;
+                questNext.textContent = "Forge my hero card →";
+                questHint.textContent = "Quest complete — your hero awaits.";
+              }
+              renderQuest();
+            }
+            if (saved.u && saved.u.length) {
+              document.querySelectorAll(".upsell-card").forEach(function(b){
+                if (saved.u.indexOf(b.dataset.upsell) !== -1) {
+                  b.setAttribute("aria-pressed", "true");
+                  b.querySelector(".uadd").textContent = "Added ✓";
+                  state.upsells.push({ name: b.dataset.upsell, price: +b.dataset.price });
+                }
+              });
+            }
+            state.spotify = !!saved.sp;
+            var target = saved.s || 1;
+            if (target > 1 && !state.freq) target = 1;
+            if (target >= 6 && !state.questDone) target = 5;
+            /* Steps 8–9 sit behind checkout: without a Stripe success
+               return, a saved or crafted position there clamps back to
+               the offer. With one, the return lands on the Spotify step
+               (8) — the done screen (9) is reached only from there. */
+            if (target >= 8 && !checkoutDone) target = 7;
+            if (checkoutDone) state.paid = true;
+            if (target > 1 || checkoutDone) {
+              document.body.classList.add("funnel-locked");
+              show(checkoutDone ? 8 : target, false);
+            }
+          } else if (checkoutDone) {
+            state.paid = true;
+            document.body.classList.add("funnel-locked");
+            show(8, false);
+          }
+        })();
+
+        /* ---- reveal on scroll ---- */
+        var rvEls = document.querySelectorAll(".rv");
+        if ("IntersectionObserver" in window && !reduced) {
+          var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+          }, { threshold: 0.12 });
+          rvEls.forEach(function(el){ io.observe(el); });
+        } else {
+          rvEls.forEach(function(el){ el.classList.add("in"); });
+        }
+
+        setProgress();
+      })();
+    </script>
+  </body>
+</html>
