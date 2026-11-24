@@ -220,6 +220,9 @@
       .circle-line{ margin:26px 0 0; font-size:17px; color:var(--muted); max-width:44em; }
       .circle-line a{ color:var(--accent); font-weight:800; text-decoration:none; white-space:nowrap; }
       .circle-line a:hover{ text-decoration:underline; }
+      .arch-link{ color:var(--accent); font-weight:800; text-decoration:none; }
+      .arch-link:hover{ text-decoration:underline; }
+      .archive-line{ margin:22px 0 0; font-size:16px; color:var(--muted); }
 
       /* timeline */
       .timeline{ display:grid; gap:0; border-left:2px solid var(--line); margin-left:8px; }
@@ -537,14 +540,14 @@
           <div class="step" data-step="3">
             <div class="step-meta"><span class="step-count">Step 3 of 8 · Your first drop</span><span class="step-free">Free</span></div>
             <h3>Your first drop is already waiting.</h3>
-            <p class="lede">The moment your trial starts, this month's exclusive track lands in your inbox — before you've paid a cent. Press play and feel the shape of it.</p>
+            <p class="lede">The moment your trial starts, this month's exclusive track is waiting for you in the Hyper Signal Archive — before you've paid a cent. Press play and feel the shape of it.</p>
             <div class="eq-stage">
               <div class="eq" id="eq" aria-hidden="true"></div>
               <button type="button" class="btn btn-primary" id="eqPlay" aria-pressed="false">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" id="eqIcon"><path d="M7 4.5v15l13-7.5z"/></svg>
                 <span id="eqLabel">Play the preview</span>
               </button>
-              <p class="eq-caption">Equalizer preview — the full track arrives by email the second your free trial begins.</p>
+              <p class="eq-caption">Equalizer preview — the full track is waiting in the Hyper Signal Archive the second your free trial begins.</p>
             </div>
             <div class="step-nav">
               <button type="button" class="btn-back" data-back>Back</button>
@@ -608,8 +611,8 @@
               </div>
             </div>
             <div class="email-gate">
-              <label for="cardEmail">Where should your drops find you?</label>
-              <p>Your card is free either way. Enter your email to unlock the full-size download. Straight talk: this page doesn't save or send your email anywhere — it stays in this tab, and when you start the trial it's handed to Stripe checkout as your prefilled email, so your member drops have an address to land on.</p>
+              <label for="cardEmail">Your email — for checkout only</label>
+              <p>Your card is free either way. Enter your email to unlock the full-size download. Straight talk: this page doesn't save or send your email anywhere — it stays in this tab, and when you start the trial it's handed to Stripe checkout as your prefilled email. That's all it's for: your drops live in the Hyper Signal Archive, not in an inbox.</p>
               <input id="cardEmail" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" />
               <p class="gate-status" id="emailStatus">Enter a valid email to unlock the download.</p>
             </div>
@@ -629,7 +632,7 @@
                 <button type="button" class="btn btn-ghost" id="shareCard" style="display:none;">Share my card</button>
               </div>
             </div>
-            <p class="card-note">Keep this card — it's yours forever, member or not. The download unlocks with your email, which is held only in this tab and passed to Stripe at checkout — never stored by this page. There is only one of it in the world. Inside the membership, your hero goes further: every month you receive a <b style="color:var(--ink)">personalized hero frequency</b> — a members-only transmission built around your hero, your headphone, and your sound, delivered with your drop.</p>
+            <p class="card-note">Keep this card — it's yours forever, member or not. The download unlocks with your email, which is held only in this tab and passed to Stripe at checkout — never stored by this page. There is only one of it in the world. Inside the membership, your hero goes further: every month your hero gets a <b style="color:var(--ink)">personalized hero frequency</b> — a members-only transmission built around your hero, your headphone, and your sound, waiting in the Hyper Signal Archive with your drop.</p>
 
             <div class="card-model" aria-label="How NVK cards work">
               <div class="cm one">
@@ -702,13 +705,13 @@
           <div class="step" data-step="7">
             <div class="step-meta"><span class="step-count">Step 7 of 8 · The offer</span><span class="step-free">Still $0 today</span></div>
             <h3 id="offerHead">Your membership is tuned. Keep it running.</h3>
-            <p class="lede">Everything you just picked — hero included — starts free. If the frequency is yours, it continues at $10 a month — less than one album — billed automatically so the drops, and your hero's monthly frequency, never miss you.</p>
+            <p class="lede">Everything you just picked — hero included — starts free. If the frequency is yours, it continues at $10 a month — less than one album — billed automatically, so your drops keep landing in the Hyper Signal Archive, and your hero's monthly frequency with them.</p>
             <div class="offer-grid">
               <div>
                 <ul class="summary-list" id="summaryList"></ul>
                 <ul class="summary-list">
-                  <li><span class="tick">✓</span><span><b>Reminder before billing</b> — you hear from us before the trial ends, not after.</span></li>
-                  <li><span class="tick">✓</span><span><b>Cancel anytime</b> — one tap, no lock-in, keep everything you've already received.</span></li>
+                  <li><span class="tick">✓</span><span><b>Drops live in the archive</b> — your first drop is waiting in the Hyper Signal Archive from minute one; new drops land there monthly.</span></li>
+                  <li><span class="tick">✓</span><span><b>Cancel anytime</b> — one tap from the manage link in your Stripe receipt email, no lock-in, keep everything you've already received.</span></li>
                 </ul>
               </div>
               <div class="price-card">
@@ -739,7 +742,7 @@
               <h3 id="doneHead">Signal locked in.</h3>
               <p>Frequency chosen, quest conquered, hero forged, first drop unlocked. That's all it takes — nothing owed, and everything you just picked, hero included, is waiting for you on the inside.</p>
               <div class="done-recap" id="doneRecap"></div>
-              <p style="margin-top:18px;">This is where your 30 free days begin — $0 today, $10/mo from <b id="billDate3" style="color:var(--ink);">December 23, 2026</b> only if you stay, cancel anytime before that and you pay nothing. Your first drop lands the moment you step through the door.</p>
+              <p style="margin-top:18px;">This is where your 30 free days begin — $0 today, $10/mo from <b id="billDate3" style="color:var(--ink);">December 23, 2026</b> only if you stay, cancel anytime before that and you pay nothing. Your first drop is waiting in the <a class="arch-link" href="https://muse.ai/s/hyper-signal-archive-xpu6xv0xlxmzxoxnxx/L1Fbkp145LXN1hM0XaaZpjeNLGs3Z-x7Mbdoezx6plc" target="_blank" rel="noopener">Hyper Signal Archive</a> the moment you step through the door.</p>
               <div class="step-nav" style="justify-content:center;">
                 <button type="button" class="btn btn-ghost" id="restart">Start over</button>
                 <a class="btn btn-primary" href="#inside" id="doneInside" style="color:var(--accent-ink);">See what's inside</a>
@@ -761,7 +764,7 @@
           <div class="perk-card rv">
             <div class="glyph"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v11"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="15" r="2.5"/></svg></div>
             <h3>Monthly exclusive track</h3>
-            <p>One unreleased Headphone Hero / NVK Records track per month, delivered to members only. Not on streaming. Not on the feed.</p>
+            <p>One unreleased Headphone Hero / NVK Records track per month, waiting in the Hyper Signal Archive for members. Not on streaming. Not on the feed.</p>
             <span class="when">Every month</span>
           </div>
           <div class="perk-card rv">
@@ -779,7 +782,7 @@
           <div class="perk-card rv">
             <div class="glyph"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></div>
             <h3>Your hero's frequency</h3>
-            <p>Your Headphone Hero card is just the beginning. Members receive a personalized hero frequency every month — a transmission built around their hero, headphone, and sound.</p>
+            <p>Your Headphone Hero card is just the beginning. Members find a personalized hero frequency waiting in the Hyper Signal Archive every month — a transmission built around their hero, headphone, and sound.</p>
             <span class="when">Monthly · Yours alone</span>
           </div>
           <div class="perk-card rv">
@@ -789,6 +792,7 @@
             <span class="when">Before the public window</span>
           </div>
         </div>
+        <p class="archive-line rv">Your drops live in the <a class="arch-link" href="https://muse.ai/s/hyper-signal-archive-xpu6xv0xlxmzxoxnxx/L1Fbkp145LXN1hM0XaaZpjeNLGs3Z-x7Mbdoezx6plc" target="_blank" rel="noopener">Hyper Signal Archive →</a> — open from minute one, no subscription needed to look around.</p>
       </section>
 
       <!-- ============ THE CIRCLE ============ -->
@@ -805,7 +809,7 @@
           </div>
           <div class="circle-card rv">
             <h3>Small by design</h3>
-            <p>No feed. No algorithm deciding who hears what. Your drops arrive by email because you chose your frequency — not because a platform served you an ad.</p>
+            <p>No feed. No algorithm deciding who hears what. Your drops wait in the Hyper Signal Archive because you chose your frequency — not because a platform served you an ad.</p>
           </div>
           <div class="circle-card rv">
             <h3>Yours to leave</h3>
@@ -825,12 +829,12 @@
           <div class="t-item">
             <span class="t-day">Day 0 · Today</span>
             <h3>Trial starts — everything unlocks</h3>
-            <p>Card on file, $0 charged. This month's exclusive track, the early chapters, and the members-only art are all live from minute one.</p>
+            <p>Card on file, $0 charged. This month's exclusive track, the early chapters, and the members-only art are all live in the <a class="arch-link" href="https://muse.ai/s/hyper-signal-archive-xpu6xv0xlxmzxoxnxx/L1Fbkp145LXN1hM0XaaZpjeNLGs3Z-x7Mbdoezx6plc" target="_blank" rel="noopener">Hyper Signal Archive</a> from minute one.</p>
           </div>
           <div class="t-item">
             <span class="t-day">Day 28</span>
-            <h3>The reminder</h3>
-            <p>An email lands three days before the first charge: what's unlocked, what's coming, and a one-tap cancel link. No surprises, ever.</p>
+            <h3>Know before it bills</h3>
+            <p>Three days out, your trial is still free — cancel any time before the first charge from the manage link in your Stripe receipt email and you pay $0. No surprises, ever.</p>
           </div>
           <div class="t-item bill">
             <span class="t-day">Day 31 · <span id="billDate4">First charge</span></span>
@@ -858,11 +862,11 @@
           </details>
           <details>
             <summary>How do I cancel?</summary>
-            <p>One tap from any member email or the membership page, any time — including during the free trial. Cancelling costs nothing and you keep the track, chapters, and art you already received.</p>
+            <p>Cancel from the manage link in your Stripe receipt email, any time — including during the free trial. Cancelling costs nothing and you keep the track, chapters, and art you already received.</p>
           </details>
           <details>
             <summary>Where do the drops arrive?</summary>
-            <p>By email, monthly: the exclusive track as a download, chapter links, and the members-only art. First-access drop windows are announced to members before anywhere else.</p>
+            <p>In the <a class="arch-link" href="https://muse.ai/s/hyper-signal-archive-xpu6xv0xlxmzxoxnxx/L1Fbkp145LXN1hM0XaaZpjeNLGs3Z-x7Mbdoezx6plc" target="_blank" rel="noopener">Hyper Signal Archive</a>, monthly: the exclusive track, the next chapters, and the members-only art — waiting there from minute one. First-access drop windows open in the archive before anywhere else.</p>
           </details>
           <details>
             <summary>Can I change my frequency later?</summary>
