@@ -651,3 +651,248 @@ export function mountOrb(canvas, opts) {
     }
   };
 }
+
+/* ------------------------------------------------------------------ */
+/* mountNexusOrb — the mount the pages actually import.                */
+/*                                                                     */
+/* Both pages import this name (index.html home hero, visualizations   */
+/* hub) and pass the [data-viz] host DIV, not a canvas; orb.js used    */
+/* to export only createNexusOrb / mountOrb, so the import was a hard  */
+/* module error and the live hero showed its CSS fallback.             */
+/*                                                                     */
+/* Mechanics mirror the store's working mount                          */
+/* (~/workspace/storefront-transformation/site/assets/store-orb.js,    */
+/* mountStoreOrb): renderer + EffectComposer/UnrealBloomPass/          */
+/* OutputPass, slow idle spin, drag rotates the orb GROUP itself       */
+/* with inertia via Pointer Events, click/tap fires a bloom pulse,    */
+/* returns null (leaving the CSS fallback in place) on WebGL failure. */
+/* No OrbitControls: mountOrb's compact mode routes drag through       */
+/* OrbitControls + an (empty) gateway ring, so dragging does nothing   */
+/* visible there; here drag rotates the orb itself.                    */
+/*                                                                     */
+/* Unified-site behavior kept from mountOrb (not in the store mount):  */
+/* the orb listens for real 'nvk:orb-state' page-activity events      */
+/* (STATE_VISUALS), marks the host [data-viz-ready] on the first      */
+/* frame, and a tap plays the orb chime + emits a resonance event     */
+/* (both guarded — audio/activity may be absent).                      */
+/*                                                                     */
+/* Deliberately NO gateway nodes and NO gateway modal in this mount:   */
+/* the visualizations call passes modalEl/titleEl/bodyEl/actionsEl     */
+/* and those opts are accepted and ignored. The hub's gateway nodes    */
+/* live only in mountOrb, whose self-built modal has no CSS on this    */
+/* site (.gateway-modal-overlay is unstyled) — restoring the hub is    */
+/* a separate job (mountOrb + overlay CSS), not this fix.              */
+/*                                                                     */
+/* Camera z=9 on both pages (mountOrb's compact value): the orb fills  */
+/* about half the panel height. Bloom 1.2/0.5/0.1 is mountOrb's value  */
+/* for these dark panels (the store's gentler 0.55 was tuned for its   */
+/* 120px light-hero disc and is not used here).                        */
+/* Returns a { dispose } handle, or null when WebGL cannot start.     */
+/* ------------------------------------------------------------------ */
+
+export function mountNexusOrb(host, opts) {
+  opts = opts || {};
+  if (!host || !host.appendChild) return null;
+
+  const canvas = document.createElement("canvas");
+  canvas.setAttribute("role", "img");
+  canvas.setAttribute("aria-label", "The NVK orb — a live 3D orb. Drag to rotate, click for a pulse.");
+  host.appendChild(canvas);
+
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let renderer = null;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
+  } catch (e) {
+    try { renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: true }); }
+    catch (e2) {
+      try { renderer = new THREE.WebGLRenderer({ canvas, alpha: true }); }
+      catch (e3) { canvas.remove(); return null; }
+    }
+  }
+  if (!renderer) { canvas.remove(); return null; }
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+  camera.position.set(0, 0, 9);
+
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.toneMapping = THREE.ReinhardToneMapping;
+
+  const nexusOrb = createNexusOrb();
+  const orbGroup = new THREE.Group();
+  orbGroup.add(nexusOrb.object);
+  scene.add(orbGroup);
+
+  const composer = new EffectComposer(renderer);
+  composer.addPass(new RenderPass(scene, camera));
+  const bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 1.2, 0.5, 0.1);
+  composer.addPass(bloomPass);
+  composer.addPass(new OutputPass());
+
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2(9999, 9999);
+  const clock = new THREE.Clock();
+  let animationFrameId = 0;
+  let readyMarked = false;
+
+  let dragging = false;
+  let moved = false;
+  let downX = 0, downY = 0;
+  let lastX = 0, lastY = 0;
+  let velX = 0, velY = 0;
+  let hovered = false;
+  let hoverCurrent = 0;
+  let bloomFlash = 0;
+  let bloomCurrent = 1.2;
+
+  let visual = STATE_VISUALS.idle;
+
+  function onOrbState(e) {
+    const state = (e && e.detail && e.detail.state) || "idle";
+    visual = STATE_VISUALS[state] || STATE_VISUALS.idle;
+    if (state === "complete") bloomFlash = 1;
+  }
+  window.addEventListener("nvk:orb-state", onOrbState);
+
+  function setPointer(event) {
+    const rect = canvas.getBoundingClientRect();
+    pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+  }
+
+  function hitOrb() {
+    raycaster.setFromCamera(pointer, camera);
+    return raycaster.intersectObjects(orbGroup.children, true).length > 0;
+  }
+
+  function onPointerDown(event) {
+    dragging = true;
+    moved = false;
+    downX = event.clientX;
+    downY = event.clientY;
+    lastX = event.clientX;
+    lastY = event.clientY;
+    velX = 0;
+    velY = 0;
+    try { canvas.setPointerCapture(event.pointerId); } catch (e) { /* pointer already gone */ }
+    canvas.style.cursor = "grabbing";
+  }
+
+  function onPointerMove(event) {
+    setPointer(event);
+    if (!dragging) {
+      hovered = hitOrb();
+      canvas.style.cursor = hovered ? "pointer" : "grab";
+      return;
+    }
+    const dx = event.clientX - lastX;
+    const dy = event.clientY - lastY;
+    if (Math.abs(event.clientX - downX) + Math.abs(event.clientY - downY) > 4) moved = true;
+    const SENS = 0.005;
+    orbGroup.rotation.y += dx * SENS;
+    orbGroup.rotation.x = Math.max(-1.0, Math.min(1.0, orbGroup.rotation.x + dy * SENS));
+    velX = dx * SENS;
+    velY = dy * SENS;
+    lastX = event.clientX;
+    lastY = event.clientY;
+  }
+
+  function onPointerUp(event) {
+    const wasDragging = dragging;
+    dragging = false;
+    canvas.style.cursor = hovered ? "pointer" : "grab";
+    if (!wasDragging) return;
+    if (!moved) {
+      // Tap / click without a drag: pulse, but only if it hit the orb.
+      setPointer(event);
+      if (hitOrb()) {
+        bloomFlash = 1;
+        if (window.NVKAudio) window.NVKAudio.nexusOrbClick();
+        if (window.NVKActivity) window.NVKActivity.emitResonance(0.8, "orb");
+      }
+    }
+  }
+
+  function onPointerLeave() {
+    if (!dragging) {
+      hovered = false;
+      pointer.set(9999, 9999);
+      canvas.style.cursor = "grab";
+    }
+  }
+
+  canvas.addEventListener("pointerdown", onPointerDown);
+  canvas.addEventListener("pointermove", onPointerMove);
+  canvas.addEventListener("pointerup", onPointerUp);
+  canvas.addEventListener("pointercancel", onPointerUp);
+  canvas.addEventListener("pointerleave", onPointerLeave);
+
+  function resize() {
+    const w = host.clientWidth || 1;
+    const h = host.clientHeight || 1;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h, false);
+    composer.setSize(w, h);
+  }
+  resize();
+  const resizeObserver = new ResizeObserver(resize);
+  resizeObserver.observe(host);
+  window.addEventListener("resize", resize);
+
+  function animate() {
+    animationFrameId = requestAnimationFrame(animate);
+    const elapsedTime = clock.getElapsedTime();
+
+    if (!dragging) {
+      if (Math.abs(velX) > 0.0001 || Math.abs(velY) > 0.0001) {
+        orbGroup.rotation.y += velX;
+        orbGroup.rotation.x = Math.max(-1.0, Math.min(1.0, orbGroup.rotation.x + velY));
+        velX *= 0.95;
+        velY *= 0.95;
+      } else if (!reduceMotion) {
+        orbGroup.rotation.y += 0.002 * visual.speed; // slow idle spin
+      }
+    }
+
+    if (bloomFlash > 0) bloomFlash = Math.max(0, bloomFlash - 0.012);
+    const bloomTarget = visual.bloom + bloomFlash * 1.2;
+    bloomCurrent += (bloomTarget - bloomCurrent) * 0.08;
+    bloomPass.strength = bloomCurrent;
+    const hoverTarget = Math.max(hovered ? 1 : 0, visual.hover);
+    hoverCurrent += (hoverTarget - hoverCurrent) * 0.08;
+
+    nexusOrb.update(elapsedTime * visual.speed, hoverCurrent);
+    composer.render();
+    if (!readyMarked) {
+      readyMarked = true;
+      // The [data-viz] host is the mount itself on the home page, but on
+      // the visualizations page it is the hub ancestor (#orb-hub) — the
+      // watchdog in main.js only watches [data-viz] hosts, so mark the
+      // nearest one, not necessarily the div passed in.
+      const vizHost = host.closest ? (host.closest("[data-viz]") || host) : host;
+      vizHost.setAttribute("data-viz-ready", "true");
+      window.dispatchEvent(new CustomEvent("nvk:viz-ready", { detail: { viz: "orb" } }));
+    }
+  }
+  animate();
+
+  return {
+    dispose() {
+      cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("nvk:orb-state", onOrbState);
+      window.removeEventListener("resize", resize);
+      resizeObserver.disconnect();
+      canvas.removeEventListener("pointerdown", onPointerDown);
+      canvas.removeEventListener("pointermove", onPointerMove);
+      canvas.removeEventListener("pointerup", onPointerUp);
+      canvas.removeEventListener("pointercancel", onPointerUp);
+      canvas.removeEventListener("pointerleave", onPointerLeave);
+      renderer.dispose();
+      canvas.remove();
+    }
+  };
+}

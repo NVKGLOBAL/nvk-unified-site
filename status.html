@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>System Status — What Is Real | NVK Global</title>
 <meta name="description" content="NVK Global system status: a capability registry of what is operational, partial, simulated, missing, or blocked — with evidence and what comes next for each.">
 <link rel="canonical" href="https://nvk.global/status.html">
@@ -10,6 +14,7 @@
 <meta property="og:description" content="A capability registry: what is operational, partial, simulated, missing, or blocked — with evidence and what's next.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nvk.global/status.html">
+<meta property="og:image" content="https://nvkglobal.github.io/nvk-unified-site/assets/logo-nvk.png">
 <meta property="og:site_name" content="NVK GLOBAL">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
@@ -35,7 +40,7 @@ table.registry td p{margin:0;color:var(--ink-soft)}
 <body>
 <header class="site-header">
 <div class="header-inner">
-<a class="brand" href="index.html" aria-label="NVK Global — home"><svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="none" stroke="#00a8c6" stroke-width="2.5"/><path d="M20 9 L29 29 L11 29 Z" fill="none" stroke="#11151a" stroke-width="2.5" stroke-linejoin="round"/><circle cx="20" cy="23" r="2.4" fill="#00a8c6"/></svg><span>NVK&nbsp;GLOBAL<sup>™</sup></span></a>
+<a class="brand" href="index.html" aria-label="NVK Global — home"><img src="assets/logo-nvk.png" alt="NVK" width="34" height="34"><span>NVK&nbsp;GLOBAL<sup>™</sup></span></a>
 <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
 <nav class="main-nav" id="main-nav" aria-label="Main">
 <a href="index.html">Home</a>
@@ -76,20 +81,20 @@ table.registry td p{margin:0;color:var(--ink-soft)}
 <tr>
 <td>Live store</td>
 <td><span class="badge badge-live">Operational</span></td>
-<td><p>NVK-Equipment-Vault Cloudflare Worker + Stripe checkout, live and verified November 2026: 27 products, PRO 2.0 $299.99, prices audited.</p></td>
+<td><p>NVK-Equipment-Vault Cloudflare Worker + Stripe checkout, live and verified November 2026: 32 products, PRO 2.0 $299.99, prices audited.</p></td>
 <td><p>Keep operating. A redesigned storefront is staged and awaiting owner approval before anything live changes.</p></td>
 </tr>
 <tr>
 <td>CODEXA shell</td>
-<td><span class="badge badge-live">Operational shell</span> / <span class="badge badge-exp">Simulated intelligence</span></td>
-<td><p><a href="https://codexa.nvkglobal.workers.dev" target="_blank" rel="noopener">codexa.nvkglobal.workers.dev</a> loads and renders; onboarding works; 122-module navigator works. Chat and inference inside the shell are canned templates, verified at source.</p></td>
-<td><p>Wire real inference into the shell, starting with one real model downloaded, loaded, and answering.</p></td>
+<td><span class="badge badge-live">Operational</span></td>
+<td><p><a href="https://codexa.nvkglobal.workers.dev" target="_blank" rel="noopener">codexa.nvkglobal.workers.dev</a> loads and renders; onboarding works; 122-module navigator works. Chat answers through real models via the cloud gateway (Workers AI → Kilo → Groq → OpenRouter), verified live 2026-11-24: "2+2" answered "Four" via Kilo.</p></td>
+<td><p>Prove the local on-device inference path end to end here; keep the gateway tiers healthy.</p></td>
 </tr>
 <tr>
 <td>CODEXA product</td>
-<td><span class="badge badge-soon">Priced — coming soon</span></td>
-<td><p>1 week free, then $20/month. Listed on the <a href="offers.html">Offers page</a> with no buy button and no payment taken. The intelligence is not real yet — the Aethel reasoner is canned and milestone #10 (one real model answering "2+2" with "4") has not passed — so checkout stays closed until the intelligence is real and Stripe is wired.</p></td>
-<td><p>Pass milestone #10, then wire Stripe checkout and open first access.</p></td>
+<td><span class="badge badge-live">Live — $20/month</span></td>
+<td><p>1 day free, then $20/month. Live on the <a href="offers.html">Offers page</a> with a working Stripe buy link; the app is live at <a href="https://codexa.nvkglobal.workers.dev" target="_blank" rel="noopener">codexa.nvkglobal.workers.dev</a>. Milestone #10 passed 2026-11-24 (one real model answering "2+2" with "4" via Kilo).</p></td>
+<td><p>Monitor the free-tier gateway budget — Kilo's shared 200/hour limit burns fast under load. Local inference remains the sovereign path.</p></td>
 </tr>
 <tr>
 <td>CODEXA local inference</td>
@@ -99,15 +104,15 @@ table.registry td p{margin:0;color:var(--ink-soft)}
 </tr>
 <tr>
 <td>CODEXA cloud inference</td>
-<td><span class="badge badge-soon">Partial</span></td>
-<td><p>Real server-side Gemini call in <code>server.ts</code>, verified in the source code. Gated on an API key; the client bundle previously leaked the key (claimed fixed, unverified by this read).</p></td>
-<td><p>Verify key handling; cloud stays an explicit, user-enabled option, never the default.</p></td>
+<td><span class="badge badge-live">Operational</span></td>
+<td><p>Real cloud gateway in <code>worker.js</code>: Workers AI → Kilo (keyless) → Groq → OpenRouter, verified live 2026-11-24. No Gemini anywhere in CODEXA — removed 2026-11-23 by owner direction; the Gemini API is never used.</p></td>
+<td><p>Workers AI is erroring with a non-quota error — the real error is still to be surfaced (server-side logging or a direct binding test). Kilo's shared 200/hour budget burns fast under load.</p></td>
 </tr>
 <tr>
 <td>Aethel reasoner</td>
-<td><span class="badge badge-exp">Simulated</span></td>
-<td><p>Canned string, no inference — verified at source. This is the live site&rsquo;s failure to answer a simple question, confirmed in the code.</p></td>
-<td><p>Build it into real inference; until then, chat must say so instead of performing an answer.</p></td>
+<td><span class="badge badge-soon">Unverified since fix</span></td>
+<td><p>The chat path no longer routes through canned replies — it answers via the real cloud gateway, verified live 2026-11-24. The Aethel reasoner component itself has not been re-verified as a standalone engine since the fix round, and it is not presented as the answering engine.</p></td>
+<td><p>Re-verify the reasoner against the current code, or remove it from the architecture if it is no longer the answering path.</p></td>
 </tr>
 <tr>
 <td>MLC / WebLLM models</td>
@@ -159,9 +164,9 @@ table.registry td p{margin:0;color:var(--ink-soft)}
 </tr>
 <tr>
 <td>Membership funnel / Stripe product</td>
-<td><span class="badge badge-blocked">Blocked</span></td>
-<td><p>The funnel artifact exists, but the Stripe product has not been created yet, so the funnel cannot take payment.</p></td>
-<td><p>Create the Stripe product (owner action — needs the owner&rsquo;s Stripe account), then wire the funnel to it.</p></td>
+<td><span class="badge badge-live">Live</span></td>
+<td><p>Headphone Heroes Membership is live: $10/month, 30-day free trial, Stripe checkout verified working 2026-11-24 (Step 7 opens the live link). Funnel at <a href="https://nvkglobal.github.io/nvk-unified-site/funnel/">nvkglobal.github.io/nvk-unified-site/funnel/</a>. The funnel's email promises were removed 2026-11-24 — drops live in the Hyper Signal Archive, not in an inbox.</p></td>
+<td><p>A real mail system is still to be built if email drops are wanted; until then, no email delivery is promised anywhere.</p></td>
 </tr>
 <tr>
 <td>NVK-shop</td>
@@ -172,7 +177,7 @@ table.registry td p{margin:0;color:var(--ink-soft)}
 </tbody>
 </table>
 </div>
-<p class="legend-note" style="margin-top:28px">Source: NVK Unified repository inventory (Phase 1 Discover, 2026-11-21) and the CODEXA fix list (live review, 2026-11-21). Classifications are provisional where the underlying code has only been listed, not read — those rows say so. No fake dashboards, metrics, or network statistics appear on this site, because there is no live network to measure.</p>
+<p class="legend-note" style="margin-top:28px">Source: NVK Unified repository inventory (Phase 1 Discover, 2026-11-21) and the CODEXA fix list (live review, 2026-11-21). Updated 2026-11-24 with the live CODEXA retest (chat answering via the real gateway), the verified Stripe records for Membership and CODEXA, and the live funnel check. Classifications are provisional where the underlying code has only been listed, not read — those rows say so. No fake dashboards, metrics, or network statistics appear on this site, because there is no live network to measure.</p>
 <div class="btn-row">
 <a class="btn btn-primary" href="intelligence.html">Read the Intelligence program</a>
 <a class="btn btn-ghost" href="why.html">Why choose NVK</a>
@@ -195,7 +200,7 @@ table.registry td p{margin:0;color:var(--ink-soft)}
 <li><a href="why.html">Why NVK</a></li>
 <li><a href="intelligence.html">NVK Intelligence / Codex</a></li>
 <li><a href="status.html">System Status</a></li>
-<li><a href="https://nvk.global/">Shop — all 27 products</a></li>
+<li><a href="https://nvk.global/">Shop — all 32 products</a></li>
 </ul>
 </div>
 <div>

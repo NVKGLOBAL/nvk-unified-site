@@ -56,7 +56,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .header-inner{display:flex;align-items:center;gap:20px;max-width:var(--max);margin:0 auto;padding:14px 20px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em;color:var(--ink);font-size:1.05rem;white-space:nowrap}
 .brand:hover{text-decoration:none}
-.brand svg{flex:none}
+.brand svg,.brand img{flex:none}
+.brand img{width:34px;height:34px;display:block}
 .main-nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
 .main-nav a{color:var(--ink-soft);font-weight:600;font-size:.92rem;padding:8px 11px;border-radius:10px}
 .main-nav a:hover{background:var(--bg-light);text-decoration:none;color:var(--ink)}
