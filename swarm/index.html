@@ -145,7 +145,7 @@ footer{color:var(--mut);font-size:13px;margin-top:30px;border-top:1px solid var(
 
   <footer>
     <p><b>Sources.</b> Roster, tiers, Triad and division agents: NVK NEXUS / NVK GLOBAL SOP, Version Ω.1.0 (Google Doc 1L97wN6aLneJoT5bOhfZ9B7OzBNQXaIIxCe93LxFKns0) — extracted text with line references on each card (see roster.json). Structure and benchmark: NVK OS 3D Intelligence Operations Environment brief, Nov 23, 2026. Brain: CODEXA gateway, POST https://codexa.nvkglobal.workers.dev/ai/generate (free tiers; shared budget — answers may pause at peak use).</p>
-    <p style="margin-top:8px">Built locally Nov 27, 2026. Not deployed. The SOP is a reference document (2026-11-24 salvage verdict: nothing operational worth salvaging; its revenue and headcount numbers are invented). This page presents its agent roles, not its claims.</p>
+    <p style="margin-top:8px">Deployed Nov 27, 2026. The SOP is a reference document (2026-11-24 salvage verdict: nothing operational worth salvaging; its revenue and headcount numbers are invented). This page presents its agent roles, not its claims.</p>
   </footer>
 </main>
 
@@ -268,7 +268,7 @@ async function send(){
       const via = "Answered via " + (data.tier||"gateway") + (data.model ? " · " + data.model : "") + (data.notice ? " · " + data.notice : "");
       addMsg("a", data.text, via);
       histories[active.id].push({role:"assistant", content:data.text, via});
-      statusEl.textContent = "Brain: answering (" + (data.tier||"gateway") + ").";
+      statusEl.textContent = "Brain: answered via " + (data.tier||"gateway") + ".";
     } else if(r.status===429){
       const errs = data.tierErrors ? Object.entries(data.tierErrors).map(([k,v])=>k+": "+v).join(" · ") : "";
       addMsg("a", "The free brain is out of budget right now — every tier is exhausted. Nothing was made up. Try again in a little while." + (errs ? "\n" + errs : ""), "");
